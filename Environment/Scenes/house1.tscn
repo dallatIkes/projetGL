@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnyvoa8pr4g12"]
+
+[ext_resource type="PackedScene" uid="uid://c3byka6183q1b" path="res://3D_Models/Environnement/3/wallWoodDoor.glb" id="1_kjdl3"]
+[ext_resource type="PackedScene" uid="uid://bja0xgbu7tyl6" path="res://3D_Models/Environnement/3/wallWoodCorner.glb" id="2_ul8yx"]
+[ext_resource type="PackedScene" uid="uid://bfxo5oyd4fw3w" path="res://3D_Models/Environnement/3/wallWoodDetailHorizontal.glb" id="3_mpfhm"]
+[ext_resource type="PackedScene" uid="uid://foxp3k1xcwnq" path="res://3D_Models/Environnement/3/wallWoodWindowGlass.glb" id="4_kgm53"]
+[ext_resource type="PackedScene" uid="uid://b7l8bxb6gqw6p" path="res://3D_Models/Environnement/3/stairsWood.glb" id="5_umfmt"]
+[ext_resource type="PackedScene" uid="uid://b13wnmjhvqa8n" path="res://3D_Models/Environnement/3/wallWoodDetailCross.glb" id="6_xiht2"]
+[ext_resource type="PackedScene" uid="uid://blnw31x7buvbh" path="res://3D_Models/Environnement/3/wallWoodDoorwaySquare.glb" id="8_bu4oa"]
+[ext_resource type="PackedScene" uid="uid://ckt0lv77sky8c" path="res://3D_Models/Environnement/3/wallWoodWindowSmall.glb" id="9_i5bci"]
+[ext_resource type="PackedScene" uid="uid://dq8oacoqgqes5" path="res://3D_Models/Environnement/3/wallWoodBlock.glb" id="10_yb1gc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="wallWoodDoor2" parent="." instance=ExtResource("1_kjdl3")]
+
+[node name="wallWoodCorner2" parent="." instance=ExtResource("2_ul8yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.901997, 0, 0.897714)
+
+[node name="wallWoodCorner3" parent="." instance=ExtResource("2_ul8yx")]
+transform = Transform3D(0.999959, -0.000139258, -0.00907543, -0.000122669, -0.999998, 0.00182853, -0.00907566, -0.00182734, -0.999957, -0.916817, 0.993723, -0.897775)
+
+[node name="wallWoodDetailHorizontal2" parent="." instance=ExtResource("3_mpfhm")]
+transform = Transform3D(-0.0308699, 0, 0.999523, 0, 1, 0, -0.999523, 0, -0.0308699, -1.80708, 0.00107151, 0.915978)
+
+[node name="wallWoodWindowGlass2" parent="." instance=ExtResource("4_kgm53")]
+transform = Transform3D(0.0204014, 0, -0.999792, 0, 1, 0, 0.999792, 0, 0.0204014, -1.78226, -1.19209e-07, -0.881825)
+
+[node name="stairsWood2" parent="." instance=ExtResource("5_umfmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66758, 0, -1.01)
+
+[node name="wallWoodDetailCross2" parent="." instance=ExtResource("6_xiht2")]
+transform = Transform3D(0.0158295, 0, -0.999875, 0, 1, 0, 0.999875, 0, 0.0158295, -2.67306, 0, -0.86937)
+
+[node name="wallWoodDetailCross3" parent="." instance=ExtResource("6_xiht2")]
+transform = Transform3D(0.00186749, 0, 0.999998, 0, 1, 0, -0.999998, 0, 0.00186749, -2.69422, -0.00140035, 0.912983)
+
+[node name="wallWoodDoorwaySquare2" parent="." instance=ExtResource("8_bu4oa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.925498, 0, 0.0336058)
+
+[node name="wallWoodWindowSmall2" parent="." instance=ExtResource("9_i5bci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60447, 1.19209e-07, 0.0154264)
+
+[node name="wallWoodBlock2" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.90725, -0.0667313, -0.0056023)
+
+[node name="wallWoodBlock3" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -1.8829, -0.0721528, -0.827438)
+
+[node name="wallWoodBlock4" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -1.86227, -0.0723132, 0.117773)
+
+[node name="wallWoodBlock5" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.8, -1.8685, -0.0725421, 0.964052)
+
+[node name="wallWoodBlock6" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -2.80934, -0.07592, -0.843581)
+
+[node name="wallWoodBlock7" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -2.81275, -0.074745, 0.103674)
+
+[node name="wallWoodBlock8" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.8, -2.80316, -0.0746625, 0.957949)
+
+[node name="wallWoodBlock9" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(0.799969, 0, 0.00717006, 0, 0.1, 0, -0.00699519, 0, 0.819969, -3.6579, -0.0749013, 0.962436)
+
+[node name="wallWoodCorner4" parent="." instance=ExtResource("2_ul8yx")]
+transform = Transform3D(-0.00371758, 0, 0.999993, 0, 1, 0, -0.999993, 0, -0.00371758, -3.6031, 0, 0.912893)
+
+[node name="wallWoodCorner5" parent="." instance=ExtResource("2_ul8yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60085, 0, -0.895297)
+
+[node name="wallWoodBlock10" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(0.8, 0, 0, 0, 0.1, 0, 0, 0, 1, -3.66262, -0.0764407, 0.101495)
+
+[node name="wallWoodBlock11" parent="." instance=ExtResource("10_yb1gc")]
+transform = Transform3D(0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.98, -3.65843, -0.0743714, -0.835494)
