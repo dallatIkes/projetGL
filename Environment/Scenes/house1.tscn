@@ -1,14 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnyvoa8pr4g12"]
+[gd_scene load_steps=24 format=3 uid="uid://cnyvoa8pr4g12"]
 
 [ext_resource type="PackedScene" uid="uid://c3byka6183q1b" path="res://3D_Models/Environnement/3/wallWoodDoor.glb" id="1_kjdl3"]
 [ext_resource type="PackedScene" uid="uid://bja0xgbu7tyl6" path="res://3D_Models/Environnement/3/wallWoodCorner.glb" id="2_ul8yx"]
 [ext_resource type="PackedScene" uid="uid://bfxo5oyd4fw3w" path="res://3D_Models/Environnement/3/wallWoodDetailHorizontal.glb" id="3_mpfhm"]
 [ext_resource type="PackedScene" uid="uid://foxp3k1xcwnq" path="res://3D_Models/Environnement/3/wallWoodWindowGlass.glb" id="4_kgm53"]
-[ext_resource type="PackedScene" uid="uid://b7l8bxb6gqw6p" path="res://3D_Models/Environnement/3/stairsWood.glb" id="5_umfmt"]
 [ext_resource type="PackedScene" uid="uid://b13wnmjhvqa8n" path="res://3D_Models/Environnement/3/wallWoodDetailCross.glb" id="6_xiht2"]
 [ext_resource type="PackedScene" uid="uid://blnw31x7buvbh" path="res://3D_Models/Environnement/3/wallWoodDoorwaySquare.glb" id="8_bu4oa"]
+[ext_resource type="PackedScene" uid="uid://dqjnuyqjhg6no" path="res://3D_Models/Environnement/3/roofPoint.glb" id="9_4e0xu"]
 [ext_resource type="PackedScene" uid="uid://ckt0lv77sky8c" path="res://3D_Models/Environnement/3/wallWoodWindowSmall.glb" id="9_i5bci"]
+[ext_resource type="PackedScene" uid="uid://d1q27necb04yv" path="res://3D_Models/Environnement/3/roofWindow.glb" id="10_8il0i"]
 [ext_resource type="PackedScene" uid="uid://dq8oacoqgqes5" path="res://3D_Models/Environnement/3/wallWoodBlock.glb" id="10_yb1gc"]
+[ext_resource type="PackedScene" uid="uid://ca0g3jcqscuuy" path="res://3D_Models/Environnement/3/roofLeft.glb" id="11_pxn46"]
+[ext_resource type="PackedScene" uid="uid://b1udamxp8ugqf" path="res://3D_Models/Environnement/3/roofRight.glb" id="12_5hwyt"]
+[ext_resource type="PackedScene" uid="uid://ssfi6ik3lkxg" path="res://3D_Models/Environnement/3/roofGable.glb" id="13_yqgys"]
+[ext_resource type="PackedScene" uid="uid://cg8r5twni8yik" path="res://3D_Models/Environnement/1/ladder.glb" id="14_r4x63"]
+[ext_resource type="PackedScene" uid="uid://djo11ctxo2epv" path="res://3D_Models/Environnement/1/crate.glb" id="15_44snt"]
+[ext_resource type="PackedScene" uid="uid://v6uk47eb420m" path="res://3D_Models/Environnement/1/coin-gold.glb" id="16_cgojy"]
+[ext_resource type="PackedScene" uid="uid://c58g8w32dc0v" path="res://3D_Models/Environnement/1/flag.glb" id="17_faj31"]
+[ext_resource type="PackedScene" uid="uid://djr6pjokf0k1y" path="res://3D_Models/Environnement/1/barrel.glb" id="18_wu01n"]
+[ext_resource type="PackedScene" uid="uid://cnw85g4kql1c1" path="res://3D_Models/Environnement/3/stallStool.glb" id="19_gkrup"]
+[ext_resource type="PackedScene" uid="uid://djb4oxssul13c" path="res://3D_Models/Food/GLB format/cauliflower.glb" id="20_h8vwl"]
+[ext_resource type="PackedScene" uid="uid://chehp6t82r35f" path="res://3D_Models/Food/GLB format/cheese-slicer.glb" id="21_43jvt"]
+[ext_resource type="PackedScene" uid="uid://cafnaswgt64jx" path="res://3D_Models/Food/GLB format/chocolate.glb" id="22_g5uiv"]
+[ext_resource type="PackedScene" uid="uid://bb647yw4ii32k" path="res://3D_Models/Food/GLB format/apple-half.glb" id="23_nkjbm"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -25,9 +39,6 @@ transform = Transform3D(-0.0308699, 0, 0.999523, 0, 1, 0, -0.999523, 0, -0.03086
 
 [node name="wallWoodWindowGlass2" parent="." instance=ExtResource("4_kgm53")]
 transform = Transform3D(0.0204014, 0, -0.999792, 0, 1, 0, 0.999792, 0, 0.0204014, -1.78226, -1.19209e-07, -0.881825)
-
-[node name="stairsWood2" parent="." instance=ExtResource("5_umfmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66758, 0, -1.01)
 
 [node name="wallWoodDetailCross2" parent="." instance=ExtResource("6_xiht2")]
 transform = Transform3D(0.0158295, 0, -0.999875, 0, 1, 0, 0.999875, 0, 0.0158295, -2.67306, 0, -0.86937)
@@ -76,3 +87,78 @@ transform = Transform3D(0.8, 0, 0, 0, 0.1, 0, 0, 0, 1, -3.66262, -0.0764407, 0.1
 
 [node name="wallWoodBlock11" parent="." instance=ExtResource("10_yb1gc")]
 transform = Transform3D(0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.98, -3.65843, -0.0743714, -0.835494)
+
+[node name="roofPoint2" parent="." instance=ExtResource("9_4e0xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869006, 0.984505, -0.020326)
+
+[node name="roofWindow2" parent="." instance=ExtResource("10_8il0i")]
+transform = Transform3D(0.00792371, 0, -0.999969, 0, 1, 0, 0.999969, 0, 0.00792371, -2.71351, 1.01082, 0.818448)
+
+[node name="roofWindow2" parent="roofWindow2" instance=ExtResource("10_8il0i")]
+transform = Transform3D(-0.99992, 0, -0.0126533, 0, 1, 0, 0.0126533, 0, -0.99992, -1.80628, 0.00511968, -0.00622106)
+
+[node name="roofLeft2" parent="." instance=ExtResource("11_pxn46")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.71784, 1.01234, 0.816781)
+
+[node name="roofLeft2" parent="roofLeft2" instance=ExtResource("11_pxn46")]
+transform = Transform3D(-0.999999, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -0.999999, -1.79141, -0.00721824, 1.98083)
+
+[node name="roofRight2" parent="." instance=ExtResource("12_5hwyt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.71584, 1.01376, -0.992236)
+
+[node name="roofRight2" parent="roofRight2" instance=ExtResource("12_5hwyt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.79604, 0.00629234, -2.00612)
+
+[node name="roofGable2" parent="." instance=ExtResource("13_yqgys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77107, 1.57135, -0.0846259)
+
+[node name="roofGable2" parent="roofGable2" instance=ExtResource("13_yqgys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.726392, 0.006459, -0.00579326)
+
+[node name="roofGable2" parent="roofGable2/roofGable2" instance=ExtResource("13_yqgys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10109, 0.006459, -0.00579326)
+
+[node name="wallWoodWindowSmall3" parent="." instance=ExtResource("9_i5bci")]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -3.62961, 0.990429, -0.0436076)
+
+[node name="wallWoodWindowSmall3" parent="wallWoodWindowSmall3" instance=ExtResource("9_i5bci")]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, 2.76156, 0.0662059, 0.00558946)
+
+[node name="ladder2" parent="." instance=ExtResource("14_r4x63")]
+transform = Transform3D(0.435947, -0.341446, 0.832686, -0.0440382, 0.916033, 0.398679, -0.898894, -0.210473, 0.384305, -0.955954, -0.0315574, 1.54892)
+
+[node name="crate2" parent="." instance=ExtResource("15_44snt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.55584, 0, 1.10076)
+
+[node name="crate2" parent="crate2" instance=ExtResource("15_44snt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0896118, 0.497903, 0.0273185)
+
+[node name="coin-gold2" parent="." instance=ExtResource("16_cgojy")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.5978, 0.250537, 1.04534)
+
+[node name="flag2" parent="." instance=ExtResource("17_faj31")]
+transform = Transform3D(1, 0, 0, 0, 0.999911, -0.0133514, 0, 0.0133514, 0.999911, -0.864896, 1.4216, -0.0174476)
+
+[node name="barrel2" parent="." instance=ExtResource("18_wu01n")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80596, 0.0249822, 1.0019)
+
+[node name="barrel2" parent="barrel2" instance=ExtResource("18_wu01n")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0687037, 0.433071, -0.00146317)
+
+[node name="stallStool2" parent="." instance=ExtResource("19_gkrup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85399, 0.0619923, 0.297949)
+
+[node name="stallStool2" parent="stallStool2" instance=ExtResource("19_gkrup")]
+transform = Transform3D(1, 0, 0, 0, 0.999941, -0.0108557, 0, 0.0108557, 0.999941, -0.00403285, 0.00102535, -0.268043)
+
+[node name="cauliflower2" parent="." instance=ExtResource("20_h8vwl")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.78319, 0.295836, 0.0331659)
+
+[node name="cheese-slicer2" parent="." instance=ExtResource("21_43jvt")]
+transform = Transform3D(0.115477, 0, -0.163294, 0, 0.2, 0, 0.163294, 0, 0.115477, -2.87422, 0.289255, 0.37047)
+
+[node name="chocolate2" parent="." instance=ExtResource("22_g5uiv")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.84649, 0.318739, 0.16013)
+
+[node name="apple-half2" parent="." instance=ExtResource("23_nkjbm")]
+transform = Transform3D(0.0475141, -2.08616e-08, 0.397168, 0.396981, 0.0122782, -0.0474917, -0.0121912, 0.399812, 0.00145849, -2.74373, 0.351545, 0.258917)
