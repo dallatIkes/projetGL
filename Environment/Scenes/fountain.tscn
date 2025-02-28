@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://clnwa3tmphxb5"]
+
+[ext_resource type="PackedScene" uid="uid://7utlxbanar7i" path="res://3D_Models/Environnement/3/fountainRound.glb" id="1_fvoyx"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="fountainRound2" parent="." instance=ExtResource("1_fvoyx")]
