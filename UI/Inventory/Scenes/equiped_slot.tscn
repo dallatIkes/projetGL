@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4kqn66qcknf0"]
+
+[ext_resource type="Script" path="res://UI/Inventory/Scripts/equiped_slot.gd" id="1_vifkv"]
+[ext_resource type="FontFile" uid="uid://dgvk5ucb0rlly" path="res://UI/Inventory/Assets/Themes/Font/BabaMediumPixels.ttf" id="2_8hjbd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6y8f"]
+
+[node name="EquipedSlot" type="Control"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 85.0
+offset_bottom = 85.0
+script = ExtResource("1_vifkv")
+
+[node name="OuterBorder" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0470588, 1, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -32.5
+offset_right = 32.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
+
+[node name="ItemText" type="Label" parent="InnerBorder"]
+visible = false
+layout_mode = 1
+offset_left = 5.0
+offset_right = 41.0
+offset_bottom = 23.0
+scale = Vector2(2.5, 2.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Item"
+
+[node name="ItemButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p6y8f")
+
+[node name="DetailsPanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 130.0
+color = Color(0, 0, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="DetailsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DetailsPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="DetailsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("2_8hjbd")
+theme_override_font_sizes/font_size = 25
+text = "NAME"
+
+[node name="ItemType" type="Label" parent="DetailsPanel/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 0.784314)
+theme_override_fonts/font = ExtResource("2_8hjbd")
+theme_override_font_sizes/font_size = 15
+text = "TYPE"
+
+[node name="ItemDescription" type="Label" parent="DetailsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0745098, 0.0745098, 0.0745098, 0.588235)
+theme_override_fonts/font = ExtResource("2_8hjbd")
+theme_override_font_sizes/font_size = 10
+text = "DESCRIPTION 
+"
+autowrap_mode = 2
+
+[node name="UnequipButton" type="Button" parent="DetailsPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_8hjbd")
+theme_override_font_sizes/font_size = 20
+text = "UNEQUIP
+"
+
+[connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
