@@ -16,7 +16,7 @@ func _ready() -> void:
 
 ### LOGIC ###
 
-# Adding an item to the inventory
+# Adding an item to the inventory (if an item is unequiped or collected)
 func _append_item(item: Item, amount: int = 1) -> void:
 	# we search if we already have the item in the inventory
 	var item_amount_id = _find_item_id(item)
@@ -31,7 +31,7 @@ func _append_item(item: Item, amount: int = 1) -> void:
 		item_amount.amount += amount
 	emit_signal("item_added", item_amount)
 
-# Removing an item to the inventory
+# Removing an item to the inventory (if an item is equiped)
 func _remove_item(item: Item, amount: int = 1) -> void:
 	# ve verify the existence of the item
 	var item_amount_id = _find_item_id(item)
@@ -64,11 +64,6 @@ func _print_inventory() -> void:
 		print(item_amount.item.name+ " : " + String(item_amount.amount))
 	print(" ")
 	print("-------------------------")
-
-func _input(_event: InputEvent) -> void:
-	if (Input.is_action_pressed("inventory")):
-		_print_inventory()
-		# toggle_inventory()
 
 ### SIGNALS ###
 

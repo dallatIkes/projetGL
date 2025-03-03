@@ -34,17 +34,3 @@
 #	var to = visible_position if appear else hidden_position
 #	tween.interpolate_property(self, "rect_position:x", from, to, 1, tween.TRANS_CUBIC) # can change the TRANS
 #	tween.start() 
-
-### INPUTS ###
-
-#func _input(event: InputEvent) -> void:
-#	if (Input.is_action_pressed("inventory")):
-#		# button for hidding or showing the inventory
-#		set_hidden(!is_hidden())
-
-### SIGNALS ###
-
-# launch inventory animation when key is pressed
-# value is here to know if inventory have to be shown or hidden
-#func _on_hidden_changed(_value: bool) -> void:
-#	_animation(!is_hidden())

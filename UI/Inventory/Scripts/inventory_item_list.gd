@@ -2,29 +2,36 @@
 extends ItemList
 class_name InventoryItemList
 
-var selected_item_id = -1 
 
-signal selected_item_id_changed(id)
+@onready var equip_popup: PopupPanel = $EquipPopup
+@onready var equip_button: Button = $EquipPopup/VBoxContainer/EquipButton
+@onready var equip_label: Label = $EquipPopup/VBoxContainer/Label
+
+var selected_item: ItemAmount = null
+#var selected_item_id = -1 
+
+#signal selected_item_id_changed(id)
 
 ### ACCESSORS ###
 
-func set_selected_item_id(value: int) -> void:
-	if value == -1 :
-		selected_item_id = value
-	else :
-		selected_item_id = wrapi(value, 0, get_item_count()) # wrap is a modulo function
-	emit_signal("selected_item_id_changed")
+#func set_selected_item_id(value: int) -> void:
+#	if value == -1 :
+#		selected_item_id = value
+#	else :
+#		selected_item_id = wrapi(value, 0, get_item_count()) # wrap is a modulo function
+#	emit_signal("selected_item_id_changed")
 
-func get_selected_item_id() -> int:
-	return selected_item_id
+#func get_selected_item_id() -> int:
+#	return selected_item_id
 
 ### BUILT-IN ###
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#var __ = connect("selected_item_id_changed",_on_selected_item_id_changed)
+#	connect("selected_item_id_changed",_on_selected_item_id_changed)
+	connect("item_selected", _on_item_selected)
+	equip_button.connect("pressed", _on_equip_pressed)
 	testItemList()
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -78,10 +85,23 @@ func _find_item_in_list(item_amount: ItemAmount) -> int:
 	return -1
 
 # Select another item
-func _update_selected_item() -> void:
-	if selected_item_id == -1:
-		deselect_all() 
-	select(selected_item_id)
+#func _update_selected_item() -> void:
+#	if selected_item_id == -1:
+#		deselect_all() 
+#	select(selected_item_id)
+
+func _on_item_selected(index: int) -> void:
+	selected_item = get_item_metadata(index)
+	if selected_item:
+		equip_label.text = "Do you want to equip " + selected_item.item.name + " ?"
+		equip_popup.popup_centered()
+
+### INPUTS ###
+
+func _on_equip_pressed():
+	if selected_item:
+		print("Objet équipé :", selected_item.item.name)
+		equip_popup.hide()
 
 ### SIGNALS ###
 
@@ -91,7 +111,7 @@ func _on_inventory_data_manager_item_added(item_amount: ItemAmount) -> void:
 func _on_inventory_data_manager_item_removed(item_amount: ItemAmount) -> void:
 	update_item_display(item_amount)
 
-func _on_selected_item_id_changed(id: int) -> void:
-	pass
+#func _on_selected_item_id_changed(id: int) -> void:
+#	pass
 
 # If we have no collectible object, every ItemAmount can be changed for Item

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://0834q7kxqanc"]
+[gd_scene load_steps=7 format=3 uid="uid://0834q7kxqanc"]
 
 [ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory_data_manager.gd" id="2_6huh0"]
 [ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory.gd" id="2_mt14b"]
 [ext_resource type="Theme" uid="uid://dg53t0qvfm33u" path="res://UI/Inventory/Assets/Themes/main_theme.tres" id="2_v7vix"]
+[ext_resource type="PackedScene" uid="uid://b4kqn66qcknf0" path="res://UI/Inventory/Scenes/equiped_slot.tscn" id="4_1u322"]
 [ext_resource type="Theme" uid="uid://c4mavaaltgqee" path="res://UI/Inventory/Assets/Themes/item_list_theme.tres" id="4_g1ylu"]
 [ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory_item_list.gd" id="4_y58oj"]
 
@@ -94,8 +95,7 @@ back left"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Helmet" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
-custom_minimum_size = Vector2(75, 75)
+[node name="Helmet" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped" instance=ExtResource("4_1u322")]
 layout_mode = 2
 
 [node name="backright" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
@@ -225,3 +225,24 @@ theme = ExtResource("4_g1ylu")
 item_count = 1
 item_0/text = "item direct"
 script = ExtResource("4_y58oj")
+
+[node name="EquipPopup" type="PopupPanel" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/InventoryItemList"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/InventoryItemList/EquipPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EquipLabel" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/InventoryItemList/EquipPopup/VBoxContainer"]
+layout_mode = 2
+text = "Item Name"
+
+[node name="EquipButton" type="Button" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/InventoryItemList/EquipPopup/VBoxContainer"]
+layout_mode = 2
+text = "Equip"
