@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dukv6cpvxtuas"]
+[gd_scene load_steps=19 format=3 uid="uid://dukv6cpvxtuas"]
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/test_scene.gd" id="1_uxoqw"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_u0o5a"]
+[ext_resource type="PackedScene" uid="uid://ryiwkyu8bn1n" path="res://Entities/Player/Scenes/belt_snap_zone.tscn" id="3_lj2ui"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="4_ahgrv"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="6_xoky8"]
 [ext_resource type="PackedScene" uid="uid://ci42hw60qc84r" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="7_vm6dl"]
@@ -40,6 +41,12 @@ environment = SubResource("Environment_x4xqt")
 
 [node name="Player" parent="." instance=ExtResource("2_u0o5a")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 22.7985, -2.6946, 8.89417)
+
+[node name="BeltSnapZone2" parent="Player" instance=ExtResource("3_lj2ui")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, -0.3, 1, -0.3)
+
+[node name="BeltSnapZone" parent="Player" instance=ExtResource("3_lj2ui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.3)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_bw2fv")

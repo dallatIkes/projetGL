@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="godot_project_name_string">MetroVR</string>
+    <style name="GodotAppMainTheme" parent="@android:style/Theme.Black.NoTitleBar"/>
+    <style name="GodotAppSplashTheme" parent="Theme.SplashScreen">
+		
+		<item name="android:windowSplashScreenBackground">@mipmap/icon_background</item>
+
+		
+		<item name="windowSplashScreenAnimatedIcon">@mipmap/icon_foreground</item>
+
+		
+		<item name="postSplashScreenTheme">@style/GodotAppMainTheme</item>
+	</style>
+</resources>

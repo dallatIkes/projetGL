@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.godot.game-mergeDebugResources-17:/values-fa/values-fa.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\laszl\\.gradle\\caches\\transforms-3\\245f1aa0863a677574781ac0a1900f6e\\transformed\\core-1.8.0\\res\\values-fa\\values-fa.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "117",
+                        "endColumns": "100",
+                        "endOffsets": "213"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\laszl\\.gradle\\caches\\transforms-3\\ec78cfc85816bd35fa163c180d5f4394\\transformed\\jetified-godot-lib.template_debug\\res\\values-fa\\values-fa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,109,183,241,301,370,440,618,791,893,972",
+                        "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
+                        "endOffsets": "104,178,236,296,365,435,613,786,888,967,1038"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "218,272,346,404,464,533,603,781,954,1056,1135",
+                        "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
+                        "endOffsets": "267,341,399,459,528,598,776,949,1051,1130,1201"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\laszl\\OneDrive\\Documents\\Cours\\Projet GL\\projetGL\\android\\build\\res\\values-fa\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "58",
+                        "endOffsets": "169"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "61",
+                        "endOffsets": "112"
+                    }
+                }
+            ]
+        }
+    ]
+}
