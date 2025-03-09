@@ -9,6 +9,7 @@ extends PlayerScript
 @onready var FunctionPointer = $"RightHand/#XR_PLUGIN/FunctionPointer"
 
 
+
 signal hit_by_ennemy(damage)
 
 

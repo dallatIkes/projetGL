@@ -76,7 +76,7 @@ tracker = &"left_hand"
 [node name="FunctionPickup" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("1_v7mbb")]
 
 [node name="MovementDirect" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("2_1ym5p")]
-max_speed = 10.0
+max_speed = 5.0
 
 [node name="LeftPhysicsHand" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("3_dnfyn")]
 

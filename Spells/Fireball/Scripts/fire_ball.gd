@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	if mode == 0:
 		position = left_hand_position
 		list_of_position.append(position)
-		if list_of_position.size() > 5:
+		if list_of_position.size() > 10:
 			position_t_moins_1 = list_of_position.pop_at(0)
 	
 	# in mode 1, the fireball calculates the velocity she has at the instant t0 and keep it for 3 seconds
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		if t0 == 0:
 			t0 = Time.get_ticks_msec()  # Définir t0 une seule fois
 		velocity = calcul_velocity(left_hand_position, delta)
-		linear_velocity = velocity * 3
+		linear_velocity = velocity * 5
 		# delete fireball after 3 seconds
 		if Time.get_ticks_msec() - t0 > 3000:
 			destroy()
