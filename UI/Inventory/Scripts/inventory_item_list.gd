@@ -42,15 +42,15 @@ func _process(delta: float) -> void:
 # Test function
 func testItemList() -> void:
 	var testItem : Item = Item.new()
-	testItem.name = "un item"
+	testItem.item_name = "un item"
 	var testItemAmount : ItemAmount = ItemAmount.new(testItem, 1)
 	update_item_display(testItemAmount)
 	var testItem2 : Item = Item.new()
-	testItem2.name = "un autre item"
+	testItem2.item_name = "un autre item"
 	var testItemAmount2 : ItemAmount = ItemAmount.new(testItem2, 1)
 	update_item_display(testItemAmount2)
 	var testItem3 : Item = Item.new()
-	testItem3.name = "item3"
+	testItem3.item_name = "item3"
 	var testItemAmount3 : ItemAmount = ItemAmount.new(testItem3, 2)
 	update_item_display(testItemAmount3)
 
@@ -61,7 +61,7 @@ func update_item_display(item_amount: ItemAmount) -> void:
 	var item_id = _find_item_in_list(item_amount)
 	#var item_id = _find_item_in_list(item_amount.item)
 	# create the text to display in inventory
-	var item_text = "%s : %d" % [item_amount.item.name, item_amount.amount]
+	var item_text = "%s : %d" % [item_amount.item.item_name, item_amount.amount]
 	
 	# if item not on the list, display it in another inventory line
 	if item_id == -1:
