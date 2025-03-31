@@ -39,10 +39,10 @@ Make sure you have the following installed:
 - [Android Studio](https://developer.android.com/studio?hl=fr)
   - 🪟/🍎 **Windows/macOS:** Launch Android Studio once after installation.
   - 🐧 **Linux:** Run the following in a terminal:
-    ```bash
-    cd {installation_home}/bin
-    ./studio.sh
-    ```
+	```bash
+	cd {installation_home}/bin
+	./studio.sh
+	```
 
 ### 🔗 Set the SDK Paths
 After installing the prerequisites, configure the SDK paths in Godot's Editor settings:
