@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dukv6cpvxtuas"]
+[gd_scene load_steps=23 format=3 uid="uid://dukv6cpvxtuas"]
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/test_scene.gd" id="1_uxoqw"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_u0o5a"]
@@ -13,8 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://mf7sr62wde8x" path="res://Levels/Test/Scenes/tool_board.tscn" id="10_i8o1x"]
 [ext_resource type="Texture2D" uid="uid://d08nm5alpbafg" path="res://UI/Assets/inputs.png" id="11_qy7ux"]
 [ext_resource type="PackedScene" uid="uid://baslo52ff8tpu" path="res://Entities/Boss/ForestBoss/Scenes/ForestBoss.tscn" id="12_0b2w8"]
-[ext_resource type="AudioStream" uid="uid://deckv0cl1x3u3" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
-[ext_resource type="PackedScene" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
+[ext_resource type="AudioStream" uid="uid://db35q01tjxqt6" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
+[ext_resource type="PackedScene" uid="uid://cgaxsqy0e6h3" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
+[ext_resource type="PackedScene" uid="uid://bsr17ytbnwu7h" path="res://Items/Equipment/Weapon/Sword/Scenes/nice_sword.tscn" id="16_6ckxj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.46527, 22.6949)
 
 [node name="Tuto" parent="Entities" instance=ExtResource("8_fhv4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.454, -2.02, -6.886)
-collision_mask = 589827
+collision_mask = 524291
 race = 3
 isTrackingPlayer = true
 speed = 5
@@ -248,3 +249,10 @@ spellToUnlock = "FireBall"
 
 [node name="musicbg" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ggwef")
+
+[node name="NiceSword" parent="." groups=["Weapon"] instance=ExtResource("16_6ckxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.914, -3.2642, 9.25926)
+collision_mask = 8388611
+
+[editable path="Player"]
+[editable path="NiceSword"]

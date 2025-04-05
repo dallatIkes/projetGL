@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/hpbar.gd" id="6_ypaab"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_bkp5h"]
-[ext_resource type="AudioStream" uid="uid://doxrsts1nncaf" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
+[ext_resource type="AudioStream" uid="uid://b3l4yft12r3ri" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rdg41"]
 radius = 0.38998
