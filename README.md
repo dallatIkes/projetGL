@@ -111,6 +111,8 @@ That’s it! 🚀 Enjoy your game on VR! 🎮
 
 ---
 
+Enjoy our game - Team Kiwi
+
 [![Discord](https://img.shields.io/discord/1291668818590044201?color=5865F2&logo=discord&logoColor=white)](https://discord.gg/QdvcnQ6rES)
 
 ## Repository view counter
