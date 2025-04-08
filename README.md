@@ -1,4 +1,4 @@
-# Vainquished Realm
+# Vainquished Realm 
 
 Vainquished Realm is a virtual reality video game developed for a software engineering project at [ENSSAT](https://enssat.fr) by the Team Kiwi. This game is made with the [Godot engine](https://godotengine.org) ``v4.3`` and is configured to run on the Meta Quest VR headsets (tested with the Meta Quest 2 and 3). The game uses [Bastiaan Olij](https://github.com/BastiaanOlij)'s [OpenXR Vendors plugin](https://github.com/GodotVR/godot_openxr_vendors/releases) where all basic VR features have been implemented in GDscript.  
 
