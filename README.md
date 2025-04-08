@@ -1,13 +1,13 @@
-# Vainquished realm
+# Vainquished Realm
 
-Vainquished Realm is a virtual reality video game developped for a software engineering project at [ENSSAT](https://enssat.fr) by the Team Kiwi. This game is made with the [Godot engine](https://godotengine.org) ``v4.3`` and is configured to run on the Meta Quest VR headsets (tested with the Meta Quest 2 and 3). The game uses [Bastiaan Olij](https://github.com/BastiaanOlij)'s [OpenXR Vendors plugin](https://github.com/GodotVR/godot_openxr_vendors/releases) where every basic VR feature has been implemented in GDscript.  
+Vainquished Realm is a virtual reality video game developed for a software engineering project at [ENSSAT](https://enssat.fr) by the Team Kiwi. This game is made with the [Godot engine](https://godotengine.org) ``v4.3`` and is configured to run on the Meta Quest VR headsets (tested with the Meta Quest 2 and 3). The game uses [Bastiaan Olij](https://github.com/BastiaanOlij)'s [OpenXR Vendors plugin](https://github.com/GodotVR/godot_openxr_vendors/releases) where all basic VR features have been implemented in GDscript.  
 
-**Next, you'll find an installation guide to try our game.**  
+**Bellow, you'll find an installation guide to try our game.**  
 But if you're a programmer and want to dive deeper into the project, check out our wiki where we document every major feature to help you in your coding journey! 🚀  
 
 [![Wiki](https://img.shields.io/badge/Wiki-Explore-blue?style=for-the-badge&logo=github)](https://github.com/dallatIkes/projetGL/wiki)  
   
-Thank you for playing our game on behalf of the whole team, if you want to contact us, feel free to join our [official discord server](https://discord.gg/QdvcnQ6rES). Enjoy! 😉  
+Thank you for playing our game on behalf of the whole team. If you want to contact us, feel free to join our [official Discord server](https://discord.gg/QdvcnQ6rES). Enjoy! 😉  
 
 # 📥 Installation Guide
 
