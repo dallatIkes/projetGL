@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bgui52ospmdea"]
+[gd_scene load_steps=25 format=3 uid="uid://bgui52ospmdea"]
 
 [ext_resource type="Script" path="res://Levels/Starting_menu/world_start_menu.gd" id="1_djd7w"]
 [ext_resource type="PackedScene" uid="uid://c5jbobmn5qd5f" path="res://3D_Models/Environnement/1/block-grass-low.glb" id="1_ry6it"]
@@ -19,7 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cn48167782uqf" path="res://Levels/Starting_menu/couronne.png" id="20_kihch"]
 [ext_resource type="PackedScene" uid="uid://d1bto1efv4r4x" path="res://3D_Models/Environnement/2/boat-row-small.glb" id="21_e0swr"]
 [ext_resource type="PackedScene" uid="uid://cd6jfslqjn3vf" path="res://3D_Models/Environnement/2/bottle.glb" id="22_4k1md"]
+[ext_resource type="Texture2D" uid="uid://ch822qtlht0eh" path="res://Levels/Starting_menu/270toujoursplushaut.jpeg" id="23_cokk1"]
 [ext_resource type="PackedScene" uid="uid://wr387hya0wvv" path="res://3D_Models/Environnement/2/cannon.glb" id="23_qug3k"]
+[ext_resource type="Texture2D" uid="uid://bc7sj3g51ca7g" path="res://Levels/Starting_menu/vincent.png" id="24_2e1dg"]
 [ext_resource type="PackedScene" uid="uid://cruamiodhlgcp" path="res://3D_Models/Environnement/2/structure-platform-small.glb" id="24_6kbg0"]
 [ext_resource type="Texture2D" uid="uid://clbei71ngiui4" path="res://Levels/Starting_menu/img_gala_aee_enssat_2025-248.png" id="25_lx3m2"]
 
@@ -619,6 +621,15 @@ texture = ExtResource("25_lx3m2")
 [node name="Sprite3D3" type="Sprite3D" parent="labels"]
 transform = Transform3D(0.0328504, -0.00365104, 0.190149, 0, 0.192964, 0.00370511, -0.190184, -0.000630644, 0.0328444, -2.39767, 4.41427, 6.79923)
 texture = ExtResource("20_1ms5g")
+
+[node name="Sprite3D5" type="Sprite3D" parent="labels"]
+transform = Transform3D(-0.175344, 8.46914e-05, 0.00746456, 0.000863465, 0.0955852, 0.00422105, -0.0147856, 0.00457771, -0.0882761, -1.92753, 2.19301, 10.0067)
+texture = ExtResource("23_cokk1")
+
+[node name="Sprite3D6" type="Sprite3D" parent="labels"]
+transform = Transform3D(-0.206082, 9.90398e-05, 0.00872168, 0.00101483, 0.11178, 0.00493192, -0.0173776, 0.00535331, -0.103143, -1.92753, 2.19301, 10.0067)
+render_priority = 5
+texture = ExtResource("24_2e1dg")
 
 [node name="start_game" type="Label3D" parent="."]
 transform = Transform3D(2.1279e-05, 0.0017452, -0.999998, 0.012217, 0.999924, 0.00174533, 0.999925, -0.012217, -4.37113e-08, 5.21251, 4.04129, 6.91732)
