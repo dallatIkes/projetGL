@@ -47,11 +47,11 @@ func snapLever() -> void:
 		LeverPosition.UP:
 			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, -45))
 			get_node("GrabPoint").set("position", Vector3(-0.7, 0.7, 0))
-			get_tree().change_scene_to_packed(DEMO) # Start and launch the appropiate scene when the lever is up. 
+			get_tree().quit() # Quit the game if the lever is down
 		LeverPosition.DOWN:
 			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, 45))
 			get_node("GrabPoint").set("position", Vector3(0.7, 0.7, 0))
-			get_tree().quit() # Quit the game if the lever is down
+			get_tree().change_scene_to_packed(DEMO) # Start and launch the appropiate scene when the lever is up. 
 		LeverPosition.NEUTRAL:
 			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, 0))
 			get_node("GrabPoint").set("position", Vector3(0, 1, 0))
