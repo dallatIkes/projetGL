@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c717orbdilke3"]
+[gd_scene load_steps=21 format=3 uid="uid://c717orbdilke3"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/collisionScript.gd" id="1_h3dvg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="1_v7mbb"]
@@ -13,7 +13,8 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/hpbar.gd" id="6_ypaab"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_bkp5h"]
-[ext_resource type="AudioStream" uid="uid://doxrsts1nncaf" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
+[ext_resource type="AudioStream" uid="uid://b3l4yft12r3ri" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
+[ext_resource type="PackedScene" uid="uid://ryiwkyu8bn1n" path="res://Entities/Player/Scenes/belt_snap_zone.tscn" id="15_77rdj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rdg41"]
 radius = 0.38998
@@ -47,6 +48,18 @@ manaMax = 100
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_kh7mg")]
 collision_mask = 11
+
+[node name="BeltSnapZone" parent="PlayerBody" instance=ExtResource("15_77rdj")]
+transform = Transform3D(1, 0, 0, 0, -0.707107, -0.707107, 0, 0.707107, -0.707107, 0.3, 0.8, 0)
+
+[node name="BeltSnapZone2" parent="PlayerBody" instance=ExtResource("15_77rdj")]
+transform = Transform3D(-1, 8.74228e-08, 0, -6.18172e-08, -0.707107, 0.707107, 6.18172e-08, 0.707107, 0.707107, -0.3, 0.8, 0)
+
+[node name="BackSnapZone1" parent="PlayerBody" instance=ExtResource("15_77rdj")]
+transform = Transform3D(1.05529e-07, -0.707107, -0.707107, 6.18172e-08, -0.707107, 0.707107, -1, -1.18331e-07, -3.09086e-08, 0.3, 1.6, 0.2)
+
+[node name="BackSnapZone2" parent="PlayerBody" instance=ExtResource("15_77rdj")]
+transform = Transform3D(-1.81059e-08, 0.707107, 0.707107, 6.18172e-08, -0.707107, 0.707107, 1, 5.65141e-08, -3.09086e-08, -0.3, 1.6, 0.2)
 
 [node name="Hitbox" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.791252, 0)

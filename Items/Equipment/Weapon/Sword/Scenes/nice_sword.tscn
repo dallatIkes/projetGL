@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsr17ytbnwu7h"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_rff0o"]
+[ext_resource type="PackedScene" uid="uid://bv25sgu4hcd7i" path="res://3D_Models/Weapons/adventurers_sword.glb" id="2_34ltp"]
+[ext_resource type="Script" path="res://Items/Equipment/Weapon/Scripts/melee.gd" id="2_outrd"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_nwf6s"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="4_eotj2"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_7b1p2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrl3g"]
+size = Vector3(0.0677795, 0.666077, 0.0928955)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1cf3b"]
+size = Vector3(0.196045, 1.21228, 0.189697)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xd4vh"]
+size = Vector3(0.235931, 0.0970459, 0.926567)
+
+[node name="NiceSword" groups=["Sword"] instance=ExtResource("1_rff0o")]
+
+[node name="Hitbox" type="Area3D" parent="." index="0"]
+collision_layer = 4
+collision_mask = 8388608
+script = ExtResource("2_outrd")
+damages = 5
+fullAtkSpeed = 1.0
+
+[node name="BladeHitboxCollision" type="CollisionShape3D" parent="Hitbox" index="0"]
+transform = Transform3D(0.999991, 0.00427606, 0, -0.00427606, 0.999991, 0, 0, 0, 1, -0.00874642, 0.342816, 0.000793457)
+shape = SubResource("BoxShape3D_rrl3g")
+
+[node name="SwordModel" parent="." index="1" instance=ExtResource("2_34ltp")]
+transform = Transform3D(0.0415532, -0.0141165, 0.00995267, -0.0150736, -0.0169778, 0.0388528, -0.00843315, -0.0392107, -0.020406, -0.163264, 0.241958, 0.711224)
+
+[node name="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.00058496, -0.13167, 0.00292676)
+shape = SubResource("BoxShape3D_1cf3b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.00260925, -0.00140381, 0.0017128)
+shape = SubResource("BoxShape3D_xd4vh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(0.999991, 0.00427606, 0, -0.00427606, 0.999991, 0, 0, 0, 1, -0.00874642, 0.342816, 0.000793457)
+shape = SubResource("BoxShape3D_rrl3g")
+
+[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource("3_nwf6s")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0)
+
+[node name="GrabPointHandLeft" parent="." index="6" instance=ExtResource("5_7b1p2")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0)
+
+[node name="GrabPointSnap" parent="." index="7" instance=ExtResource("4_eotj2")]
+
+[connection signal="area_entered" from="Hitbox" to="Hitbox" method="_on_hitbox_area_entered"]
