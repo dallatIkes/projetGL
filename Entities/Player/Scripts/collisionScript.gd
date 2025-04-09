@@ -24,6 +24,7 @@ var incr = 0
 
 
 
+
 func _ready() -> void:
 	super._ready()
 	musicbg.volume_db = -30
@@ -32,11 +33,11 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	counter += 1
-	if(!musicbg.playing):
-		musicbg.play()
 	# print(debugMenu_scene.get_content())
 	debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr])
 	recharge_mana()
+	if(!musicbg.playing):
+		musicbg.play()
 	
 	# Gestion du son des pas
 	var movement_speed = global_transform.origin - previous_position
@@ -49,11 +50,7 @@ func _process(delta: float) -> void:
 		#sfx_footsteps.stop()
 
 ## Function which regen the the number of manapoint every second (replace this function later)
-func recharge_mana():
-	if mana+2 < manaMax:
-		if Time.get_ticks_msec()-t_recharge_mana>1000:
-			mana +=10
-			t_recharge_mana = Time.get_ticks_msec()
+
 
 func _on_area_3d_body_entered(body):
  #	print("Collision détectée avec :", body.name)
