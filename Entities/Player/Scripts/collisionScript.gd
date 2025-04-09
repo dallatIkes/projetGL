@@ -48,6 +48,12 @@ func _process(delta: float) -> void:
 	#else:
 		#sfx_footsteps.stop()
 
+## Function which regen the the number of manapoint every second (replace this function later)
+func recharge_mana():
+	if mana+2 < manaMax:
+		if Time.get_ticks_msec()-t_recharge_mana>1000:
+			mana +=10
+			t_recharge_mana = Time.get_ticks_msec()
 
 func _on_area_3d_body_entered(body):
  #	print("Collision détectée avec :", body.name)

@@ -9,7 +9,7 @@ signal new_angle_value(angle)
 
 func _ready():
 	$HSlider.value = Global.angle;
-	
+	node_hand.max_speed = 5  # Define the default hand speed
 	change_text_button_main_hand()
 
 	$HSliderPlayerSpeed.value = node_hand.max_speed
