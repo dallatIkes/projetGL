@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/test_scene.gd" id="1_uxoqw"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_u0o5a"]
-[ext_resource type="PackedScene" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="4_ahgrv"]
+[ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="4_ahgrv"]
 [ext_resource type="PackedScene" uid="uid://cfrk2xrnvma5q" path="res://Levels/Test/Scenes/torch.tscn" id="4_c8i2s"]
 [ext_resource type="PackedScene" uid="uid://6rc2e6agp77u" path="res://Entities/NPC/Scenes/NPC.tscn" id="6_p6fjh"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="6_xoky8"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d08nm5alpbafg" path="res://UI/Assets/inputs.png" id="11_qy7ux"]
 [ext_resource type="PackedScene" uid="uid://baslo52ff8tpu" path="res://Entities/Boss/ForestBoss/Scenes/ForestBoss.tscn" id="12_0b2w8"]
 [ext_resource type="AudioStream" uid="uid://bu4ee00t78138" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
-[ext_resource type="PackedScene" uid="uid://cgaxsqy0e6h3" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
+[ext_resource type="PackedScene" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
