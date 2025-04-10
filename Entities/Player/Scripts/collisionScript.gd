@@ -8,6 +8,7 @@ extends PlayerScript
 @onready var debugMenu_scene = debugMenu.get_scene_instance() 
 @onready var FunctionPointer = $"RightHand/#XR_PLUGIN/FunctionPointer"
 @onready var sfx_footsteps = $"sfx_footsteps"  
+@onready var sword_hitbox = $"../NiceSword/Hitbox"
 @onready var musicbg = $musicbg
 
 
@@ -34,7 +35,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	counter += 1
 	# print(debugMenu_scene.get_content())
-	debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr])
+	debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr, sword_hitbox.velocity, sword_hitbox.velocity_norm])
 	recharge_mana()
 	if(!musicbg.playing):
 		musicbg.play()
