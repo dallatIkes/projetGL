@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://mf7sr62wde8x" path="res://Levels/Test/Scenes/tool_board.tscn" id="10_i8o1x"]
 [ext_resource type="Texture2D" uid="uid://d08nm5alpbafg" path="res://UI/Assets/inputs.png" id="11_qy7ux"]
 [ext_resource type="PackedScene" uid="uid://baslo52ff8tpu" path="res://Entities/Boss/ForestBoss/Scenes/ForestBoss.tscn" id="12_0b2w8"]
-[ext_resource type="AudioStream" uid="uid://db35q01tjxqt6" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
-[ext_resource type="PackedScene" uid="uid://cgaxsqy0e6h3" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
-[ext_resource type="PackedScene" uid="uid://bsr17ytbnwu7h" path="res://Items/Equipment/Weapon/Sword/Scenes/nice_sword.tscn" id="16_6ckxj"]
+[ext_resource type="AudioStream" uid="uid://0y4pwy2gpa4i" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
+[ext_resource type="PackedScene" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
+[ext_resource type="PackedScene" path="res://Items/Equipment/Weapon/Sword/Scenes/nice_sword.tscn" id="16_6ckxj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

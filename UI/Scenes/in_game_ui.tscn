@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr3f307xa3bfq"]
 
 [ext_resource type="Script" path="res://UI/Scripts/menuButtons.gd" id="1_f280e"]
-[ext_resource type="AudioStream" uid="uid://dh7fdfrbay22d" path="res://Sounds/menu_sfx1.mp3" id="2_4jtvh"]
+[ext_resource type="AudioStream" uid="uid://i110wvyrwdut" path="res://Sounds/menu_sfx1.mp3" id="2_4jtvh"]
 [ext_resource type="Script" path="res://UI/Scripts/parametersMenu.gd" id="2_yptuk"]
-[ext_resource type="AudioStream" uid="uid://h5sruvm5iwvm" path="res://Sounds/menu_sfx2.mp3" id="3_qy6hr"]
+[ext_resource type="AudioStream" uid="uid://bjiv6l1vhrmuf" path="res://Sounds/menu_sfx2.mp3" id="3_qy6hr"]
 
 [node name="InGameUI" type="Node2D"]
 process_mode = 2
@@ -116,7 +116,7 @@ text = "Return"
 [node name="sfx1" type="AudioStreamPlayer" parent="Control/ColorRect/MarginContainer/VBoxContainer2"]
 stream = ExtResource("2_4jtvh")
 
-[node name="sfx1" type="AudioStreamPlayer" parent="Control/ColorRect/MarginContainer/VBoxContainer2"]
+[node name="sfx3" type="AudioStreamPlayer" parent="Control/ColorRect/MarginContainer/VBoxContainer2"]
 stream = ExtResource("2_4jtvh")
 
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/ResumeButton" to="Control/ColorRect/MarginContainer/VBoxContainer/ResetButton" method="_on_resume_button_pressed"]

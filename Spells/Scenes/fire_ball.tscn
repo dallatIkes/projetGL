@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_bfojb"]
 [ext_resource type="Script" path="res://Spells/Scripts/fire_ball.gd" id="2_7o4dm"]
-[ext_resource type="AudioStream" uid="uid://b7w0fn0h1nkmr" path="res://Sounds/fireball-whoosh-2-179126.mp3" id="3_mgqbf"]
+[ext_resource type="AudioStream" uid="uid://bjocc0gvsq4gu" path="res://Sounds/fireball-whoosh-2-179126.mp3" id="3_mgqbf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1506l"]
 radius = 0.1
