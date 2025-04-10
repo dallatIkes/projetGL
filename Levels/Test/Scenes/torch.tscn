@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfrk2xrnvma5q"]
+[gd_scene load_steps=8 format=3 uid="uid://cfrk2xrnvma5q"]
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/torch.gd" id="1_k3p4m"]
 
@@ -24,7 +24,13 @@ height = 0.1
 height = 1.2
 radius = 0.2
 
-[node name="Torch" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tmvw5"]
+height = 1.0
+radius = 0.05
+
+[node name="Torch" type="StaticBody3D"]
+collision_layer = 256
+collision_mask = 0
 script = ExtResource("1_k3p4m")
 
 [node name="Lit" type="Node3D" parent="."]
@@ -53,3 +59,6 @@ collision_mask = 16777216
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_2873a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_tmvw5")

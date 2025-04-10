@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c53jnapvcwyfw"]
+
+[ext_resource type="Script" path="res://Entities/TrainingDummy/Scripts/training_dummy.gd" id="1_5yofa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbdws"]
+albedo_color = Color(0.286275, 0.184314, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lqaaa"]
+material = SubResource("StandardMaterial3D_wbdws")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4c8ft"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s2bhj"]
+
+[node name="TrainingDummy" type="StaticBody3D"]
+collision_layer = 8388609
+collision_mask = 0
+script = ExtResource("1_5yofa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_lqaaa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4c8ft")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8388608
+collision_mask = 33489183
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_s2bhj")
+
+[node name="DamageLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+text = "Text"

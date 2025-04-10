@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://dukv6cpvxtuas"]
+[gd_scene load_steps=25 format=3 uid="uid://dukv6cpvxtuas"]
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/test_scene.gd" id="1_uxoqw"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_u0o5a"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="4_ahgrv"]
 [ext_resource type="PackedScene" uid="uid://cfrk2xrnvma5q" path="res://Levels/Test/Scenes/torch.tscn" id="4_c8i2s"]
+[ext_resource type="PackedScene" uid="uid://c53jnapvcwyfw" path="res://Entities/TrainingDummy/Scenes/training_dummy.tscn" id="5_qsd2n"]
 [ext_resource type="PackedScene" uid="uid://6rc2e6agp77u" path="res://Entities/NPC/Scenes/NPC.tscn" id="6_p6fjh"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="6_xoky8"]
 [ext_resource type="PackedScene" uid="uid://ci42hw60qc84r" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="7_vm6dl"]
@@ -14,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d08nm5alpbafg" path="res://UI/Assets/inputs.png" id="11_qy7ux"]
 [ext_resource type="PackedScene" uid="uid://baslo52ff8tpu" path="res://Entities/Boss/ForestBoss/Scenes/ForestBoss.tscn" id="12_0b2w8"]
 [ext_resource type="AudioStream" uid="uid://bu4ee00t78138" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
-[ext_resource type="PackedScene" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
+[ext_resource type="PackedScene" uid="uid://cgaxsqy0e6h3" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
 [ext_resource type="PackedScene" path="res://Items/Equipment/Weapon/Sword/Scenes/nice_sword.tscn" id="16_6ckxj"]
 [ext_resource type="Script" path="res://Levels/Test/Scripts/lever_start_menu.gd" id="17_p74tx"]
 
@@ -64,6 +65,9 @@ metadata/_editor_floor_ = Vector3(-4, -2, -12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.46527, 22.6949)
 
 [node name="Entities" type="Node3D" parent="."]
+
+[node name="TrainingDummy" parent="Entities" instance=ExtResource("5_qsd2n")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, -3, 25)
 
 [node name="MobDist" parent="Entities" instance=ExtResource("8_fhv4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.482, -2.94854, -7.48149)
