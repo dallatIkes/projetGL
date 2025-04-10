@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dukv6cpvxtuas"]
+[gd_scene load_steps=24 format=3 uid="uid://dukv6cpvxtuas"]
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/test_scene.gd" id="1_uxoqw"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_u0o5a"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bu4ee00t78138" path="res://Sounds/Kokiri Forest - The Legend of Zelda Ocarina Of Time.mp3" id="13_ggwef"]
 [ext_resource type="PackedScene" path="res://Environment/Scenes/spellTowerUnlock.tscn" id="14_ws638"]
 [ext_resource type="PackedScene" path="res://Items/Equipment/Weapon/Sword/Scenes/nice_sword.tscn" id="16_6ckxj"]
+[ext_resource type="Script" path="res://Levels/Test/Scripts/lever_start_menu.gd" id="17_p74tx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -258,6 +259,10 @@ stream = ExtResource("13_ggwef")
 [node name="NiceSword" parent="." groups=["Weapon"] instance=ExtResource("16_6ckxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.914, -3.2642, 9.25926)
 collision_mask = 8388611
+
+[node name="start_menu_lever" parent="." instance=ExtResource("6_xoky8")]
+transform = Transform3D(-3.0598e-08, 0.7, 0, -0.7, -3.0598e-08, 0, 0, 0, 0.7, 27.0812, -2.68559, 15.0749)
+script = ExtResource("17_p74tx")
 
 [editable path="Player"]
 [editable path="NiceSword"]
