@@ -44,6 +44,7 @@ skeleton = NodePath("")
 
 [node name="DebugPos" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 8.88178e-16, 0, -8.88178e-16, 0.3, 0, 0, 0, 0.3, 8.07629e-09, 0.184764, 0.358751)
+visible = false
 mesh = SubResource("SphereMesh_ct7ty")
 script = ExtResource("5_h0ord")
 

@@ -1,5 +1,6 @@
 extends MeshInstance3D
 
+#Set this node visible for debug
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
