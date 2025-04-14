@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://c717orbdilke3"]
+[gd_scene load_steps=25 format=3 uid="uid://c717orbdilke3"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/collisionScript.gd" id="1_h3dvg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="1_v7mbb"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_1ym5p"]
 [ext_resource type="PackedScene" uid="uid://bj1aas6kty3qx" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_tac_glove_low.tscn" id="3_dnfyn"]
+[ext_resource type="Shader" path="res://Entities/Player/Assets/greyscales_death_screen_shader.gdshader" id="4_3xkfu"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_qsoh7"]
 [ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="5_ap4jk"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_if4xl"]
+[ext_resource type="Script" path="res://Entities/death_screen_shader.gd" id="5_sw1kb"]
 [ext_resource type="PackedScene" uid="uid://c2uvwvdlsfuep" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_tac_glove_low.tscn" id="5_wcfh6"]
 [ext_resource type="PackedScene" uid="uid://cr3f307xa3bfq" path="res://UI/Scenes/in_game_ui.tscn" id="6_28e5p"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_kh7mg"]
@@ -14,11 +16,17 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_bkp5h"]
 [ext_resource type="AudioStream" uid="uid://554txm411qim" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
-[ext_resource type="PackedScene" path="res://Entities/Player/Scenes/belt_snap_zone.tscn" id="15_77rdj"]
+[ext_resource type="PackedScene" uid="uid://ryiwkyu8bn1n" path="res://Entities/Player/Scenes/belt_snap_zone.tscn" id="15_77rdj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rdg41"]
 radius = 0.38998
 height = 2.39309
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uerni"]
+render_priority = 0
+shader = ExtResource("4_3xkfu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_q57r0"]
 
 [sub_resource type="Gradient" id="Gradient_ya72f"]
 interpolation_mode = 1
@@ -74,6 +82,13 @@ shape = SubResource("CapsuleShape3D_rdg41")
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 far = 250.0
+
+[node name="DeathScreenShader" type="MeshInstance3D" parent="XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.76234)
+visible = false
+material_override = SubResource("ShaderMaterial_uerni")
+mesh = SubResource("QuadMesh_q57r0")
+script = ExtResource("5_sw1kb")
 
 [node name="LeftHand" type="XRController3D" parent="."]
 process_mode = 3
