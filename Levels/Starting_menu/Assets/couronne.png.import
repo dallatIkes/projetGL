@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn48167782uqf"
-path.s3tc="res://.godot/imported/couronne.png-a80d963680535d29d114bc597dca71dd.s3tc.ctex"
-path.etc2="res://.godot/imported/couronne.png-a80d963680535d29d114bc597dca71dd.etc2.ctex"
+path.s3tc="res://.godot/imported/couronne.png-d88c0d9c562db76686142be112f64e80.s3tc.ctex"
+path.etc2="res://.godot/imported/couronne.png-d88c0d9c562db76686142be112f64e80.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Levels/Starting_menu/couronne.png"
-dest_files=["res://.godot/imported/couronne.png-a80d963680535d29d114bc597dca71dd.s3tc.ctex", "res://.godot/imported/couronne.png-a80d963680535d29d114bc597dca71dd.etc2.ctex"]
+source_file="res://Levels/Starting_menu/Assets/couronne.png"
+dest_files=["res://.godot/imported/couronne.png-d88c0d9c562db76686142be112f64e80.s3tc.ctex", "res://.godot/imported/couronne.png-d88c0d9c562db76686142be112f64e80.etc2.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr8hvlehkgoc8"]
 
-[ext_resource type="Script" path="res://Levels/Starting_menu/starting_menu.gd" id="1_3nsr2"]
+[ext_resource type="Script" path="res://Levels/Starting_menu/Scripts/starting_menu.gd" id="1_3nsr2"]
+
 
 [node name="InGameUI" type="Node2D"]
 position = Vector2(621, 305)
