@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6sjn2nxl0jue"
+uid="uid://dx2p6jguiu0rj"
 path.s3tc="res://.godot/imported/LeverBase_cobblestone.png-32ce1279f09492f21da80c885742a253.s3tc.ctex"
 path.etc2="res://.godot/imported/LeverBase_cobblestone.png-32ce1279f09492f21da80c885742a253.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "ec21d0def8e21086c386bb2fa8f94f01"
 }
 
 [deps]
