@@ -17,7 +17,7 @@ enum LeverPosition{
 }
 
 @export var lever_position : LeverPosition = LeverPosition.NEUTRAL
-const START_MENU = "res://Levels/Starting_menu/start_menu.tscn"
+const START_MENU = "res://Levels/Starting_menu/Scenes/start_menu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

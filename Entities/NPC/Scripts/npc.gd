@@ -7,7 +7,7 @@ extends Entity
 @onready var sfx_animal_crossing = $"sfx_animal_crossing"
 #@onready var sfx2 = $"sfx2"
 var isSpeaking = false
-var defaultText = "Hello there! I am a basic Non Player Character (NPC), my duty is not determined yet but I am happy to speak with you :)"
+@export_multiline var defaultText = "Hello there! I am a basic Non Player Character (NPC), my duty is not determined yet but I am happy to speak with you :)"
 
 # Say if the npc is interacting with the player
 func onInteraction() -> bool:

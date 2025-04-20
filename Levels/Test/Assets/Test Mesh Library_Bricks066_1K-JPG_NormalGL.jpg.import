@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn7xousbcr0b5"
+uid="uid://cqv2g64tbs1so"
 path.s3tc="res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_NormalGL.jpg-9d0697b1cd8d55ada381ba24222f2ed5.s3tc.ctex"
 path.etc2="res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_NormalGL.jpg-9d0697b1cd8d55ada381ba24222f2ed5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "261bf875df635d8ac7662bea5a6425dc"
 }
 
 [deps]
@@ -28,8 +25,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Models/Test Mesh Library_Bricks066_1K-JPG_NormalGL.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
