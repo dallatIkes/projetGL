@@ -11,6 +11,6 @@ func _ready():
 	texture.gradient.set_offset(1,entity_scene.hp/maxHP)
 
 func _process(delta):
-	print("Mon parent est : ",entity_scene.name)
+	#print("Mon parent est : ",entity_scene.name)
 	#value is between 0 (0 hp) and 1 (full hp)
 	texture.gradient.set_offset(1,entity_scene.hp/maxHP)

@@ -28,17 +28,20 @@ var incr = 0
 
 func _ready() -> void:
 	super._ready()
-	musicbg.volume_db = -30
-	musicbg.play()
+	if musicbg :
+		musicbg.volume_db = -30
+		musicbg.play()
 	previous_position = global_transform.origin
 	
 func _process(delta: float) -> void:
 	counter += 1
 	# print(debugMenu_scene.get_content())
-	debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr, sword_hitbox.velocity, sword_hitbox.velocity_norm])
+	if sword_hitbox :
+		debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr, sword_hitbox.velocity, sword_hitbox.velocity_norm])
 	recharge_mana()
-	if(!musicbg.playing):
-		musicbg.play()
+	if musicbg: 
+		if(!musicbg.playing):
+			musicbg.play()
 	
 	# Gestion du son des pas
 	var movement_speed = global_transform.origin - previous_position

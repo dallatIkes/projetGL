@@ -96,4 +96,4 @@ func spawn_mob_around_player():
 		if !isTrackingPlayer:
 			audiosteamplayer.stop()
 			break
-		await get_tree().create_timer(time_between_spawning_mobs).timeout  # Waiting 2 seconds
+		await get_tree().create_timer(time_between_spawning_mobs).timeout  # Waiting time_between_spawning_mobs seconds

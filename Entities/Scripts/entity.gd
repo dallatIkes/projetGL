@@ -42,6 +42,7 @@ var hp : int ## The current amount of health points
 
 @export var speed : int ## Defines the entity's speed
 @onready var navigation_agent_3d = $NavigationAgent3D
+@onready var mesh_instance_3d = $MeshInstance3D
 
 var last_time_ptarg_pos_chg : float
 var time_reach_targ_pos : float
@@ -72,7 +73,6 @@ var position_status_change : Array
 @export var melee_distance : float ## Distance under which the entity attacks in melee
 @export var dist_distance : float ## Distance at which the entity wants shoot the player
 @export var stop_fleeing_distance : float ## Distance at which the entity will stop targeting the player
-
 
 ## Call the good function in fonction of the targeting mode of the entity
 func movement()->Vector3:
@@ -145,6 +145,7 @@ func set_new_pos()->void:
 func take_damage(damages : int):
 	if !isInvincible:
 		hp -= damages
+		damage_effect()
 		if (hp <= 0):
 			queue_free()
 	
@@ -184,3 +185,9 @@ func _process(delta: float) -> void:
 	# move entity
 	move_and_slide()
 	
+# Called in order to put a damage effect on the mob by becoming red
+func damage_effect() -> void:
+	var precedent_material = mesh_instance_3d.get_surface_override_material(0) # We stock the current used material
+	mesh_instance_3d.set_surface_override_material(0,load("res://Entities/Effects/damage_effect.tres").duplicate(true))
+	await get_tree().create_timer(0.2).timeout # Waiting 0.5 seconds
+	mesh_instance_3d.set_surface_override_material(0,precedent_material)
