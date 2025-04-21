@@ -10,6 +10,7 @@ var position_t_moins_1 : Vector3 # the position before the player released the b
 
 @onready var sfx_fireball = $sfx_fireball
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("Fireball")
@@ -27,7 +28,7 @@ func _process(delta: float) -> void:
 	# in mode 0, the fireball keep the position of the hand and save the 5 last position it takes
 	if mode == 0:
 		position = main_hand_position
-		list_of_position.append(position)
+		list_of_position.append(position - player_scene.global_position)
 		if list_of_position.size() > 10:
 			position_t_moins_1 = list_of_position.pop_at(0)
 	
