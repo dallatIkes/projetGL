@@ -13,6 +13,7 @@ config_version=5
 config/name="MetroVR"
 run/main_scene="res://Levels/Starting_menu/Scenes/start_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://Levels/Starting_menu/Assets/logo_kiwi.png"
 
 [autoload]
 
