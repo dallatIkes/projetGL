@@ -60,7 +60,7 @@ class InstallerApp(ttk.Window):
 
         # if platform.system() == 'Windows':
         #     # Path to icon inside the bundle
-        #     icon_src = resource_path(f'{INSTALL_PATH}/assets/logo_kiwi.ico')
+        #     icon_src = resource_path('assets/logo_kiwi.ico')
 
         #     # Copy it to a real temporary file
         #     tmp_icon_path = os.path.join(tempfile.gettempdir(), "logo_kiwi.ico")
@@ -86,7 +86,7 @@ class StartPage(ttk.Frame):
     def __init__(self, master):
         super().__init__(master)
         ttk.Label(self, text="Welcome to our game's installation wizard!", font=FONT_SETTINGS).pack(pady=30)
-        image = Image.open(f'../assets/wizard.png').resize((420, 450))
+        image = Image.open(resource_path('assets/wizard.png')).resize((420, 450))
         self.image = ImageTk.PhotoImage(image)
         ttk.Label(self, image=self.image).pack()
         ttk.Label(self, text="Please choose an option:", font=FONT_SETTINGS).pack(pady=30)
@@ -98,7 +98,7 @@ class APKStep1(ttk.Frame):
     def __init__(self, master):
         super().__init__(master)
         ttk.Label(self, text="Do you have Meta Quest Developer Hub installed?", font=FONT_SETTINGS).pack(pady=30)
-        rounded_image = add_rounded_corners(resource_path(f"{INSTALL_PATH}/assets/meta.png"), size=(500, 370))
+        rounded_image = add_rounded_corners(resource_path("assets/meta.png"), size=(500, 370))
         self.rounded_photo = ImageTk.PhotoImage(rounded_image)
         ttk.Label(self, image=self.rounded_photo).pack(pady=80)
         ttk.Button(self, text="Yes, continue", width=BUTTON_WIDTH, command=self.download_and_open_doc).pack(pady=10)
@@ -135,7 +135,7 @@ class APKStep1(ttk.Frame):
 class APKDownloadProgress(ttk.Frame):
     def __init__(self, master):
         super().__init__(master)
-        image = Image.open(resource_path(f'{INSTALL_PATH}/assets/download.png').resize((420, 450)))
+        image = Image.open(resource_path('assets/download.png')).resize((420, 450))
         self.image = ImageTk.PhotoImage(image)
         ttk.Label(self, image=self.image).pack(pady=60)
         ttk.Label(self, text="Downloading APK...", font=FONT_SETTINGS).pack(pady=20)
@@ -153,7 +153,7 @@ class SourceStep(ttk.Frame):
     def __init__(self, master):
         super().__init__(master)
         ttk.Label(self, text="Clone the source code repository:", font=FONT_SETTINGS).pack(pady=30)
-        rounded_image = add_rounded_corners(resource_path(f"{INSTALL_PATH}/assets/github.png"), size=(500, 500))
+        rounded_image = add_rounded_corners(resource_path("assets/github.png"), size=(500, 500))
         self.rounded_photo = ImageTk.PhotoImage(rounded_image)
         ttk.Label(self, image=self.rounded_photo).pack(pady=50)
         ttk.Button(self, text="Clone Git Repository", width=BUTTON_WIDTH, command=self.clone_repo).pack(pady=10)
@@ -241,7 +241,7 @@ class GitOutputPage(ttk.Frame):
 class DownloadPage(ttk.Frame):
     def __init__(self, master):
         super().__init__(master)
-        image = Image.open(resource_path(f'{INSTALL_PATH}/assets/download.png')).resize((420, 450))
+        image = Image.open(resource_path('assets/download.png')).resize((420, 450))
         self.image = ImageTk.PhotoImage(image)
         ttk.Label(self, image=self.image).pack(pady=60)
         ttk.Label(self, text="Downloading Required Files...", font=FONT_SETTINGS).pack(pady=20)
@@ -255,7 +255,7 @@ class DownloadPage(ttk.Frame):
 class UnzipPage(ttk.Frame):
     def __init__(self, master):
         super().__init__(master)
-        image = Image.open(resource_path(f'{INSTALL_PATH}/assets/unzip.png')).resize((420, 450))
+        image = Image.open(resource_path('assets/unzip.png')).resize((420, 450))
         self.image = ImageTk.PhotoImage(image)
         ttk.Label(self, image=self.image).pack(pady=60)
         ttk.Label(self, text="Unzipping Files...", font=FONT_SETTINGS).pack(pady=20)
