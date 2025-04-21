@@ -6,8 +6,6 @@ import urllib.request
 import subprocess
 import threading
 import os
-import zipfile
-
 from unzip import *
 
 APK_URL = "https://github.com/dallatIkes/projetGL/releases/download/alpha/VainquishedRealm_alpha.apk"
@@ -28,7 +26,7 @@ class InstallerApp(ttk.Window):
         self.resizable(False, False)
 
         self.frames = {}
-        for F in (StartPage, APKStep1, SourceStep):
+        for F in (StartPage, APKStep1, SourceStep, GitOutputPage, DownloadPage, UnzipPage):
             frame = F(self)
             self.frames[F] = frame
             frame.place(relwidth=1, relheight=1)
@@ -92,9 +90,6 @@ class SourceStep(ttk.Frame):
         super().__init__(master)
         ttk.Label(self, text="Clone the source code repository:", font=FONT_SETTINGS).pack(pady=30)
 
-        self.output_label = ttk.Label(self, text="", font=("Courier", 10), wraplength=550, justify="left")
-        self.output_label.pack(pady=10)
-
         ttk.Button(self, text="Clone Git Repository", width=BUTTON_WIDTH,
                    command=self.clone_repo).pack(pady=10)
 
@@ -105,6 +100,7 @@ class SourceStep(ttk.Frame):
         folder = filedialog.askdirectory(title="Choose folder to clone into")
         if not folder:
             return
+        self.master.show_frame(GitOutputPage)
         threading.Thread(target=self.do_clone, args=(folder,)).start()
 
     def do_clone(self, folder):
@@ -116,29 +112,81 @@ class SourceStep(ttk.Frame):
                 stderr=subprocess.STDOUT,
                 text=True
             )
+            git_page = self.master.frames[GitOutputPage]
+            output = ""
             for line in process.stdout:
-                self.output_label.config(text=line.strip())
-                self.output_label.update_idletasks()
+                output += line
+                git_page.update_output(output)
 
             process.wait()
             if process.returncode != 0:
                 raise Exception("Git clone failed")
 
             project_path = os.path.join(folder, "projetGL")
-            self.install_dependencies(project_path)
-
-            webbrowser.open(README_URL)
-            messagebox.showinfo("Success", "Repository cloned and dependencies installed.")
+            self.master.show_frame(DownloadPage)
+            threading.Thread(target=self.download_zips, args=(project_path,)).start()
         except Exception as e:
             messagebox.showerror("Error", f"Clone failed: {e}")
 
-    def install_dependencies(self, project_path):
+    def download_zips(self, project_path):
+        page = self.master.frames[DownloadPage]
         try:
             os.chdir(project_path)
-            for item in ZIP_FILES:
+            for idx, item in enumerate(ZIP_FILES):
                 with urllib.request.urlopen(item["url"]) as r:
                     with open(item["name"], 'wb') as out_file:
                         out_file.write(r.read())
-                unzip(item["name"], project_path, lambda *_: None)
+                page.update_progress((idx + 1) / len(ZIP_FILES) * 100)
+            self.master.show_frame(UnzipPage)
+            threading.Thread(target=self.unzip_zips, args=(project_path,)).start()
         except Exception as e:
-            messagebox.showerror("Error", f"Installation failed: {e}")
+            messagebox.showerror("Error", f"Download failed: {e}")
+
+    def unzip_zips(self, project_path):
+        page = self.master.frames[UnzipPage]
+        try:
+            for idx, item in enumerate(ZIP_FILES):
+                unzip(item["name"], project_path, lambda *_: None)
+                page.update_progress((idx + 1) / len(ZIP_FILES) * 100)
+            webbrowser.open(README_URL)
+            messagebox.showinfo("Success", "Repository cloned and dependencies installed.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Unzip failed: {e}")
+
+
+class GitOutputPage(ttk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        ttk.Label(self, text="Cloning Repository (Console Output):", font=FONT_SETTINGS).pack(pady=10)
+        self.output_text = ttk.Text(self, wrap="word", font=("Courier", 10))
+        self.output_text.pack(fill=BOTH, expand=True, padx=10, pady=10)
+
+    def update_output(self, text):
+        self.output_text.delete("1.0", "end")
+        self.output_text.insert("1.0", text)
+        self.output_text.see("end")
+        self.update_idletasks()
+
+
+class DownloadPage(ttk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        ttk.Label(self, text="Downloading Required Files...", font=FONT_SETTINGS).pack(pady=20)
+        self.progress = ttk.Progressbar(self, length=500, mode='determinate')
+        self.progress.pack(pady=20)
+
+    def update_progress(self, value):
+        self.progress['value'] = value
+        self.update_idletasks()
+
+
+class UnzipPage(ttk.Frame):
+    def __init__(self, master):
+        super().__init__(master)
+        ttk.Label(self, text="Unzipping Files...", font=FONT_SETTINGS).pack(pady=20)
+        self.progress = ttk.Progressbar(self, length=500, mode='determinate')
+        self.progress.pack(pady=20)
+
+    def update_progress(self, value):
+        self.progress['value'] = value
+        self.update_idletasks()
