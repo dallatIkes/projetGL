@@ -187,8 +187,8 @@ func _process(delta: float) -> void:
 	
 # Called in order to put a damage effect on the mob by becoming red
 func damage_effect() -> void:
-	var precedent_material = mesh_instance_3d.get_surface_override_material(0) # We stock the current used material
 	if mesh_instance_3d :
+		var precedent_material = mesh_instance_3d.get_surface_override_material(0) # We stock the current used material
 		mesh_instance_3d.set_surface_override_material(0,load("res://Entities/Effects/damage_effect.tres").duplicate(true))
 		await get_tree().create_timer(0.2).timeout # Waiting 0.5 seconds
 		mesh_instance_3d.set_surface_override_material(0,precedent_material)
