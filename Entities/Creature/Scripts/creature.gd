@@ -8,6 +8,10 @@ var drop : Array[Object] ## Array containing the items dropped once dead
 
 @onready var time_last_deal_damage : float
 
+@export var knockback_jump_force : float = 4.0
+@export var knockback_force : float = 15
+var knockback_velocity: Vector3 = Vector3.ZERO # Used for the knockback
+var gravity: float = 9.8
 
 func _ready() -> void:
 	time_last_deal_damage = Time.get_ticks_msec() 
@@ -47,10 +51,38 @@ func attack() -> void:
 			
 		
 	
-	
-
+## Reduce the heal point of the entity
+func take_damage(damages : int):
+	super.take_damage(damages)
+	knockback_effect((global_transform.origin - player_scene.global_position).normalized(), knockback_force ,knockback_jump_force)
 
 func _process(delta: float) -> void:
-	super._process(delta)
+	var horizontal_knockback = Vector3(knockback_velocity.x, 0, knockback_velocity.z)
+	if (horizontal_knockback.length() < 0.1):
+		knockback_velocity.x = 0.0
+		knockback_velocity.z = 0.0
+		super._process(delta)
+		attack()
+
+# Used for the knockback
+func _physics_process(delta: float) -> void:
+	# Applique un amortissement progressif au knockback horizontal
+	var horizontal_knockback = Vector3(knockback_velocity.x, 0, knockback_velocity.z)
+	if horizontal_knockback.length() > 0.1:
+		knockback_velocity.x = lerp(knockback_velocity.x, 0.0, delta * 5)
+		knockback_velocity.z = lerp(knockback_velocity.z, 0.0, delta * 5)
+		
+		# Applique la gravité
+		knockback_velocity.y -= gravity * delta  # Ajuste selon ta physique
+		
+		velocity = knockback_velocity
+		print(knockback_velocity.length())
+		move_and_slide()
+
+
+func knockback_effect(direction: Vector3 = Vector3.BACK, force: float = 10.0, jump_strength: float = 4.0) -> void:
+	var dir = direction.normalized()
+	dir.y = 0  # On neutralise la hauteur dans la direction de base (on va la gérer à part)
+	knockback_velocity = dir * force
+	knockback_velocity.y = jump_strength
 	
-	attack()

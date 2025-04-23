@@ -115,9 +115,11 @@ func damage_player(damages: int):
 	randomize()  # Initialise the random number generator
 	var result = randi_range(1, 2)  #Generate 1 or 2
 	if(result == 1):
-		sfx1.play()
+		if sfx1 :
+			sfx1.play()
 	else : 
-		sfx2.play()
+		if sfx2:
+			sfx2.play()
 
 
 

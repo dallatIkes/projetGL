@@ -4,14 +4,11 @@
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="2_jgnpv"]
 [ext_resource type="PackedScene" uid="uid://dnmrdbstv2dl8" path="res://Entities/Boss/ForestBoss/Assets/tentacle_plant/scene.gltf" id="3_k1yol"]
 [ext_resource type="AudioStream" uid="uid://c0dy3n1cafn1i" path="res://Entities/Boss/ForestBoss/SFX/ForestBossMusic.mp3" id="3_k6uif"]
+[ext_resource type="SphereMesh" uid="uid://boarfhocxjd7i" path="res://Entities/Effects/mesh_son_of_mobs.tres" id="5_e0x1e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oitgh"]
 radius = 3.64217
 height = 7.28434
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_dlky2"]
-radius = 1.366
-height = 5.33
 
 [sub_resource type="Gradient" id="Gradient_0d0hi"]
 interpolation_mode = 1
@@ -36,10 +33,6 @@ stop_fleeing_distance = 20.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.140476)
 shape = SubResource("CapsuleShape3D_oitgh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-visible = false
-mesh = SubResource("CapsuleMesh_dlky2")
-
 [node name="Sketchfab_Scene" parent="CollisionShape3D" instance=ExtResource("3_k1yol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57973, -3.4173, -0.140476)
 
@@ -53,3 +46,8 @@ parameters/looping = true
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.920184, 0)
 texture = SubResource("GradientTexture2D_njjtf")
 script = ExtResource("2_jgnpv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.13946, 0.140476)
+mesh = ExtResource("5_e0x1e")
+skeleton = NodePath("../CollisionShape3D")
