@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://8cqkxo6s8mv6" path="res://3D_Models/Environnement/4/tree_tall.glb" id="3_4itq5"]
 [ext_resource type="PackedScene" uid="uid://b5e0jxthopbhr" path="res://3D_Models/Environnement/1/platform.glb" id="4_pcg8i"]
 [ext_resource type="PackedScene" uid="uid://cxnif1fir8paj" path="res://3D_Models/Environnement/1/hedge.glb" id="5_27ryo"]
-[ext_resource type="AudioStream" uid="uid://d0ilgixv7x1ha" path="res://Sounds/Fortnite Menu Theme (Full) - Fortnite Soundtrack [Original + Battle Royale].mp3" id="6_kfgi1"]
+[ext_resource type="AudioStream" uid="uid://dwgfk33cfmatg" path="res://Sounds/Fortnite Menu Theme (Full) - Fortnite Soundtrack [Original + Battle Royale].mp3" id="6_kfgi1"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="7_deq0v"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="8_4cpqi"]
 [ext_resource type="Script" path="res://Levels/Test/Scripts/lever_main_menu_for_demo.gd" id="9_idt1p"]
