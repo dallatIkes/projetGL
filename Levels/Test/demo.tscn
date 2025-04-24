@@ -264,6 +264,18 @@ stream = ExtResource("13_ggwef")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.914, -3.2642, 9.25926)
 collision_mask = 8388611
 
+[node name="SwordModel" parent="NiceSword" index="1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
+
 [node name="start_menu_lever" parent="." instance=ExtResource("6_xoky8")]
 transform = Transform3D(-3.0598e-08, 0.7, 0, -0.7, -3.0598e-08, 0, 0, 0, 0.7, 27.0812, -2.68559, 15.0749)
 script = ExtResource("17_p74tx")
