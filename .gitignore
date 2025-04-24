@@ -17,3 +17,5 @@ mono_crash.*.json
 
 android/
 3D_Models/
+
+*.import
