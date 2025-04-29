@@ -153,6 +153,7 @@ func take_damage(damages : int):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("Entity")
 	hp = hpMax; #hp initialization
 	current_position_in_list = 0
 	isTrackingPlayer = false

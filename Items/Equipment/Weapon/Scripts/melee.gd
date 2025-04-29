@@ -32,3 +32,4 @@ func _on_hitbox_area_entered(area: Area3D) -> void:
 				effective_damage = 34
 			area.get_parent_node_3d().take_damage(floor(effective_damage))
 			last_damage_time = Time.get_ticks_msec()
+		
