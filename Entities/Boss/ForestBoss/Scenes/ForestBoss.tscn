@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://baslo52ff8tpu"]
+[gd_scene load_steps=10 format=3 uid="uid://baslo52ff8tpu"]
 
 [ext_resource type="Script" path="res://Entities/Boss/ForestBoss/Scripts/ForestBossScript.gd" id="1_r8ssg"]
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="2_jgnpv"]
-[ext_resource type="PackedScene" uid="uid://dnmrdbstv2dl8" path="res://Entities/Boss/ForestBoss/Assets/tentacle_plant/scene.gltf" id="3_k1yol"]
-[ext_resource type="AudioStream" uid="uid://c0dy3n1cafn1i" path="res://Entities/Boss/ForestBoss/SFX/ForestBossMusic.mp3" id="3_k6uif"]
+[ext_resource type="PackedScene" uid="uid://68qp5f1wbr8b" path="res://Entities/Boss/ForestBoss/Assets/tentacle_plant/scene.gltf" id="3_k1yol"]
+[ext_resource type="AudioStream" uid="uid://b3a5qr4tb5dqd" path="res://Entities/Boss/ForestBoss/SFX/ForestBossMusic.mp3" id="3_k6uif"]
 [ext_resource type="SphereMesh" uid="uid://boarfhocxjd7i" path="res://Entities/Effects/mesh_son_of_mobs.tres" id="5_e0x1e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oitgh"]
@@ -18,6 +18,9 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_0d0hi")
 width = 100
 height = 20
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3l58"]
+radius = 1.73627
 
 [node name="ForestBoss" type="CharacterBody3D"]
 collision_layer = 8388608
@@ -48,6 +51,14 @@ texture = SubResource("GradientTexture2D_njjtf")
 script = ExtResource("2_jgnpv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.13946, 0.140476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.553929, -3.13946, 0.0718672)
 mesh = ExtResource("5_e0x1e")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8388608
+collision_mask = 0
+
+[node name="Hitbox" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8644, 0)
+shape = SubResource("SphereShape3D_u3l58")
