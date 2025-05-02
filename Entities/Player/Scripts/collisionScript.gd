@@ -33,11 +33,11 @@ func _ready() -> void:
 		musicbg.play()
 	previous_position = global_transform.origin
 	
+	SerializeSettings.load_settings()
+	
 func _process(delta: float) -> void:
 	counter += 1
 	# print(debugMenu_scene.get_content())
-	if sword_hitbox :
-		debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr, sword_hitbox.velocity, sword_hitbox.velocity_norm])
 	recharge_mana()
 	if musicbg: 
 		if(!musicbg.playing):

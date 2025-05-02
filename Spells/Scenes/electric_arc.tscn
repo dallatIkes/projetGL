@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_lg6bi"]
 [ext_resource type="Script" path="res://Spells/Scripts/electric_arc.gd" id="2_o68g3"]
-[ext_resource type="AudioStream" uid="uid://cpjxgallubn4f" path="res://Sounds/Continuous Electricity Sound Effect.mp3" id="3_xnl53"]
+[ext_resource type="AudioStream" uid="uid://ci8g8ugu3dtea" path="res://Sounds/Continuous Electricity Sound Effect.mp3" id="3_xnl53"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c32r4"]
 size = Vector3(1, 0.01, 1)

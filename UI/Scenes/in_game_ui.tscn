@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://UI/Scenes/resume_button.gd" id="1_4erur"]
 [ext_resource type="Script" path="res://UI/Scripts/menuButtons.gd" id="1_f280e"]
-[ext_resource type="AudioStream" uid="uid://b4ltm3wdgum1c" path="res://Sounds/menu_sfx1.mp3" id="2_4jtvh"]
+[ext_resource type="AudioStream" uid="uid://b6vwo1h060dyk" path="res://Sounds/menu_sfx1.mp3" id="2_4jtvh"]
 [ext_resource type="Script" path="res://UI/Scripts/parametersMenu.gd" id="2_yptuk"]
 [ext_resource type="Script" path="res://UI/Scripts/keyMappingMenu.gd" id="3_j1q11"]
-[ext_resource type="AudioStream" uid="uid://cnxcjb3cjo2ii" path="res://Sounds/menu_sfx2.mp3" id="3_qy6hr"]
+[ext_resource type="AudioStream" uid="uid://dyhwtfn86gh1d" path="res://Sounds/menu_sfx2.mp3" id="3_qy6hr"]
 
 [node name="InGameUI" type="Node2D"]
 process_mode = 2
