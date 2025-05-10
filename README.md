@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/dallatIkes/projetGL)](https://github.com/dallatIkes/projetGL/releases/tag/alpha)
 
-Vainquished Realm is a virtual reality video game developed for a software engineering project at [ENSSAT](https://enssat.fr) by the Team Kiwi. This game is made with the [Godot engine](https://godotengine.org) ``v4.3`` and is configured to run on the Meta Quest VR headsets (tested with the Meta Quest 2 and 3). The game uses [Bastiaan Olij](https://github.com/BastiaanOlij)'s [OpenXR Vendors plugin](https://github.com/GodotVR/godot_openxr_vendors/releases) where all basic VR features have been implemented in GDscript.  
+Vanquished Realm is a virtual reality video game developed for a software engineering project at [ENSSAT](https://enssat.fr) by the Team Kiwi. This game is made with the [Godot engine](https://godotengine.org) ``v4.3`` and is configured to run on the Meta Quest VR headsets (tested with the Meta Quest 2 and 3). The game uses [Bastiaan Olij](https://github.com/BastiaanOlij)'s [OpenXR Vendors plugin](https://github.com/GodotVR/godot_openxr_vendors/releases) where all basic VR features have been implemented in GDscript.  
 
 **Bellow, you'll find an installation guide to try our game.**  
 But if you're a programmer and want to dive deeper into the project, check out our wiki where we document every major feature to help you in your coding journey! 🚀  
