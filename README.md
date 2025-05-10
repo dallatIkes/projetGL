@@ -1,4 +1,4 @@
-# Vainquished Realm 
+# Vanquished Realm 
 
 [![GitHub Release](https://img.shields.io/github/v/release/dallatIkes/projetGL)](https://github.com/dallatIkes/projetGL/releases/tag/alpha)
 
