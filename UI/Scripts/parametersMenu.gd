@@ -72,3 +72,13 @@ func playSfx():
 		sfx1.play()
 	else : 
 		sfx2.play()
+
+
+func _on_hiding_hp_bars_pressed():
+	var entities_node = get_tree().get_current_scene().get_node("Entities")
+	if entities_node:
+		for child in entities_node.get_children():
+			if child is Entity:
+				if child.has_node("HPBar"):
+					var hp_bar = child.get_node("HPBar")
+					hp_bar.visible = not hp_bar.visible

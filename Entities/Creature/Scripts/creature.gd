@@ -76,7 +76,6 @@ func _physics_process(delta: float) -> void:
 		knockback_velocity.y -= gravity * delta  # Ajuste selon ta physique
 		
 		velocity = knockback_velocity
-		print(knockback_velocity.length())
 		move_and_slide()
 
 

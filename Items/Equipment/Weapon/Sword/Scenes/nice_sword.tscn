@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsr17ytbnwu7h"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_rff0o"]
-[ext_resource type="PackedScene" uid="uid://bv25sgu4hcd7i" path="res://3D_Models/Weapons/adventurers_sword.glb" id="2_34ltp"]
+[ext_resource type="PackedScene" uid="uid://gfwcl0tkpejk" path="res://3D_Models/Weapons/adventurers_sword.glb" id="2_34ltp"]
 [ext_resource type="Script" path="res://Items/Equipment/Weapon/Scripts/melee.gd" id="2_outrd"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_nwf6s"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="4_eotj2"]
@@ -53,3 +53,4 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 
 [node name="GrabPointSnap" parent="." index="7" instance=ExtResource("4_eotj2")]
 
 [connection signal="area_entered" from="Hitbox" to="Hitbox" method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
