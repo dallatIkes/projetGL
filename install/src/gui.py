@@ -3,22 +3,18 @@ from ttkbootstrap.constants import *
 from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk, ImageDraw
 import webbrowser
-import urllib.request
 import subprocess
 import threading
 import os
 from pathlib import Path
-import platform
 import sys
-import tempfile
-import shutil
 from unzip import *
 
-APK_URL = "https://github.com/dallatIkes/projetGL/releases/download/alpha/VainquishedRealm_alpha.apk"
-DOC_URL = "https://github.com/dallatIkes/projetGL/blob/alpha/README.md#-use-an-already-existing-apk"
+APK_URL = "https://github.com/dallatIkes/projetGL/releases/latest/download/VainquishedRealm.apk"
+DOC_URL = "https://github.com/dallatIkes/projetGL/blob/release/README.md#-use-an-already-existing-apk"
 MQDH_URL = "https://developers.meta.com/horizon/documentation/unity/ts-mqdh/"
 REPO_URL = "https://github.com/dallatIkes/projetGL.git"
-README_URL = "https://github.com/dallatIkes/projetGL/blob/alpha/README.md"
+README_URL = "https://github.com/dallatIkes/projetGL/blob/release/README.md"
 FONT_SETTINGS = ("Helvetica", 16)
 BUTTON_WIDTH = 25
 
@@ -58,19 +54,6 @@ class InstallerApp(ttk.Window):
         self.title("Vanquished Realm Installation Wizard")
         self.geometry("650x850")
 
-        # if platform.system() == 'Windows':
-        #     # Path to icon inside the bundle
-        #     icon_src = resource_path('assets/logo_kiwi.ico')
-
-        #     # Copy it to a real temporary file
-        #     tmp_icon_path = os.path.join(tempfile.gettempdir(), "logo_kiwi.ico")
-        #     shutil.copyfile(icon_src, tmp_icon_path)
-
-        #     # Set it
-        #     try:
-        #         self.iconbitmap(tmp_icon_path)
-        #     except Exception as e:
-        #         print(f"Failed to set icon: {e}")
         self.resizable(False, False)
         self.frames = {}
         for F in (StartPage, APKStep1, SourceStep, GitOutputPage, DownloadPage, UnzipPage, APKDownloadProgress):
@@ -168,7 +151,7 @@ class SourceStep(ttk.Frame):
     def do_clone(self, folder):
         try:
             os.chdir(folder)
-            process = subprocess.Popen(["git", "clone", "--progress", REPO_URL], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            process = subprocess.Popen(["git", "clone", "--progress", REPO_URL, "--depth", "5"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
             git_page = self.master.frames[GitOutputPage]
             output = ""
             for line in process.stdout:
