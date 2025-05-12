@@ -15,5 +15,11 @@ func _process(delta: float) -> void:
 
 
 func _on_torch_torch_lit(torch: Variant) -> void:
-	# When the torh is on fireeeee, the player can return in the forrest scene
-	get_tree().change_scene_to_packed(WORLD) # Start and launch the appropiate scene. 
+	# Enregistre la position du joueur avant de changer de scène (si ce n'est pas déjà fait)
+	var player = get_node("Player/PlayerBody")
+	if player:
+		GameState.player_position = player.global_transform.origin
+		GameState.should_restore_position = true
+
+	# Changer de scène vers la forêt (ou la scène souhaitée)
+	get_tree().change_scene_to_packed(WORLD) # Change de scène
