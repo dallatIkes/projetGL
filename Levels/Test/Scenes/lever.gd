@@ -44,29 +44,33 @@ func _process(delta: float) -> void:
 # Snaps the lever to the correct position
 # Snaps the lever to the correct position and places the player accordingly
 func snapLever() -> void:
-	var player_position = Vector3(0, 0, 0) # Position par défaut
+	var player = get_node_or_null("/root/Player/PlayerBody") # Adaptable selon ta scène
 
 	match lever_position:
 		LeverPosition.UP:
-			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, -45))
-			get_node("GrabPoint").set("position", Vector3(-0.7, 0.7, 0))
-			player_position = Vector3(10, 0, 10) # Exemple de position pour le joueur quand le levier est en haut.
-			get_tree().change_scene_to_packed(WORLD) # Change de scène
+			get_node("LeverStick").rotation_degrees = Vector3(0, 0, -45)
+			get_node("GrabPoint").position = Vector3(-0.7, 0.7, 0)
+			
+			if player:
+				GameState.player_position = player.global_transform.origin
+				GameState.should_restore_position = true
+			
+			get_tree().change_scene_to_packed(WORLD)
+
 		LeverPosition.DOWN:
-			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, 45))
-			get_node("GrabPoint").set("position", Vector3(0.7, 0.7, 0))
-			player_position = Vector3(-10, 0, -10) # Exemple pour position en bas.
-			get_tree().change_scene_to_packed(WORLD) # Change de scène
+			get_node("LeverStick").rotation_degrees = Vector3(0, 0, 45)
+			get_node("GrabPoint").position = Vector3(0.7, 0.7, 0)
+
+			if player:
+				GameState.player_position = player.global_transform.origin
+				GameState.should_restore_position = true
+
+			get_tree().change_scene_to_packed(WORLD)
+
 		LeverPosition.NEUTRAL:
-			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, 0))
-			get_node("GrabPoint").set("position", Vector3(0, 1, 0))
-			player_position = Vector3(0, 0, 0) # Position neutre du joueur.
-	
-	# Sauvegarder la position du joueur dans GameState avant de changer de scène
-	var player = get_node("Player/PlayerBody")
-	if player:
-		GameState.player_position = player.global_transform.origin
-		GameState.should_restore_position = true
+			get_node("LeverStick").rotation_degrees = Vector3(0, 0, 0)
+			get_node("GrabPoint").position = Vector3(0, 1, 0)
+
 
 
 # Called when the player releases the lever
