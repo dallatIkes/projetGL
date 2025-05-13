@@ -4,14 +4,14 @@
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="2_tuqtu"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_qtwyn"]
 [ext_resource type="PackedScene" uid="uid://c40wiqb58aege" path="res://Entities/NPC/Scenes/dialogBox.tscn" id="4_4brgg"]
-[ext_resource type="AudioStream" uid="uid://q18yfulc7dh8" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="5_xqura"]
+[ext_resource type="AudioStream" uid="uid://coaonojnaf55n" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="5_xqura"]
 
-[sub_resource type="Gradient" id="Gradient_0d0hi"]
+[sub_resource type="Gradient" id="Gradient_plx50"]
 interpolation_mode = 1
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qiuld"]
-gradient = SubResource("Gradient_0d0hi")
+gradient = SubResource("Gradient_plx50")
 width = 100
 height = 20
 

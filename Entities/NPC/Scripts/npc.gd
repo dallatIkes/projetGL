@@ -22,6 +22,9 @@ func dialog() -> void:
 func _ready() -> void:
 	super._ready()
 	add_to_group("PNJ") # DO NOT REMOVE
+	var animation_player = get_node_or_null("AnimationPlayer")
+	if animation_player:
+		animation_player.play("Take 001")
 	#self.dialog()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
