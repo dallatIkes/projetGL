@@ -10,6 +10,7 @@ size = Vector3(0.0938568, 0.268166, 0.0769558)
 [sub_resource type="BoxMesh" id="BoxMesh_1gnpu"]
 
 [node name="wallDoorInteractible" instance=ExtResource("1_2lfa2")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 script = ExtResource("2_by37t")
 
 [node name="GrabPoint" parent="wallDoor" index="1" instance=ExtResource("3_ixac4")]
