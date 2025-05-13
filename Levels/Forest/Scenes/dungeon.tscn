@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://23w47wo7fcu0"]
+[gd_scene load_steps=32 format=3 uid="uid://23w47wo7fcu0"]
 
 [ext_resource type="Script" path="res://Levels/Forest/Scenes/dungeon.gd" id="1_jxg7h"]
 [ext_resource type="PackedScene" uid="uid://c2focikyps40s" path="res://3D_Models/Environnement/3/wallDoorwaySquare.glb" id="1_wqbju"]
@@ -30,16 +30,18 @@
 [ext_resource type="AudioStream" uid="uid://ccv6yur2uam4l" path="res://Levels/Forest/D&amp;DDark CaveMusic(1).mp3" id="28_qd0yt"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="29_t8o0t"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_evmq8"]
+size = Vector3(10.2441, 0.0262786, 7.61511)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5uf2"]
+size = Vector3(10.2924, 4.20691, 0.278809)
+
 [node name="dungeon" type="Node3D"]
 script = ExtResource("1_jxg7h")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 
 [node name="Entities" type="Node3D" parent="NavigationRegion3D"]
-
-[node name="Tuto" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
-transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 7.38058, 0.450496, -2.61628)
-dist_distance = 10.0
 
 [node name="Tuto2" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 5.14042, 1.44938, -3.98585)
@@ -84,248 +86,14 @@ transform = Transform3D(-0.134304, -0.0106955, 0.268045, 0, 0.299761, 0.0119611,
 [node name="cannon-ball14" parent="NavigationRegion3D/Environment" instance=ExtResource("18_qtxsq")]
 transform = Transform3D(-0.134304, -0.0106955, 0.268045, 0, 0.299761, 0.0119611, -0.268258, 0.00535474, -0.134198, 0.219007, 1.12623, -1.58531)
 
-[node name="wallBlockHalf3" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, -1.18723e-05, -0.000403333, 0.000169441, 0.07, -0.000374583, 0.000403402, 2.62157e-05, 1, -0.0418599, 0, 0.0562494)
-
-[node name="wallBlockHalf4" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, 0.0562494)
-
-[node name="wallBlockHalf5" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, 0.0562494)
-
-[node name="wallBlockHalf6" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, 0.0562494)
-
-[node name="wallBlockHalf7" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, 0.0562494)
-
-[node name="wallBlockHalf8" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0699996, 0.00331612, 0, -0.000232128, 0.999995, 4.69329, 0, 0.0562494)
-
-[node name="wallBlockHalf9" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, 0.0562494)
-
-[node name="wallBlockHalf10" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, 0.0562494)
-
-[node name="wallBlockHalf11" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, 0.0562494)
-
-[node name="wallBlockHalf12" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, 0.0562494)
-
-[node name="wallBlockHalf13" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, 0.0562494)
-
-[node name="wallBlockHalf14" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -0.895475)
-
-[node name="wallBlockHalf15" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908257, 0, -0.894053)
-
-[node name="wallBlockHalf16" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -0.895475)
-
-[node name="wallBlockHalf17" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -0.895475)
-
-[node name="wallBlockHalf18" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -0.895475)
-
-[node name="wallBlockHalf19" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(0.999926, -0.000852747, 0, 0.0121821, 0.0699948, 0, 0, 0, 1, 4.69329, 0, -0.895475)
-
-[node name="wallBlockHalf20" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -0.895475)
-
-[node name="wallBlockHalf21" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -0.895475)
-
-[node name="wallBlockHalf22" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -0.895475)
-
-[node name="wallBlockHalf23" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -0.895475)
-
-[node name="wallBlockHalf24" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -0.895475)
-
-[node name="wallBlockHalf25" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -1.85186)
-
-[node name="wallBlockHalf26" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -1.85186)
-
-[node name="wallBlockHalf27" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -1.85186)
-
-[node name="wallBlockHalf28" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -1.85186)
-
-[node name="wallBlockHalf29" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -1.85186)
-
-[node name="wallBlockHalf30" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -1.85186)
-
-[node name="wallBlockHalf31" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -1.85186)
-
-[node name="wallBlockHalf32" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -1.85186)
-
-[node name="wallBlockHalf33" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -1.85186)
-
-[node name="wallBlockHalf34" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -1.85186)
-
-[node name="wallBlockHalf35" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -1.85186)
-
-[node name="wallBlockHalf36" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -2.80725)
-
-[node name="wallBlockHalf37" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -2.80725)
-
-[node name="wallBlockHalf38" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -2.80725)
-
-[node name="wallBlockHalf39" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -2.80725)
-
 [node name="wallBlockHalf40" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -2.80725)
-
-[node name="wallBlockHalf41" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -2.80725)
-
-[node name="wallBlockHalf42" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -2.80725)
-
-[node name="wallBlockHalf43" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -2.80725)
-
-[node name="wallBlockHalf44" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -2.80725)
-
-[node name="wallBlockHalf45" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -2.80725)
-
-[node name="wallBlockHalf46" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -2.80725)
-
-[node name="wallBlockHalf47" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -3.75245)
-
-[node name="wallBlockHalf48" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -3.75245)
-
-[node name="wallBlockHalf49" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -3.75245)
-
-[node name="wallBlockHalf50" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -3.75245)
-
-[node name="wallBlockHalf51" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -3.75245)
-
-[node name="wallBlockHalf52" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -3.75245)
-
-[node name="wallBlockHalf53" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -3.75245)
-
-[node name="wallBlockHalf54" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -3.75245)
-
-[node name="wallBlockHalf55" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -3.75245)
-
-[node name="wallBlockHalf56" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -3.75245)
-
-[node name="wallBlockHalf57" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -3.75245)
-
-[node name="wallBlockHalf58" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -4.71063)
-
-[node name="wallBlockHalf59" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -4.71063)
-
-[node name="wallBlockHalf60" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -4.71063)
-
-[node name="wallBlockHalf61" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -4.71063)
-
-[node name="wallBlockHalf62" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -4.71063)
-
-[node name="wallBlockHalf63" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -4.71063)
-
-[node name="wallBlockHalf64" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -4.71063)
-
-[node name="wallBlockHalf65" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -4.71063)
-
-[node name="wallBlockHalf66" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -4.71063)
-
-[node name="wallBlockHalf67" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -4.71063)
-
-[node name="wallBlockHalf68" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -4.71063)
-
-[node name="wallBlockHalf69" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -5.64756)
-
-[node name="wallBlockHalf70" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -5.64756)
-
-[node name="wallBlockHalf71" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -5.64756)
-
-[node name="wallBlockHalf72" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -5.64756)
-
-[node name="wallBlockHalf73" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -5.64756)
-
-[node name="wallBlockHalf74" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -5.64756)
-
-[node name="wallBlockHalf75" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -5.64756)
-
-[node name="wallBlockHalf76" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -5.64756)
-
-[node name="wallBlockHalf77" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -5.64756)
-
-[node name="wallBlockHalf78" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -5.64756)
-
-[node name="wallBlockHalf79" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -5.64756)
 
 [node name="wallBlockHalf80" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -6.56772)
 
-[node name="wallBlockHalf81" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -6.56772)
-
 [node name="wallBlockHalf82" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -6.56772)
-
-[node name="wallBlockHalf83" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -6.56772)
 
 [node name="wallBlockHalf84" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -6.56772)
@@ -336,50 +104,23 @@ transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -6.56772)
 [node name="wallBlockHalf86" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -6.56772)
 
-[node name="wallBlockHalf87" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -6.56772)
-
 [node name="wallBlockHalf88" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -6.56772)
-
-[node name="wallBlockHalf89" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -6.56772)
 
 [node name="wallBlockHalf90" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -6.56772)
 
-[node name="wallBlockHalf91" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -6.56772)
-
 [node name="wallBlockHalf92" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -6.56772)
-
-[node name="wallBlockHalf93" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -6.56772)
 
 [node name="wallBlockHalf94" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -6.56772)
 
-[node name="wallBlockHalf95" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -6.56772)
-
-[node name="wallBlockHalf96" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -6.56772)
-
-[node name="wallBlockHalf97" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -6.56772)
-
 [node name="wallBlockHalf98" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -6.56772)
 
-[node name="wallBlockHalf99" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -6.56772)
-
 [node name="wallBlockHalf100" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -6.56772)
-
-[node name="wallBlockHalf101" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -6.56772)
 
 [node name="wallDoorwaySquare3" parent="NavigationRegion3D/Environment" instance=ExtResource("1_wqbju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66837, 0, -4.64064)
@@ -455,39 +196,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.63596)
 
 [node name="wallDetailHorizontal18" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.52894)
-
-[node name="wallDetailHorizontal24" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0239254, 0, -6.52894)
-
-[node name="wallDetailHorizontal25" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.939733, 0, -6.52894)
-
-[node name="wallDetailHorizontal26" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.91484, 0, -6.52894)
-
-[node name="wallDetailHorizontal27" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.80711, 0, -6.52894)
-
-[node name="wallDetailHorizontal28" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.80627, 0, -6.52894)
-
-[node name="wallDetailHorizontal29" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.73594, 0, -6.52894)
-
-[node name="wallDetailHorizontal30" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.74582, 0, -6.52894)
-
-[node name="wallDetailHorizontal31" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.71949, 0, -6.52894)
-
-[node name="wallDetailHorizontal32" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.58963, 0, -6.52894)
-
-[node name="wallDetailHorizontal33" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.42699, 0, -6.52894)
-
-[node name="wallDetailHorizontal34" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.282, 0, -6.52894)
 
 [node name="wallDetailHorizontal35" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -6.51)
@@ -962,39 +670,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -5.6359
 
 [node name="wallDetailHorizontal76" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal77" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00994444, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal78" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.925745, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal79" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.90084, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal80" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.79314, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal81" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.79224, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal82" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.72195, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal83" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73184, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal84" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.70544, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal85" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.57564, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal86" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.41294, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal87" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.26804, 0.998881, -6.52894)
 
 [node name="wallDetailHorizontal88" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -6.51)
@@ -1850,6 +1525,354 @@ transform = Transform3D(-4.37023e-08, -0.0204538, 0.999791, -8.94065e-10, 0.9997
 
 [node name="SpellTowerUnlock" parent="NavigationRegion3D/Environment" instance=ExtResource("24_rln5u")]
 transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 3.14862, 2.25826, 1.36622)
+
+[node name="floor1" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallBlockHalf9" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, 0.0562494)
+
+[node name="wallBlockHalf10" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, 0.0562494)
+
+[node name="wallBlockHalf11" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, 0.0562494)
+
+[node name="wallBlockHalf12" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, 0.0562494)
+
+[node name="wallBlockHalf13" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, 0.0562494)
+
+[node name="wallBlockHalf20" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -0.895475)
+
+[node name="wallBlockHalf21" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -0.895475)
+
+[node name="wallBlockHalf22" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -0.895475)
+
+[node name="wallBlockHalf23" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -0.895475)
+
+[node name="wallBlockHalf24" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -0.895475)
+
+[node name="wallBlockHalf31" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -1.85186)
+
+[node name="wallBlockHalf32" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -1.85186)
+
+[node name="wallBlockHalf33" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -1.85186)
+
+[node name="wallBlockHalf34" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -1.85186)
+
+[node name="wallBlockHalf35" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -1.85186)
+
+[node name="wallBlockHalf42" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -2.80725)
+
+[node name="wallBlockHalf43" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -2.80725)
+
+[node name="wallBlockHalf44" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -2.80725)
+
+[node name="wallBlockHalf45" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -2.80725)
+
+[node name="wallBlockHalf46" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -2.80725)
+
+[node name="wallBlockHalf53" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -3.75245)
+
+[node name="wallBlockHalf54" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -3.75245)
+
+[node name="wallBlockHalf55" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -3.75245)
+
+[node name="wallBlockHalf56" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -3.75245)
+
+[node name="wallBlockHalf57" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -3.75245)
+
+[node name="wallBlockHalf64" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -4.71063)
+
+[node name="wallBlockHalf65" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -4.71063)
+
+[node name="wallBlockHalf66" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -4.71063)
+
+[node name="wallBlockHalf67" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -4.71063)
+
+[node name="wallBlockHalf68" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -4.71063)
+
+[node name="wallBlockHalf75" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -5.64756)
+
+[node name="wallBlockHalf76" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -5.64756)
+
+[node name="wallBlockHalf77" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -5.64756)
+
+[node name="wallBlockHalf78" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -5.64756)
+
+[node name="wallBlockHalf79" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -5.64756)
+
+[node name="wallBlockHalf87" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.58892, 0, -6.56772)
+
+[node name="wallBlockHalf89" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.43786, 0, -6.56772)
+
+[node name="wallBlockHalf97" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 5.64346, 0, -6.56772)
+
+[node name="wallBlockHalf99" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.52268, 0, -6.56772)
+
+[node name="wallBlockHalf101" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 9.31818, 0, -6.56772)
+
+[node name="Tuto" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("22_okofr")]
+transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 7.38058, 0.450496, -2.61628)
+dist_distance = 10.0
+
+[node name="wallBlockHalf3" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, -1.18723e-05, -0.000403333, 0.000169441, 0.07, -0.000374583, 0.000403402, 2.62157e-05, 1, -0.0418599, 0, 0.0562494)
+
+[node name="wallBlockHalf4" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, 0.0562494)
+
+[node name="wallBlockHalf5" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, 0.0562494)
+
+[node name="wallBlockHalf6" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, 0.0562494)
+
+[node name="wallBlockHalf7" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, 0.0562494)
+
+[node name="wallBlockHalf8" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.0699996, 0.00331612, 0, -0.000232128, 0.999995, 4.69329, 0, 0.0562494)
+
+[node name="wallBlockHalf14" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -0.895475)
+
+[node name="wallBlockHalf15" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908257, 0, -0.894053)
+
+[node name="wallBlockHalf16" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -0.895475)
+
+[node name="wallBlockHalf17" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -0.895475)
+
+[node name="wallBlockHalf18" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -0.895475)
+
+[node name="wallBlockHalf19" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(0.999926, -0.000852747, 0, 0.0121821, 0.0699948, 0, 0, 0, 1, 4.69329, 0, -0.895475)
+
+[node name="wallBlockHalf25" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -1.85186)
+
+[node name="wallBlockHalf26" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -1.85186)
+
+[node name="wallBlockHalf27" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -1.85186)
+
+[node name="wallBlockHalf28" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -1.85186)
+
+[node name="wallBlockHalf29" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -1.85186)
+
+[node name="wallBlockHalf30" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -1.85186)
+
+[node name="wallBlockHalf36" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -2.80725)
+
+[node name="wallBlockHalf37" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -2.80725)
+
+[node name="wallBlockHalf38" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -2.80725)
+
+[node name="wallBlockHalf39" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -2.80725)
+
+[node name="wallBlockHalf41" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -2.80725)
+
+[node name="wallBlockHalf47" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -3.75245)
+
+[node name="wallBlockHalf48" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -3.75245)
+
+[node name="wallBlockHalf49" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -3.75245)
+
+[node name="wallBlockHalf50" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -3.75245)
+
+[node name="wallBlockHalf51" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -3.75245)
+
+[node name="wallBlockHalf52" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -3.75245)
+
+[node name="wallBlockHalf58" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -4.71063)
+
+[node name="wallBlockHalf59" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -4.71063)
+
+[node name="wallBlockHalf60" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -4.71063)
+
+[node name="wallBlockHalf61" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -4.71063)
+
+[node name="wallBlockHalf62" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -4.71063)
+
+[node name="wallBlockHalf63" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -4.71063)
+
+[node name="wallBlockHalf69" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -5.64756)
+
+[node name="wallBlockHalf70" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -5.64756)
+
+[node name="wallBlockHalf71" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -5.64756)
+
+[node name="wallBlockHalf72" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -5.64756)
+
+[node name="wallBlockHalf73" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -5.64756)
+
+[node name="wallBlockHalf74" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -5.64756)
+
+[node name="wallBlockHalf81" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 0.908488, 0, -6.56772)
+
+[node name="wallBlockHalf83" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.80573, 0, -6.56772)
+
+[node name="wallBlockHalf91" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0418599, 0, -6.56772)
+
+[node name="wallBlockHalf93" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.85665, 0, -6.56772)
+
+[node name="wallBlockHalf95" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 3.75559, 0, -6.56772)
+
+[node name="wallBlockHalf96" parent="NavigationRegion3D/Environment/floor1" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -6.56772)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/floor1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/floor1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62207, 0.127064, -3.22052)
+shape = SubResource("BoxShape3D_evmq8")
+disabled = true
+
+[node name="Wall1" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal24" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0239254, 0, -6.52894)
+
+[node name="wallDetailHorizontal25" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.939733, 0, -6.52894)
+
+[node name="wallDetailHorizontal26" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.91484, 0, -6.52894)
+
+[node name="wallDetailHorizontal27" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.80711, 0, -6.52894)
+
+[node name="wallDetailHorizontal28" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.80627, 0, -6.52894)
+
+[node name="wallDetailHorizontal29" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.73594, 0, -6.52894)
+
+[node name="wallDetailHorizontal30" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.74582, 0, -6.52894)
+
+[node name="wallDetailHorizontal31" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.71949, 0, -6.52894)
+
+[node name="wallDetailHorizontal32" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.58963, 0, -6.52894)
+
+[node name="wallDetailHorizontal33" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.42699, 0, -6.52894)
+
+[node name="wallDetailHorizontal34" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.282, 0, -6.52894)
+
+[node name="wallDetailHorizontal77" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00994444, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal78" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.925745, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal79" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.90084, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal80" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.79314, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal81" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.79224, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal82" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.72195, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal83" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73184, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal84" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.70544, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal85" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.57564, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal86" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.41294, 0.998881, -6.52894)
+
+[node name="wallDetailHorizontal87" parent="NavigationRegion3D/Environment/Wall1" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.26804, 0.998881, -6.52894)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64621, 1.60345, -7.05347)
+shape = SubResource("BoxShape3D_w5uf2")
 
 [node name="Torch" parent="." instance=ExtResource("26_w0h43")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 6.78234, 2.29715, 1.34203)
