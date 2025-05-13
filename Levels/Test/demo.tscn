@@ -281,8 +281,11 @@ script = null
 transform = Transform3D(-3.0598e-08, 0.7, 0, -0.7, -3.0598e-08, 0, 0, 0, 0.7, 27.0812, -2.68559, 15.0749)
 script = ExtResource("17_p74tx")
 
+[node name="Lever2" parent="." instance=ExtResource("6_xoky8")]
+transform = Transform3D(1.33748e-15, -3.0598e-08, 0.7, -0.7, -3.0598e-08, 1.23526e-22, 3.0598e-08, -0.7, -3.0598e-08, 21.5272, -2.49857, 14.5334)
+
 [node name="wallDoorInteractible" parent="." instance=ExtResource("19_n4lox")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 20.5741, -3.96964, 9.59316)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20.2953, -3.96964, 9.31941)
 
 [editable path="Player"]
 [editable path="NiceSword"]
