@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_ixac4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rvjt1"]
-size = Vector3(0.0938568, 0.26095, 0.097486)
+size = Vector3(0.0938568, 0.0689217, 0.043924)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1gnpu"]
 
 [node name="wallDoorInteractible" instance=ExtResource("1_2lfa2")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("2_by37t")
 
 [node name="GrabNode" type="Node3D" parent="wallDoor" index="1"]
@@ -24,11 +24,11 @@ release_mode = 1
 ranged_grab_method = 0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="wallDoor/GrabNode/GrabPoint" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00063324, -0.0253464, 0.0437173)
+transform = Transform3D(0.974991, 0, 0, 0, 0.974991, 0, 0, 0, 0.974991, -0.00063324, -0.0238151, 0.0466393)
 shape = SubResource("BoxShape3D_rvjt1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="wallDoor/GrabNode/GrabPoint" index="2"]
-transform = Transform3D(0.102293, 0, 0, 0, 0.263369, 0, 0, 0, 0.0973053, 0, -0.024256, 0.0467118)
+transform = Transform3D(0.0801189, 0, 0, 0, 0.0696723, 0, 0, 0, 0.0455487, 0, -0.024256, 0.0467118)
 mesh = SubResource("BoxMesh_1gnpu")
 skeleton = NodePath("")
 
