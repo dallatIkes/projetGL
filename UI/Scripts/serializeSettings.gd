@@ -2,12 +2,6 @@ extends Node
 
 var f : FileAccess
 
-@onready var debugMenu = get_tree().current_scene.get_node("Player/LeftHand/#UI/debug_menu")
-# we take the instantiated debug menu UI scene
-@onready var debugMenu_scene = debugMenu.get_scene_instance() 
-
-@onready var settings_menu = get_tree().current_scene.get_node("Player/LeftHand/#UI/pause_menu")
-@onready var settings_menu_instance = settings_menu.scene.instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,27 +48,24 @@ func init_settings_file():
 
 
 
-func get_settings() -> Dictionary:
-	var settings_scene = settings_menu_instance.get_node("Control/ColorRect/MarginContainer/VBoxContainerParameter")
-	
+func get_settings() -> Dictionary:	
 	var player_scene : PlayerScript = get_tree().current_scene.get_node("Player")
 	var settings = {}
 	
-	settings["CameraAngleRotation"] = settings_scene.get_node("HSlider").value
-	settings["PlayerSpeed"] = settings_scene.get_node("HSliderPlayerSpeed").value
+	settings["CameraAngleRotation"] = Global.angle
+	settings["PlayerSpeed"] = player_scene.get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed
 	settings["MainHand"] = player_scene.main_hand
 	
 	return settings
 
 func set_settings(settings: Dictionary):
-	var settings_scene = settings_menu_instance.get_node("Control/ColorRect/MarginContainer/VBoxContainerParameter")
 	var player_scene : PlayerScript = get_tree().current_scene.get_node("Player")
 
 	if settings.has("CameraAngleRotation"):
-		settings_scene.get_node("HSlider").value = settings["CameraAngleRotation"]
+		Global.angle = settings["CameraAngleRotation"]
 
 	if settings.has("PlayerSpeed"):
-		settings_scene.get_node("HSliderPlayerSpeed").value = settings["PlayerSpeed"]
+		player_scene.get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed = settings["PlayerSpeed"]
 
 	if settings.has("MainHand"):
 		player_scene.main_hand = settings["MainHand"]
