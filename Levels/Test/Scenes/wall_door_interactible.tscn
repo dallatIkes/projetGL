@@ -5,26 +5,31 @@
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_ixac4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rvjt1"]
-size = Vector3(0.0938568, 0.268166, 0.0769558)
+size = Vector3(0.0938568, 0.26095, 0.097486)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1gnpu"]
 
 [node name="wallDoorInteractible" instance=ExtResource("1_2lfa2")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
 script = ExtResource("2_by37t")
 
-[node name="GrabPoint" parent="wallDoor" index="1" instance=ExtResource("3_ixac4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.356196, -0.168386)
+[node name="GrabNode" type="Node3D" parent="wallDoor" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.35, 0.2)
+
+[node name="GrabPoint" parent="wallDoor/GrabNode" index="0" instance=ExtResource("3_ixac4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
 gravity_scale = 0.0
 freeze = true
 release_mode = 1
 ranged_grab_method = 0
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="wallDoor/GrabPoint" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00063324, -0.0883528, 0.00614062)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wallDoor/GrabNode/GrabPoint" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00063324, -0.0253464, 0.0437173)
 shape = SubResource("BoxShape3D_rvjt1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="wallDoor/GrabPoint" index="2"]
-transform = Transform3D(0.102293, 0, 0, 0, 0.359614, 0, 0, 0, 0.117285, 0, -0.024256, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wallDoor/GrabNode/GrabPoint" index="2"]
+transform = Transform3D(0.102293, 0, 0, 0, 0.263369, 0, 0, 0, 0.0973053, 0, -0.024256, 0.0467118)
 mesh = SubResource("BoxMesh_1gnpu")
 skeleton = NodePath("")
+
+[connection signal="dropped" from="wallDoor/GrabNode/GrabPoint" to="." method="_on_grab_point_dropped"]
