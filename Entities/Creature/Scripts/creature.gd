@@ -11,7 +11,6 @@ var drop : Array[Object] ## Array containing the items dropped once dead
 @export var knockback_jump_force : float = 4.0
 @export var knockback_force : float = 15
 var knockback_velocity: Vector3 = Vector3.ZERO # Used for the knockback
-var gravity: float = 9.8
 
 func _ready() -> void:
 	time_last_deal_damage = Time.get_ticks_msec() 
@@ -34,6 +33,13 @@ func attack() -> void:
 	if Time.get_ticks_msec() - time_last_deal_damage > attackSpeed*1000:
 		if aMode == aggressiveMode.MELEE:
 			if disToPlayer <= melee_distance+0.2:
+				# If we have an animation
+				var anim_player = $AnimationPlayer if has_node("AnimationPlayer") else null
+				if anim_player and anim_player is AnimationPlayer:
+					var attacks = ["Attack1", "Attack2", "Attack3"]
+					# We play a random attack
+					var random_attack = attacks[randi() % attacks.size()]
+					anim_player.play(random_attack)
 				player_scene.damage_player(damage)
 				time_last_deal_damage = Time.get_ticks_msec()
 		elif aMode == aggressiveMode.DISTANCE:
