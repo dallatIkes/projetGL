@@ -116,7 +116,9 @@ navigation_mesh = SubResource("NavigationMesh_wqovy")
 
 [node name="Tuto2" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 5.14042, 1.44938, -3.98585)
+melee_distance = 1.5
 dist_distance = 10.0
+stop_fleeing_distance = 10.0
 
 [node name="Tuto3" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 1.04246, 1.44938, -5.24803)
@@ -126,12 +128,20 @@ stop_fleeing_distance = 10.0
 
 [node name="Tuto4" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 1.04246, 1.44938, -3.12294)
+melee_distance = 1.5
 dist_distance = 10.0
+stop_fleeing_distance = 10.0
 
 [node name="NPC" parent="NavigationRegion3D/Entities" instance=ExtResource("2_xrb75")]
 transform = Transform3D(0.0206645, 0, -0.409479, 0, 0.41, 0, 0.409479, 0, 0.0206645, 4.49969, 2.45981, 1.43077)
 defaultText = "Hi, you've succesfully completed the dungeon. Come on, grab the fireball. Now you've unlocked the FireBall spell. 
 Make sure to use it ;)"
+
+[node name="Tuto" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
+transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 7.38058, 0.450496, -2.61628)
+melee_distance = 1.5
+dist_distance = 10.0
+stop_fleeing_distance = 10.0
 
 [node name="Environment" type="Node3D" parent="NavigationRegion3D"]
 
@@ -2118,10 +2128,6 @@ transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 1.81611, 2.00914, 0.962742
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81852, 2.02211, 0.952968)
 visible = false
 shape = SubResource("BoxShape3D_wm6kl")
-
-[node name="Tuto" parent="NavigationRegion3D" instance=ExtResource("22_okofr")]
-transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 7.38058, 0.450496, -2.61628)
-dist_distance = 10.0
 
 [node name="Torch" parent="." instance=ExtResource("26_w0h43")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 6.78234, 2.29715, 1.34203)
