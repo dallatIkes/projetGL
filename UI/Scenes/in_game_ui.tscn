@@ -114,6 +114,10 @@ horizontal_alignment = 1
 [node name="ButtonMainHand" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainerParameter"]
 layout_mode = 2
 
+[node name="ButtonApply" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainerParameter"]
+layout_mode = 2
+text = "Apply"
+
 [node name="ButtonKeyView" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainerParameter"]
 layout_mode = 2
 text = "See controls"
@@ -211,6 +215,7 @@ stream = ExtResource("3_qy6hr")
 [connection signal="drag_ended" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/HSliderPlayerSpeed" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_h_slider_player_speed_drag_ended"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/CheckBox" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_check_box_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/ButtonMainHand" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_button_main_hand_pressed"]
+[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/ButtonApply" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_button_apply_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/ButtonKeyView" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_button_key_view_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/ReturnButton" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_return_button_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerControls/ReturnButtonControl" to="Control/ColorRect/MarginContainer/VBoxContainerControls" method="_on_return_button_control_pressed"]

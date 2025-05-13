@@ -6,18 +6,15 @@ var f : FileAccess
 # we take the instantiated debug menu UI scene
 @onready var debugMenu_scene = debugMenu.get_scene_instance() 
 
-
 @onready var settings_menu = get_tree().current_scene.get_node("Player/LeftHand/#UI/pause_menu")
-@onready var settings_menu_instance = settings_menu.get_scene_instance()
+@onready var settings_menu_instance = settings_menu.scene.instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_settings_file()
 	load_settings()
+	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	debugMenu_scene.update_content(["fkgtdjrfdjytfrdyf", "kgfvcjhrdfgfntgkjfhcyxtf'z"])
 
 func save_settings():
 	var settings = get_settings()
@@ -58,7 +55,8 @@ func init_settings_file():
 
 
 func get_settings() -> Dictionary:
-	var settings_scene = settings_menu_instance.get_node("InGameUI/Control/ColorRect/MarginContainer/VBoxContainerParameter")
+	var settings_scene = settings_menu_instance.get_node("Control/ColorRect/MarginContainer/VBoxContainerParameter")
+	
 	var player_scene : PlayerScript = get_tree().current_scene.get_node("Player")
 	var settings = {}
 	
@@ -69,7 +67,7 @@ func get_settings() -> Dictionary:
 	return settings
 
 func set_settings(settings: Dictionary):
-	var settings_scene = settings_menu_instance.get_node("InGameUI/Control/ColorRect/MarginContainer/VBoxContainerParameter")
+	var settings_scene = settings_menu_instance.get_node("Control/ColorRect/MarginContainer/VBoxContainerParameter")
 	var player_scene : PlayerScript = get_tree().current_scene.get_node("Player")
 
 	if settings.has("CameraAngleRotation"):

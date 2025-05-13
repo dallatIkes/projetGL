@@ -19,6 +19,8 @@ func _on_h_slider_drag_ended(value_changed):
 	playSfx()
 	Global.angle = $HSlider.value;
 	$Label2.text = str($HSlider.value)
+	
+
 
 func _on_return_button_pressed():
 	playSfx()
@@ -42,6 +44,8 @@ func _on_button_main_hand_pressed() -> void:
 	else:
 		player_scene.main_hand = PlayerScript.Hands.RIGHT
 	change_text_button_main_hand()
+	
+
 
 func change_text_button_main_hand():
 	var player_scene = get_tree().current_scene.get_node("Player")
@@ -58,7 +62,7 @@ func _on_h_slider_player_speed_drag_ended(value_changed: bool) -> void:
 	playSfx()
 	node_hand.max_speed = $HSliderPlayerSpeed.value
 	$LabelPlayerSpeed.text = str(node_hand.max_speed)
-
+	
 
 func _on_button_key_view_pressed() -> void:
 	playSfx()
@@ -72,3 +76,7 @@ func playSfx():
 		sfx1.play()
 	else : 
 		sfx2.play()
+
+
+func _on_button_apply_pressed() -> void:
+	SerializeSettings.save_settings()
