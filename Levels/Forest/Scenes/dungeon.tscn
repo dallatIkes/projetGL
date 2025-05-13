@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://23w47wo7fcu0"]
+[gd_scene load_steps=43 format=3 uid="uid://23w47wo7fcu0"]
 
 [ext_resource type="Script" path="res://Levels/Forest/Scenes/dungeon.gd" id="1_jxg7h"]
 [ext_resource type="PackedScene" uid="uid://c2focikyps40s" path="res://3D_Models/Environnement/3/wallDoorwaySquare.glb" id="1_wqbju"]
@@ -30,16 +30,51 @@
 [ext_resource type="AudioStream" uid="uid://ccv6yur2uam4l" path="res://Levels/Forest/D&amp;DDark CaveMusic(1).mp3" id="28_qd0yt"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="29_t8o0t"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_wqovy"]
+vertices = PackedVector3Array(-0.0560629, 2.49391, 0.28131, 0.693937, 2.49391, 0.28131, 0.943937, 2.49391, -0.21869, -0.0560629, 2.49391, -6.71869, 8.44394, 2.49391, -0.21869, 8.69394, 2.49391, 0.28131, 9.44394, 2.49391, 0.28131, 9.44394, 2.49391, -6.71869, 5.44394, 2.49391, 1.03131, 5.44394, 2.49391, 1.53131, 7.19394, 2.49391, 1.53131, 7.19394, 2.49391, 1.03131)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 7), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_evmq8"]
 size = Vector3(10.2441, 0.0262786, 7.61511)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w5uf2"]
 size = Vector3(10.2924, 4.20691, 0.278809)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewch8"]
+size = Vector3(0.155823, 3.06494, 7.59277)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e12ir"]
+size = Vector3(3.99609, 2.50934, 0.187866)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1uhg"]
+size = Vector3(1.87415, 2.55933, 0.19873)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_07lfn"]
+size = Vector3(10.2082, 1.51465, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5446"]
+size = Vector3(0.195175, 2.58484, 1.86328)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hd6bf"]
+size = Vector3(6.74728, 2.61829, 0.332764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnlcy"]
+size = Vector3(0.765625, 1.78271, 2.15869)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rstww"]
+size = Vector3(0.618652, 1, 1.93896)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6s7p8"]
+size = Vector3(0.191406, 2.63763, 7.78027)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gu68b"]
+size = Vector3(8.89172, 1, 1.05066)
+
 [node name="dungeon" type="Node3D"]
 script = ExtResource("1_jxg7h")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_wqovy")
 
 [node name="Entities" type="Node3D" parent="NavigationRegion3D"]
 
@@ -49,7 +84,9 @@ dist_distance = 10.0
 
 [node name="Tuto3" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 1.04246, 1.44938, -5.24803)
+melee_distance = 1.5
 dist_distance = 10.0
+stop_fleeing_distance = 10.0
 
 [node name="Tuto4" parent="NavigationRegion3D/Entities" instance=ExtResource("22_okofr")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 1.04246, 1.44938, -3.12294)
@@ -149,83 +186,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67239, 0, -5.56368)
 [node name="wallDetailHorizontal9" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67239, 0, -6.5706)
 
-[node name="wallDetailHorizontal8" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0434198)
-
-[node name="wallDetailHorizontal10" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.849562)
-
 [node name="wallDetailHorizontal11" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0434198)
-
-[node name="wallDetailHorizontal19" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0163113, 0, 0.0413182)
-
-[node name="wallDetailHorizontal20" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.912216, 0, 0.0413182)
-
-[node name="wallDetailHorizontal21" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81716, 0, 0.0413182)
-
-[node name="wallDetailHorizontal22" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.69785, 0, 0.0413182)
-
-[node name="wallDetailHorizontal55" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.77576, 0, 0.0413182)
-
-[node name="wallDetailHorizontal23" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.67057, 0, 0.0413182)
 
 [node name="wallDetailHorizontal12" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.849562)
 
-[node name="wallDetailHorizontal13" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.7548)
-
-[node name="wallDetailHorizontal14" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.64778)
-
-[node name="wallDetailHorizontal15" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.64858)
-
-[node name="wallDetailHorizontal16" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.63334)
-
-[node name="wallDetailHorizontal17" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.63596)
-
-[node name="wallDetailHorizontal18" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.52894)
-
-[node name="wallDetailHorizontal35" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -6.51)
-
-[node name="wallDetailHorizontal36" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -5.69928)
-
-[node name="wallDetailHorizontal37" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -4.76288)
-
-[node name="wallDetailHorizontal38" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -3.77567)
-
-[node name="wallDetailHorizontal39" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -2.84822)
-
-[node name="wallDetailHorizontal40" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -1.94216)
-
-[node name="wallDetailHorizontal41" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -0.94511)
-
 [node name="wallDetailHorizontal42" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, 0.0430456)
-
-[node name="wallDetailHorizontal43" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, 0.0430456)
-
-[node name="wallDetailHorizontal44" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.26976, 0, 0.0430456)
 
 [node name="wallDetailHorizontal51" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.26976, 0, -1.85905)
@@ -239,20 +207,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.5789
 [node name="wallDetailHorizontal54" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.66204, 0, -1.85905)
 
-[node name="wallDetailHorizontal45" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.36865, 0, 0.0430456)
-
 [node name="wallDetailHorizontal50" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.36865, 0, 0.0430456)
-
-[node name="wallDetailHorizontal46" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.45315, 0, 0.0430456)
-
-[node name="wallDetailHorizontal47" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.54243, 0, 0.0430456)
-
-[node name="wallDetailHorizontal48" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63377, 0, 0.0430456)
 
 [node name="wallDetailHorizontal49" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63377, 0, 0.0430456)
@@ -283,9 +239,6 @@ transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.57494, 0.998881, 0.05624
 
 [node name="wallBlockHalf110" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.50864, 0.998881, 0.0562494)
-
-[node name="wallBlockHalf111" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.42384, 0.998881, 0.0562494)
 
 [node name="wallBlockHalf113" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, -0.0558553, 0.998881, -0.895475)
@@ -596,53 +549,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65834, 0.998881, -1.0178)
 [node name="wallDetailHorizontal59" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65834, 0.998881, -0.0142401)
 
-[node name="wallDetailHorizontal62" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, 0.0434198)
-
-[node name="wallDetailHorizontal63" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -0.849562)
-
 [node name="wallDetailHorizontal64" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, 0.0434198)
-
-[node name="wallDetailHorizontal65" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00234461, 0.998881, 0.0413182)
-
-[node name="wallDetailHorizontal66" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.898244, 0.998881, 0.0413182)
 
 [node name="wallDetailHorizontal67" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.80314, 0.998881, 0.0413182)
 
-[node name="wallDetailHorizontal108" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.80134, 0.998881, 0.946989)
-
-[node name="wallDetailHorizontal109" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.80134, 0.998881, 1.86914)
-
-[node name="wallDetailHorizontal116" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 6.42114, 0.998881, 0.946989)
-
-[node name="wallDetailHorizontal117" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 6.42114, 0.998881, 1.86914)
-
 [node name="wallDetailHorizontal110" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.80134, 0.998881, 1.86914)
-
-[node name="wallDetailHorizontal111" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.80134, 0.998881, 1.86615)
-
-[node name="wallDetailHorizontal112" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.70734, 0.998881, 1.86615)
-
-[node name="wallDetailHorizontal113" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.64595, 0.998881, 1.86615)
-
-[node name="wallDetailHorizontal114" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.57604, 0.998881, 1.86615)
-
-[node name="wallDetailHorizontal115" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.50804, 0.998881, 1.86615)
 
 [node name="wallDetailHorizontal68" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.68384, 0.998881, 0.0413182)
@@ -653,53 +567,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.6565
 [node name="wallDetailHorizontal70" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -0.849562)
 
-[node name="wallDetailHorizontal71" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -1.7548)
-
-[node name="wallDetailHorizontal72" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -2.64778)
-
-[node name="wallDetailHorizontal73" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -3.64858)
-
-[node name="wallDetailHorizontal74" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -4.63334)
-
-[node name="wallDetailHorizontal75" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -5.63596)
-
-[node name="wallDetailHorizontal76" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -6.52894)
-
-[node name="wallDetailHorizontal88" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -6.51)
-
-[node name="wallDetailHorizontal89" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -5.69928)
-
-[node name="wallDetailHorizontal90" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -4.76288)
-
-[node name="wallDetailHorizontal91" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -3.77567)
-
-[node name="wallDetailHorizontal92" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -2.84822)
-
-[node name="wallDetailHorizontal93" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -1.94216)
-
-[node name="wallDetailHorizontal94" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -0.94511)
-
 [node name="wallDetailHorizontal95" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, 0.0430456)
-
-[node name="wallDetailHorizontal96" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, 0.0430456)
-
-[node name="wallDetailHorizontal97" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.25574, 0.998881, 0.0430456)
 
 [node name="wallDetailHorizontal98" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.25574, 0.998881, -1.85905)
@@ -715,15 +584,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.6480
 
 [node name="wallDetailHorizontal102" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.35464, 0.998881, 0.0430456)
-
-[node name="wallDetailHorizontal103" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.35464, 0.998881, 0.0430456)
-
-[node name="wallDetailHorizontal104" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.43914, 0.998881, 0.0430456)
-
-[node name="wallDetailHorizontal105" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.52844, 0.998881, 0.0430456)
 
 [node name="wallDetailHorizontal106" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.61974, 0.998881, 0.0430456)
@@ -845,9 +705,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -6.5
 [node name="wallBlockHalf272" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -6.57512)
 
-[node name="wallBlockHalf273" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -6.57512)
-
 [node name="wallBlockHalf274" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -5.65095)
 
@@ -859,9 +716,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -5.6
 
 [node name="wallBlockHalf277" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -5.65095)
-
-[node name="wallBlockHalf278" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -5.65095)
 
 [node name="wallBlockHalf279" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -4.71515)
@@ -875,9 +729,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -4.7
 [node name="wallBlockHalf282" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -4.71515)
 
-[node name="wallBlockHalf283" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -4.71515)
-
 [node name="wallBlockHalf284" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -3.77434)
 
@@ -889,9 +740,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -3.7
 
 [node name="wallBlockHalf287" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -3.77434)
-
-[node name="wallBlockHalf288" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -3.77434)
 
 [node name="wallBlockHalf289" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -2.83016)
@@ -905,9 +753,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -2.8
 [node name="wallBlockHalf292" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -2.83016)
 
-[node name="wallBlockHalf293" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -2.83016)
-
 [node name="wallBlockHalf294" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -1.88568)
 
@@ -919,9 +764,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -1.8
 
 [node name="wallBlockHalf297" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -1.88568)
-
-[node name="wallBlockHalf298" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -1.88568)
 
 [node name="wallBlockHalf299" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -0.980206)
@@ -935,9 +777,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -0.9
 [node name="wallBlockHalf302" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -0.980206)
 
-[node name="wallBlockHalf303" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -0.980206)
-
 [node name="wallBlockHalf304" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, -0.0429655)
 
@@ -950,9 +789,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, -0.0
 [node name="wallBlockHalf307" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, -0.0429655)
 
-[node name="wallBlockHalf308" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, -0.0429655)
-
 [node name="wallBlockHalf309" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 6.50905, 2.00914, 0.0946931)
 
@@ -964,9 +800,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 8.3931, 2.00914, 0.09
 
 [node name="wallBlockHalf312" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 9.3277, 2.00914, 0.0946931)
-
-[node name="wallBlockHalf313" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
-transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 10.2562, 2.00914, 0.0946931)
 
 [node name="wallBlockHalf319" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.0700001, 0, 0, 0, 1, 0.875942, 2.00914, 0.0946931)
@@ -1091,62 +924,8 @@ transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 7.38323, 2.00914, 0.883681
 [node name="wallBlockHalf226" parent="NavigationRegion3D/Environment" instance=ExtResource("2_qgop7")]
 transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.44239, 2.00914, 0.883681)
 
-[node name="wallDetailHorizontal118" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.77151, 2.00914, 1.85054)
-
-[node name="wallDetailHorizontal119" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 8.34215, 2.00914, 0.928342)
-
-[node name="wallDetailHorizontal120" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 8.2999, 2.00914, 1.85054)
-
 [node name="wallDetailHorizontal121" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.77151, 2.00914, 1.85054)
-
-[node name="wallDetailHorizontal130" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.79361, 2.00914, 0.932842)
-
-[node name="wallDetailHorizontal131" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.80721, 2.00914, 0.932842)
-
-[node name="wallDetailHorizontal132" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.70491, 2.00914, 0.932842)
-
-[node name="wallDetailHorizontal133" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.68001, 2.00914, 0.932842)
-
-[node name="wallDetailHorizontal122" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.77151, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal123" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.67751, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal124" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.61611, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal125" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.54621, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal126" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.47821, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal134" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.46425, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal135" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.36204, 2.00914, 1.84754)
-
-[node name="wallDetailHorizontal136" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.523, 2.00914, 0.0114709)
-
-[node name="wallDetailHorizontal137" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.53313, 2.00914, 0.0199711)
-
-[node name="wallDetailHorizontal127" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.62671, 2.00914, 0.022742)
-
-[node name="wallDetailHorizontal128" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.58991, 2.00914, 0.0244424)
 
 [node name="wallDetailHorizontal129" parent="NavigationRegion3D/Environment" instance=ExtResource("3_k2cxh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.58991, 2.00914, 0.0244424)
@@ -1330,6 +1109,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96533, 0, -1.87285)
 
 [node name="crate3" parent="NavigationRegion3D/Environment" instance=ExtResource("13_c0ub8")]
 transform = Transform3D(0.939064, 0, 0.343742, 0, 1, 0, -0.343742, 0, 0.939064, 3.4584, 0, -2.24868)
+
+[node name="ClimbStoneObject17" parent="NavigationRegion3D/Environment/crate3" instance=ExtResource("23_xvkb3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.46633, 1.76162, 2.31865)
 
 [node name="crate4" parent="NavigationRegion3D/Environment" instance=ExtResource("13_c0ub8")]
 transform = Transform3D(0.939064, 0, 0.343742, 0, 1, 0, -0.343742, 0, 0.939064, 4.03612, 0, -2.80108)
@@ -1525,6 +1307,7 @@ transform = Transform3D(-4.37023e-08, -0.0204538, 0.999791, -8.94065e-10, 0.9997
 
 [node name="SpellTowerUnlock" parent="NavigationRegion3D/Environment" instance=ExtResource("24_rln5u")]
 transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 3.14862, 2.25826, 1.36622)
+spellToUnlock = "FireBall"
 
 [node name="floor1" type="Node3D" parent="NavigationRegion3D/Environment"]
 
@@ -1797,6 +1580,7 @@ transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.69329, 0, -6.56772)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/floor1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62207, 0.127064, -3.22052)
+visible = false
 shape = SubResource("BoxShape3D_evmq8")
 disabled = true
 
@@ -1872,7 +1656,327 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.2680
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64621, 1.60345, -7.05347)
+visible = false
 shape = SubResource("BoxShape3D_w5uf2")
+
+[node name="Wall2" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal35" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -6.51)
+
+[node name="wallDetailHorizontal36" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -5.69928)
+
+[node name="wallDetailHorizontal37" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -4.76288)
+
+[node name="wallDetailHorizontal38" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -3.77567)
+
+[node name="wallDetailHorizontal39" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -2.84822)
+
+[node name="wallDetailHorizontal40" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -1.94216)
+
+[node name="wallDetailHorizontal41" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, -0.94511)
+
+[node name="wallDetailHorizontal43" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.282, 0, 0.0430456)
+
+[node name="wallDetailHorizontal88" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -6.51)
+
+[node name="wallDetailHorizontal89" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -5.69928)
+
+[node name="wallDetailHorizontal90" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -4.76288)
+
+[node name="wallDetailHorizontal91" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -3.77567)
+
+[node name="wallDetailHorizontal92" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -2.84822)
+
+[node name="wallDetailHorizontal93" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -1.94216)
+
+[node name="wallDetailHorizontal94" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, -0.94511)
+
+[node name="wallDetailHorizontal96" parent="NavigationRegion3D/Environment/Wall2" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.26804, 0.998881, 0.0430456)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7231, 1.20618, -3.30854)
+visible = false
+shape = SubResource("BoxShape3D_ewch8")
+
+[node name="Wall3" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal44" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.26976, 0, 0.0430456)
+
+[node name="wallDetailHorizontal45" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.36865, 0, 0.0430456)
+
+[node name="wallDetailHorizontal46" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.45315, 0, 0.0430456)
+
+[node name="wallDetailHorizontal47" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.54243, 0, 0.0430456)
+
+[node name="wallBlockHalf111" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("2_qgop7")]
+transform = Transform3D(1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.42384, 0.998881, 0.0562494)
+
+[node name="wallDetailHorizontal97" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.25574, 0.998881, 0.0430456)
+
+[node name="wallDetailHorizontal103" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.35464, 0.998881, 0.0430456)
+
+[node name="wallDetailHorizontal104" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.43914, 0.998881, 0.0430456)
+
+[node name="wallDetailHorizontal105" parent="NavigationRegion3D/Environment/Wall3" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.52844, 0.998881, 0.0430456)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96326, 0.754669, 0.406067)
+visible = false
+shape = SubResource("BoxShape3D_e12ir")
+
+[node name="Wall4" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal19" parent="NavigationRegion3D/Environment/Wall4" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0163113, 0, 0.0413182)
+
+[node name="wallDetailHorizontal20" parent="NavigationRegion3D/Environment/Wall4" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.912216, 0, 0.0413182)
+
+[node name="wallDetailHorizontal65" parent="NavigationRegion3D/Environment/Wall4" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00234461, 0.998881, 0.0413182)
+
+[node name="wallDetailHorizontal66" parent="NavigationRegion3D/Environment/Wall4" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.898244, 0.998881, 0.0413182)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437073, 0.779663, 0.494776)
+visible = false
+shape = SubResource("BoxShape3D_q1uhg")
+
+[node name="Wall5" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal21" parent="NavigationRegion3D/Environment/Wall5" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81716, 0, 0.0413182)
+
+[node name="wallDetailHorizontal22" parent="NavigationRegion3D/Environment/Wall5" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.69785, 0, 0.0413182)
+
+[node name="wallDetailHorizontal55" parent="NavigationRegion3D/Environment/Wall5" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.77576, 0, 0.0413182)
+
+[node name="wallDetailHorizontal23" parent="NavigationRegion3D/Environment/Wall5" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.67057, 0, 0.0413182)
+
+[node name="wallDetailHorizontal48" parent="NavigationRegion3D/Environment/Wall5" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63377, 0, 0.0430456)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6041, 0.257324, 0.4995)
+visible = false
+shape = SubResource("BoxShape3D_07lfn")
+
+[node name="Wall6" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal108" parent="NavigationRegion3D/Environment/Wall6" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.80134, 0.998881, 0.946989)
+
+[node name="wallDetailHorizontal109" parent="NavigationRegion3D/Environment/Wall6" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.80134, 0.998881, 1.86914)
+
+[node name="wallDetailHorizontal118" parent="NavigationRegion3D/Environment/Wall6" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.77151, 2.00914, 1.85054)
+
+[node name="wallDetailHorizontal130" parent="NavigationRegion3D/Environment/Wall6" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 1.79361, 2.00914, 0.932842)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27629, 2.19189, 1.38538)
+visible = false
+shape = SubResource("BoxShape3D_y5446")
+
+[node name="Wall7" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal111" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.80134, 0.998881, 1.86615)
+
+[node name="wallDetailHorizontal112" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.70734, 0.998881, 1.86615)
+
+[node name="wallDetailHorizontal113" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.64595, 0.998881, 1.86615)
+
+[node name="wallDetailHorizontal114" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.57604, 0.998881, 1.86615)
+
+[node name="wallDetailHorizontal115" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.50804, 0.998881, 1.86615)
+
+[node name="wallDetailHorizontal122" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.77151, 2.00914, 1.84754)
+
+[node name="wallDetailHorizontal123" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.67751, 2.00914, 1.84754)
+
+[node name="wallDetailHorizontal124" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.61611, 2.00914, 1.84754)
+
+[node name="wallDetailHorizontal125" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.54621, 2.00914, 1.84754)
+
+[node name="wallDetailHorizontal126" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.47821, 2.00914, 1.84754)
+
+[node name="wallDetailHorizontal134" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.46425, 2.00914, 1.84754)
+
+[node name="wallDetailHorizontal135" parent="NavigationRegion3D/Environment/Wall7" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.36204, 2.00914, 1.84754)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56091, 2.22843, 2.50495)
+visible = false
+shape = SubResource("BoxShape3D_hd6bf")
+
+[node name="Wall8" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal119" parent="NavigationRegion3D/Environment/Wall8" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 8.34215, 2.00914, 0.928342)
+
+[node name="wallDetailHorizontal120" parent="NavigationRegion3D/Environment/Wall8" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 8.2999, 2.00914, 1.85054)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.19571, 2.63124, 1.34073)
+shape = SubResource("BoxShape3D_nnlcy")
+
+[node name="Wall9" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal116" parent="NavigationRegion3D/Environment/Wall9" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 6.42114, 0.998881, 0.946989)
+
+[node name="wallDetailHorizontal117" parent="NavigationRegion3D/Environment/Wall9" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(0.999827, 0, -0.018604, 0, 1, 0, 0.018604, 0, 0.999827, 6.42114, 0.998881, 1.86914)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17599, 1.47859, 1.40806)
+visible = false
+shape = SubResource("BoxShape3D_rstww")
+
+[node name="Wall10" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal8" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0434198)
+
+[node name="wallDetailHorizontal10" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.849562)
+
+[node name="wallDetailHorizontal13" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.7548)
+
+[node name="wallDetailHorizontal14" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.64778)
+
+[node name="wallDetailHorizontal15" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.64858)
+
+[node name="wallDetailHorizontal16" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.63334)
+
+[node name="wallDetailHorizontal17" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.63596)
+
+[node name="wallDetailHorizontal18" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.52894)
+
+[node name="wallDetailHorizontal62" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, 0.0434198)
+
+[node name="wallDetailHorizontal63" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -0.849562)
+
+[node name="wallDetailHorizontal71" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -1.7548)
+
+[node name="wallDetailHorizontal72" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -2.64778)
+
+[node name="wallDetailHorizontal73" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -3.64858)
+
+[node name="wallDetailHorizontal74" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -4.63334)
+
+[node name="wallDetailHorizontal75" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -5.63596)
+
+[node name="wallDetailHorizontal76" parent="NavigationRegion3D/Environment/Wall10" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0139556, 0.998881, -6.52894)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.536865, 0.818817, -3.27207)
+visible = false
+shape = SubResource("BoxShape3D_6s7p8")
+
+[node name="Wall11" type="Node3D" parent="NavigationRegion3D/Environment"]
+
+[node name="wallDetailHorizontal131" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.80721, 2.00914, 0.932842)
+
+[node name="wallDetailHorizontal132" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.70491, 2.00914, 0.932842)
+
+[node name="wallDetailHorizontal133" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.68001, 2.00914, 0.932842)
+
+[node name="wallDetailHorizontal136" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.523, 2.00914, 0.0114709)
+
+[node name="wallDetailHorizontal137" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.53313, 2.00914, 0.0199711)
+
+[node name="wallDetailHorizontal127" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.62671, 2.00914, 0.022742)
+
+[node name="wallDetailHorizontal128" parent="NavigationRegion3D/Environment/Wall11" instance=ExtResource("3_k2cxh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.58991, 2.00914, 0.0244424)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Environment/Wall11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Environment/Wall11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94586, 2.6434, 0.0253296)
+shape = SubResource("BoxShape3D_gu68b")
 
 [node name="Torch" parent="." instance=ExtResource("26_w0h43")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 6.78234, 2.29715, 1.34203)
@@ -1882,5 +1986,7 @@ stream = ExtResource("28_qd0yt")
 
 [node name="Player" parent="." instance=ExtResource("29_t8o0t")]
 transform = Transform3D(0.338912, 0, -0.0271848, 0, 0.34, 0, 0.0271848, 0, 0.338912, 2.47731, 0.115804, 0.277405)
+
+[node name="Node3D" type="Node3D" parent="."]
 
 [connection signal="torchLit" from="Torch" to="." method="_on_torch_torch_lit"]
