@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dukv6cpvxtuas"]
+[gd_scene load_steps=27 format=3 uid="uid://dukv6cpvxtuas"]
 
 [ext_resource type="Script" path="res://Levels/Test/Scripts/test_scene.gd" id="1_uxoqw"]
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_u0o5a"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://wd226dl6q744" path="res://Entities/Creature/Scenes/Tuto.tscn" id="8_fhv4h"]
 [ext_resource type="PackedScene" uid="uid://3qhxfjpmvmgj" path="res://Levels/Test/Assets/archery_target_low_poly.glb" id="8_oqxla"]
 [ext_resource type="PackedScene" uid="uid://b7harfardein1" path="res://Entities/Creature/Scenes/plant_boy.tscn" id="9_u3elg"]
+[ext_resource type="PackedScene" uid="uid://bqwpctc6titk7" path="res://Entities/Creature/Scenes/Kiwi.tscn" id="10_gmal5"]
 [ext_resource type="PackedScene" uid="uid://mf7sr62wde8x" path="res://Levels/Test/Scenes/tool_board.tscn" id="10_i8o1x"]
 [ext_resource type="Texture2D" uid="uid://65fk1830xrgw" path="res://UI/Assets/inputs.png" id="11_qy7ux"]
 [ext_resource type="PackedScene" uid="uid://baslo52ff8tpu" path="res://Entities/Boss/ForestBoss/Scenes/ForestBoss.tscn" id="12_0b2w8"]
@@ -105,6 +106,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2041, -2.28063, -7.05796)
 
 [node name="Plant_Boy" parent="Entities" instance=ExtResource("9_u3elg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.76944, 0)
+
+[node name="Kiwi" parent="Entities" instance=ExtResource("10_gmal5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.96697, 7.14616)
 
 [node name="Spell" type="Node3D" parent="."]
 

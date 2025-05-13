@@ -21,6 +21,7 @@ description = "Horrible plant"
 hpMax = 100
 isTrackingPlayer = true
 speed = 5
+walkingAnimation = "Walk"
 pMode = 1
 aMode = 3
 radius = 10.0

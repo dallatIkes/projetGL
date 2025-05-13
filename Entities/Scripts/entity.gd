@@ -41,8 +41,11 @@ var hp : int ## The current amount of health points
 
 
 @export var speed : int ## Defines the entity's speed
+# String needed for animation
+@export var walkingAnimation : String
 @onready var navigation_agent_3d = $NavigationAgent3D
 @onready var mesh_instance_3d = $MeshInstance3D
+
 
 var last_time_ptarg_pos_chg : float
 var time_reach_targ_pos : float
@@ -74,6 +77,8 @@ var position_status_change : Array
 @export var melee_distance : float ## Distance under which the entity attacks in melee
 @export var dist_distance : float ## Distance at which the entity wants shoot the player
 @export var stop_fleeing_distance : float ## Distance at which the entity will stop targeting the player
+
+
 
 ## Call the good function in fonction of the targeting mode of the entity
 func movement()->Vector3:
@@ -197,9 +202,9 @@ func _process(delta: float) -> void:
 	if animation_player:
 		if velocity.length() > 0.1:
 			if not animation_player.is_playing():
-				animation_player.play("Walk")
+				animation_player.play(walkingAnimation)
 		else:
-			if animation_player.is_playing() and animation_player.current_animation == "Walk" :
+			if animation_player.is_playing() and animation_player.current_animation == walkingAnimation :
 				animation_player.pause()
 
 	var target_pos = navigation_agent_3d.get_next_path_position()
