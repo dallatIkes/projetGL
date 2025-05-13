@@ -10,7 +10,7 @@ from pathlib import Path
 import sys
 from unzip import *
 
-APK_URL = "https://github.com/dallatIkes/projetGL/releases/latest/download/VainquishedRealm.apk"
+APK_URL = "https://github.com/dallatIkes/projetGL/releases/latest/download/VanquishedRealm.apk"
 DOC_URL = "https://github.com/dallatIkes/projetGL/blob/release/README.md#-use-an-already-existing-apk"
 MQDH_URL = "https://developers.meta.com/horizon/documentation/unity/ts-mqdh/"
 REPO_URL = "https://github.com/dallatIkes/projetGL.git"
