@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1lp2l4vgb1ug"]
 
-[ext_resource type="PackedScene" uid="uid://b7oxcfpsltc8k" path="res://3D_Models/Environnement/3/lantern.glb" id="1_va83y"]
+[ext_resource type="PackedScene" uid="uid://y08bekrrw48p" path="res://3D_Models/Environnement/3/lantern.glb" id="1_va83y"]
 
 [node name="torch" type="Node3D"]
 

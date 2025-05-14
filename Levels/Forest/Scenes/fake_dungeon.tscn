@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwmdt77ccmtp7"]
 
-[ext_resource type="PackedScene" uid="uid://pux3ld1jq6e4" path="res://3D_Models/Environnement/2/tower-complete-large.glb" id="1_1pfhl"]
-[ext_resource type="PackedScene" uid="uid://j0o3sti7kmod" path="res://3D_Models/Environnement/3/wallWindowGlass.glb" id="2_geoyb"]
-[ext_resource type="PackedScene" uid="uid://dscpk6b1keokv" path="res://3D_Models/Environnement/3/wallDetailCross.glb" id="3_40ucj"]
-[ext_resource type="PackedScene" uid="uid://cbtc2b0ahsnvi" path="res://3D_Models/Environnement/3/wallDoor.glb" id="4_urt8g"]
+[ext_resource type="PackedScene" uid="uid://w5gpfb041yj4" path="res://3D_Models/Environnement/2/tower-complete-large.glb" id="1_1pfhl"]
+[ext_resource type="PackedScene" uid="uid://cngsxsgmcme8o" path="res://3D_Models/Environnement/3/wallWindowGlass.glb" id="2_geoyb"]
+[ext_resource type="PackedScene" uid="uid://bx52ftag4xod6" path="res://3D_Models/Environnement/3/wallDetailCross.glb" id="3_40ucj"]
+[ext_resource type="PackedScene" uid="uid://bxmf1hhck3n3c" path="res://3D_Models/Environnement/3/wallDoor.glb" id="4_urt8g"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="5_6xl6m"]
 [ext_resource type="Script" path="res://Levels/Test/Scenes/lever.gd" id="6_gp4xr"]
-[ext_resource type="PackedScene" uid="uid://71am72ljg2o7" path="res://3D_Models/Environnement/2/palm-bend.glb" id="7_psh1j"]
+[ext_resource type="PackedScene" uid="uid://cgtrc370asmc4" path="res://3D_Models/Environnement/2/palm-bend.glb" id="7_psh1j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vme4h"]
 size = Vector3(15.8167, 10.5148, 14.1006)
