@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="2_tuqtu"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_qtwyn"]
 [ext_resource type="PackedScene" uid="uid://c40wiqb58aege" path="res://Entities/NPC/Scenes/dialogBox.tscn" id="4_4brgg"]
-[ext_resource type="AudioStream" uid="uid://q18yfulc7dh8" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="5_xqura"]
+[ext_resource type="AudioStream" uid="uid://b5el5tu0epr52" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="5_xqura"]
 
 [sub_resource type="Gradient" id="Gradient_0d0hi"]
 interpolation_mode = 1
@@ -30,6 +30,7 @@ isInvincible = true
 
 [node name="HPBar" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31664, 0)
+visible = false
 texture = SubResource("GradientTexture2D_qiuld")
 script = ExtResource("2_tuqtu")
 
