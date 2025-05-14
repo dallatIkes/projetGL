@@ -5,7 +5,7 @@ const WORLD = preload("res://Levels/Forest/Scenes/forest_grid_map.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#We start the music
-	sfx_cave.volume_db = -20
+	sfx_cave.volume_db = -10
 	sfx_cave.play()
 
 

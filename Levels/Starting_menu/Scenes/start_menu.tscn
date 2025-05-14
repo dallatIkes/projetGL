@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="8_4cpqi"]
 [ext_resource type="Script" path="res://Levels/Test/Scripts/lever_main_menu_for_demo.gd" id="9_idt1p"]
 [ext_resource type="Script" path="res://Levels/Test/Scripts/lever_main_menu.gd" id="10_8xsph"]
-[ext_resource type="MeshLibrary" uid="uid://xa5h52wqdnf5" path="res://Levels/Test/Assets/world_blocks_test.tres" id="11_acdp2"]
+[ext_resource type="MeshLibrary" uid="uid://bmi8ycvgfu0y6" path="res://Levels/Forest/Assets/Forest GridMap.tres" id="11_ec3sw"]
 [ext_resource type="PackedScene" uid="uid://bicr5dcut5cfh" path="res://3D_Models/Environnement/1/grass.glb" id="12_egyy7"]
 [ext_resource type="PackedScene" uid="uid://4hfadnhlr33a" path="res://3D_Models/Environnement/1/flowers-tall.glb" id="13_6x0c7"]
 [ext_resource type="PackedScene" uid="uid://c0k0jveuilrbq" path="res://3D_Models/Environnement/4/tree_thin.glb" id="14_cic24"]
@@ -369,11 +369,11 @@ script = ExtResource("10_8xsph")
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15234, 0)
-mesh_library = ExtResource("11_acdp2")
+mesh_library = ExtResource("11_ec3sw")
 data = {
-"cells": PackedInt32Array(0, 2, 1441792, 65535, 2, 655360, 65535, 3, 655360, 0, 3, 655360, 65534, 2, 655360, 65534, 3, 655360, 1, 2, 655360, 1, 3, 655360, 65534, 4, 655360, 65535, 4, 655360, 0, 4, 655360, 1, 4, 655360, 131070, 2, 1179656, 131070, 3, 1179656, 131070, 4, 1179656, 196606, 3, 1441800, 196606, 4, 1048584, 196606, 2, 1048584)
+"cells": PackedInt32Array(0, 2, 1441792, 65535, 2, 655360, 65535, 3, 655360, 0, 3, 655360, 65534, 2, 655360, 65534, 3, 655360, 1, 2, 655360, 1, 3, 655360, 65534, 4, 655360, 65535, 4, 655360, 0, 4, 655360, 1, 4, 655360, 131070, 2, 1179656, 131070, 3, 1179656, 131070, 4, 1179656, 196606, 3, 1441800, 196606, 4, 1048584, 196606, 2, 1048584, 131071, 1, 65595, 65536, 1, 65595, 65537, 1, 65595, 65538, 2, 65595, 65538, 3, 65595, 65538, 4, 1114171, 131071, 5, 1114171, 65536, 5, 1114171, 65537, 5, 1114171, 131070, 5, 1114171, 131070, 1, 65595, 196606, 1, 65595, 196607, 1, 65595, 131072, 1, 65595, 131073, 1, 65595, 131074, 2, 65595, 131074, 3, 65595, 131074, 4, 65595, 196606, 5, 65595, 196607, 5, 65595, 131072, 5, 65595, 131073, 5, 65595)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="grass16" parent="." instance=ExtResource("12_egyy7")]
 transform = Transform3D(-0.941872, 0.333308, 0.0422163, 0.334528, 0.942027, 0.0259948, -0.031104, 0.0386063, -0.998771, 0.531971, 1.92045, 8.65206)
