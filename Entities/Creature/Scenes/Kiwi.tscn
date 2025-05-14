@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqwpctc6titk7"]
 
-[ext_resource type="PackedScene" uid="uid://b0skk8jwotot" path="res://Entities/Creature/Assets/low_poly_kiwi_run.glb" id="1_d77ik"]
+[ext_resource type="PackedScene" uid="uid://qc0ub5ax7fgv" path="res://Entities/Creature/Assets/low_poly_kiwi_run.glb" id="1_d77ik"]
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/tuto.gd" id="2_2q1hp"]
 [ext_resource type="SphereMesh" uid="uid://boarfhocxjd7i" path="res://Entities/Effects/mesh_son_of_mobs.tres" id="2_5tdut"]
 
@@ -12,26 +12,14 @@ size = Vector3(0.391724, 0.572388, 1)
 
 [node name="Kiwi" instance=ExtResource("1_d77ik")]
 script = ExtResource("2_2q1hp")
-damage = null
-attackSpeed = null
-knockback_jump_force = null
 knockback_force = 10.0
 race = 2
 description = "The best animal"
 hpMax = 50
-isInvincible = null
-isTrackingPlayer = null
 speed = 4
 walkingAnimation = "Take 001"
 pMode = 1
-aMode = null
-tMode = null
 radius = 10.0
-list_of_position = null
-reverse = null
-melee_distance = null
-dist_distance = null
-stop_fleeing_distance = null
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(6.135, 0, 0, 0, -2.68169e-07, 6.135, 0, -6.135, -2.68169e-07, 0, 0, 0)
@@ -71,7 +59,6 @@ bones/25/rotation = Quaternion(-2.35711e-09, 1.24529e-07, 0.0245226, 0.999699)
 bones/26/rotation = Quaternion(5.88181e-08, -1.49749e-07, -0.240201, 0.970723)
 bones/27/rotation = Quaternion(2.81104e-08, -1.92206e-07, -0.24814, 0.968724)
 bones/28/rotation = Quaternion(2.49673e-08, 1.03337e-08, -0.086986, 0.99621)
-bones/28/scale = Vector3(1, 0.999999, 1)
 bones/29/rotation = Quaternion(-2.8556e-08, -3.8138e-08, -0.0946499, 0.995511)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(-2.99735e-08, -3.78294e-08, -0.11805, 0.993008)

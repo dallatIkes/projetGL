@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://45s13vcev4a6"]
 
-[ext_resource type="PackedScene" uid="uid://do26nbxde25ry" path="res://Entities/NPC/Assets/full_moon_fears_torch_villager.glb" id="1_8e08a"]
+[ext_resource type="PackedScene" uid="uid://b3ro3ohuir7n1" path="res://Entities/NPC/Assets/full_moon_fears_torch_villager.glb" id="1_8e08a"]
 [ext_resource type="Script" path="res://Entities/NPC/Scripts/npc.gd" id="1_d43lh"]
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="2_tuqtu"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_qtwyn"]
 [ext_resource type="PackedScene" uid="uid://c40wiqb58aege" path="res://Entities/NPC/Scenes/dialogBox.tscn" id="4_4brgg"]
-[ext_resource type="AudioStream" uid="uid://bw2bgadx54qij" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="5_xqura"]
+[ext_resource type="AudioStream" uid="uid://yxonj8tav7qm" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="5_xqura"]
 
 [sub_resource type="Gradient" id="Gradient_0d0hi"]
 interpolation_mode = 1
@@ -48,18 +48,22 @@ bones/17/scale = Vector3(1, 1, 1)
 bones/18/rotation = Quaternion(0.0510614, -0.0501608, 0.0558222, 0.995872)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/rotation = Quaternion(-0.333003, 0.742324, 0.23798, 0.5305)
+bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(-0.338503, -0.148704, -0.0210631, 0.928902)
 bones/20/scale = Vector3(1, 1, 1)
 bones/21/rotation = Quaternion(0.510236, -0.455677, 0.0489473, 0.727751)
 bones/21/scale = Vector3(1, 1, 1)
 bones/22/rotation = Quaternion(-0.050808, -0.0119991, 0.226302, 0.972657)
 bones/23/rotation = Quaternion(-0.269773, 0.927837, 0.0719109, 0.247325)
+bones/23/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(0.325654, -0.191689, 0.0329793, 0.925266)
 bones/25/scale = Vector3(1, 1, 1)
 bones/26/scale = Vector3(1, 1, 1)
 bones/29/rotation = Quaternion(0.115371, -0.107616, 0.0670074, 0.9852)
 bones/29/scale = Vector3(1, 1, 1)
 bones/31/rotation = Quaternion(-0.354801, 0.913133, 0.0727097, 0.187129)
+bones/31/scale = Vector3(1, 1, 1)
+bones/32/scale = Vector3(1, 1, 1)
 bones/33/rotation = Quaternion(-0.17803, 0.0589055, 0.0367108, 0.981574)
 bones/34/rotation = Quaternion(-0.549962, 0.797446, 0.140932, 0.204352)
 bones/35/rotation = Quaternion(0.245657, -0.63749, 0.677531, 0.272417)
@@ -75,22 +79,30 @@ bones/39/scale = Vector3(1, 1, 1)
 bones/40/rotation = Quaternion(0.051222, -0.0391342, 0.0747905, 0.995114)
 bones/40/scale = Vector3(1, 1, 1)
 bones/41/rotation = Quaternion(-0.333003, 0.742324, 0.23798, 0.5305)
+bones/41/scale = Vector3(1, 1, 1)
 bones/42/scale = Vector3(1, 1, 1)
 bones/43/rotation = Quaternion(-0.467488, 0.781471, 0.105098, -0.39964)
+bones/43/scale = Vector3(1, 1, 1)
 bones/44/rotation = Quaternion(-0.196661, -0.306207, 0.384847, 0.848206)
 bones/44/scale = Vector3(1, 1, 1)
 bones/45/rotation = Quaternion(-0.269773, 0.927837, 0.0719109, 0.247325)
+bones/45/scale = Vector3(1, 1, 1)
 bones/47/rotation = Quaternion(-0.102435, -0.354549, -0.0562393, 0.927706)
+bones/47/scale = Vector3(1, 1, 1)
 bones/48/rotation = Quaternion(0.22118, -0.668397, -0.11679, 0.700489)
+bones/48/scale = Vector3(1, 1, 1)
 bones/49/rotation = Quaternion(0.424126, -0.566695, 0.414999, 0.57162)
 bones/52/rotation = Quaternion(-0.0396916, -0.631004, 0.250241, 0.733238)
 bones/53/rotation = Quaternion(0.0320914, -0.183351, 0.326133, 0.926817)
+bones/53/scale = Vector3(1, 1, 1)
 bones/54/rotation = Quaternion(-0.354801, 0.913133, 0.0727097, 0.187129)
+bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0.293908, -0.647147, 0.340115, 0.615744)
 bones/55/scale = Vector3(1, 1, 1)
 bones/57/rotation = Quaternion(-0.549962, 0.797446, 0.140932, 0.204352)
 bones/60/rotation = Quaternion(3.04704e-18, 1.71484e-18, 0.378573, 0.925572)
 bones/62/rotation = Quaternion(0.672701, 0.187524, 0.675619, -0.236318)
+bones/62/scale = Vector3(1, 1, 1)
 bones/64/rotation = Quaternion(0.686342, 0.192004, 0.662176, -0.231499)
 bones/64/scale = Vector3(1, 1, 1)
 

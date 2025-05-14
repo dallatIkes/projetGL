@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxpd3kisrv8px"]
 
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/tuto.gd" id="1_2j4bn"]
-[ext_resource type="PackedScene" uid="uid://cdea6k5f5moe" path="res://Entities/Creature/Assets/plantboy_animated_endboss.glb" id="1_ks522"]
+[ext_resource type="PackedScene" uid="uid://xu2jkr53okyt" path="res://Entities/Creature/Assets/plantboy_animated_endboss.glb" id="1_ks522"]
 [ext_resource type="SphereMesh" uid="uid://boarfhocxjd7i" path="res://Entities/Effects/mesh_son_of_mobs.tres" id="3_70pp8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c633s"]
@@ -11,8 +11,6 @@ size = Vector3(1.26526, 1.25342, 1.23828)
 radius = 0.7734
 
 [node name="Plant_Boy" instance=ExtResource("1_ks522")]
-collision_layer = 8388608
-collision_mask = 35
 script = ExtResource("1_2j4bn")
 damage = 20
 attackSpeed = 5.0

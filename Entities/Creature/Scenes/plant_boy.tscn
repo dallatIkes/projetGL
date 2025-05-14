@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7harfardein1"]
 
-[ext_resource type="PackedScene" uid="uid://cdea6k5f5moe" path="res://Entities/Creature/Assets/plantboy_animated_endboss.glb" id="1_l0pbi"]
+[ext_resource type="PackedScene" uid="uid://xu2jkr53okyt" path="res://Entities/Creature/Assets/plantboy_animated_endboss.glb" id="1_l0pbi"]
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/tuto.gd" id="2_awaap"]
 [ext_resource type="SphereMesh" uid="uid://boarfhocxjd7i" path="res://Entities/Effects/mesh_son_of_mobs.tres" id="3_0t4ic"]
 
