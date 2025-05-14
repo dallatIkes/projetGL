@@ -10,12 +10,10 @@ extends PlayerScript
 @onready var sfx_footsteps = $"sfx_footsteps"  
 @onready var sword_hitbox = $"../NiceSword/Hitbox"
 @onready var musicbg = $musicbg
-@onready var functionMoveScene = preload("res://addons/godot-xr-tools/functions/movement_direct.tscn")
 @onready var functionTeleportScene = preload("res://addons/godot-xr-tools/functions/function_teleport.tscn")
 @onready var movement_direct = $"LeftHand/#XR_PLUGIN/MovementDirect"
 
 var teleport = false
-# var movement_direct
 var function_teleport
 
 
@@ -23,7 +21,7 @@ var previous_position: Vector3
 
 signal hit_by_ennemy(damage)
 
-
+var max_speed = 3
 
 # test values, rememmber to remove !!!
 var counter = 0
@@ -40,16 +38,11 @@ func _ready() -> void:
 	
 	var hand_logic = $"LeftHand/#XR_PLUGIN"
 
-	# movement_direct = functionMoveScene.instantiate()
-	movement_direct.name = "MovementDirect"
-	hand_logic.add_child(movement_direct)
-
 	function_teleport = functionTeleportScene.instantiate()
 	function_teleport.name = "FunctionTeleport"
 	hand_logic.add_child(function_teleport)
 	
 	# Désactiver les deux au départ
-	_disable_function(movement_direct)
 	_disable_function(function_teleport)
 
 	# Activer le mode de départ
@@ -169,15 +162,15 @@ func switch_movement():
 func _set_mode(is_teleport):
 	if is_teleport:
 		print(">> Activation du mode TELEPORTATION")
-		_disable_function(movement_direct)
+		max_speed = movement_direct.max_speed
 		movement_direct.max_speed = 0
 		_enable_function(function_teleport)
 	else:
 		print(">> Activation du mode DIRECT")
 		_disable_function(function_teleport)
-		movement_direct.max_speed = 3
-		_enable_function(movement_direct)
-				
+		movement_direct.max_speed = max_speed
+
+
 func _enable_function(func_node):
 	if func_node:
 		func_node.set_process(true)
