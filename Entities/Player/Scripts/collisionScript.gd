@@ -16,7 +16,6 @@ extends PlayerScript
 var teleport = false
 var function_teleport
 
-
 var previous_position: Vector3
 
 signal hit_by_ennemy(damage)
@@ -128,7 +127,7 @@ func _on_right_hand_button_pressed(name):
 func _on_right_hand_button_released(name):
 	if main_hand == Hands.RIGHT:
 		button_main_hand_released(name)
-	else:
+	else: 
 		button_other_hand_released(name)
 
 
@@ -146,6 +145,7 @@ func _on_left_hand_button_pressed(name):
 	if main_hand == Hands.LEFT:
 		button_main_hand_pressed(name)
 	else:
+		
 		button_other_hand_pressed(name)
 
 func _on_left_hand_button_released(name: String) -> void:
