@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/hpbar.gd" id="6_ypaab"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_bkp5h"]
-[ext_resource type="AudioStream" uid="uid://pxy43h2fjxid" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
+[ext_resource type="AudioStream" uid="uid://b4img0aobhu8e" path="res://Sounds/footsteps.mp3" id="14_ukggx"]
 [ext_resource type="PackedScene" uid="uid://ryiwkyu8bn1n" path="res://Entities/Player/Scenes/belt_snap_zone.tscn" id="15_77rdj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rdg41"]
@@ -82,10 +82,9 @@ tracker = &"left_hand"
 
 [node name="#XR_PLUGIN" type="Node3D" parent="LeftHand"]
 
-[node name="FunctionPickup" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("1_v7mbb")]
-
 [node name="MovementDirect" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("2_1ym5p")]
-max_speed = 10.0
+
+[node name="FunctionPickup" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("1_v7mbb")]
 
 [node name="LeftPhysicsHand" parent="LeftHand/#XR_PLUGIN" instance=ExtResource("3_dnfyn")]
 

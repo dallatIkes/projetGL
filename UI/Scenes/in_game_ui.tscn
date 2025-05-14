@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://UI/Scenes/resume_button.gd" id="1_4erur"]
 [ext_resource type="Script" path="res://UI/Scripts/menuButtons.gd" id="1_f280e"]
-[ext_resource type="AudioStream" uid="uid://ba2yna4geegd7" path="res://Sounds/menu_sfx1.mp3" id="2_4jtvh"]
+[ext_resource type="AudioStream" uid="uid://0nllva43y5y5" path="res://Sounds/menu_sfx1.mp3" id="2_4jtvh"]
 [ext_resource type="Script" path="res://UI/Scripts/parametersMenu.gd" id="2_yptuk"]
 [ext_resource type="Script" path="res://UI/Scripts/keyMappingMenu.gd" id="3_j1q11"]
-[ext_resource type="AudioStream" uid="uid://0swyyium4l44" path="res://Sounds/menu_sfx2.mp3" id="3_qy6hr"]
+[ext_resource type="AudioStream" uid="uid://ba3e5j4d0v8rf" path="res://Sounds/menu_sfx2.mp3" id="3_qy6hr"]
 
 [node name="InGameUI" type="Node2D"]
 process_mode = 2
@@ -107,9 +107,10 @@ text = "Smooth head mode (In progress)"
 alignment = 1
 language = "en"
 
-[node name="Label3" type="Label" parent="Control/ColorRect/MarginContainer/VBoxContainerParameter"]
+[node name="teleport" type="CheckBox" parent="Control/ColorRect/MarginContainer/VBoxContainerParameter"]
 layout_mode = 2
-horizontal_alignment = 1
+text = "Move with teleportation"
+alignment = 1
 
 [node name="HidingHPBars" type="CheckBox" parent="Control/ColorRect/MarginContainer/VBoxContainerParameter"]
 layout_mode = 2
@@ -216,6 +217,7 @@ stream = ExtResource("3_qy6hr")
 [connection signal="drag_ended" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/HSlider" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_h_slider_drag_ended"]
 [connection signal="drag_ended" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/HSliderPlayerSpeed" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_h_slider_player_speed_drag_ended"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/CheckBox" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_check_box_pressed"]
+[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/teleport" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_teleport_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/HidingHPBars" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_hiding_hp_bars_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/ButtonMainHand" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_button_main_hand_pressed"]
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainerParameter/ButtonKeyView" to="Control/ColorRect/MarginContainer/VBoxContainerParameter" method="_on_button_key_view_pressed"]

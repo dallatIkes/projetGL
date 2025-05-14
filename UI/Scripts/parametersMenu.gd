@@ -82,3 +82,8 @@ func _on_hiding_hp_bars_pressed():
 				if child.has_node("HPBar"):
 					var hp_bar = child.get_node("HPBar")
 					hp_bar.visible = not hp_bar.visible
+
+
+func _on_teleport_pressed() -> void:
+	player_scene.switch_movement()
+	
