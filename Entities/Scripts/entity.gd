@@ -188,24 +188,24 @@ func _process(delta: float) -> void:
 	# Add gravity to the entity
 	if is_on_floor() == false:
 		velocity += get_gravity() * delta
-	
-	# in order for the entity to turn in the direction he is going	
-	velocity = global_position.direction_to(navigation_agent_3d.get_next_path_position()) * speed
 
-	if velocity.length() > 0.1:
+	var animation_player = get_node_or_null("AnimationPlayer")
+	var horizontal_velocity = Vector2(velocity.x, 0)
+
+	if horizontal_velocity.length() > 1:
 		var move_dir = velocity.normalized()
 		var target_rotation_y = atan2(move_dir.x, move_dir.z)
 		
 		rotation.y = lerp_angle(rotation.y, target_rotation_y, 0.1) # 0.1 = rotation speed
 
-	var animation_player = get_node_or_null("AnimationPlayer")
 	if animation_player:
-		if velocity.length() > 0.1:
+		if horizontal_velocity.length() > 1:
 			if not animation_player.is_playing():
 				animation_player.play(walkingAnimation)
 		else:
-			if animation_player.is_playing() and animation_player.current_animation == walkingAnimation :
+			if animation_player.is_playing() and animation_player.current_animation == walkingAnimation:
 				animation_player.pause()
+
 
 	var target_pos = navigation_agent_3d.get_next_path_position()
 	target_pos.y = global_position.y  # on annule la différence de hauteur
