@@ -1,0 +1,225 @@
+[gd_scene load_steps=11 format=3 uid="uid://cprv6q5ulutfo"]
+
+[ext_resource type="PackedScene" uid="uid://do26nbxde25ry" path="res://Entities/NPC/Assets/full_moon_fears_torch_villager.glb" id="1_ltxbh"]
+[ext_resource type="Script" path="res://Entities/NPC/Scripts/npc.gd" id="2_c8e36"]
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="3_d8202"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_olm6m"]
+[ext_resource type="PackedScene" uid="uid://c40wiqb58aege" path="res://Entities/NPC/Scenes/dialogBox.tscn" id="5_tu2vu"]
+[ext_resource type="AudioStream" uid="uid://bw2bgadx54qij" path="res://Sounds/Animal Crossing And Talking Meme Sound Effect Soundboard Link 🔽🔽.mp3" id="6_olo6r"]
+
+[sub_resource type="Gradient" id="Gradient_0d0hi"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tspmk"]
+gradient = SubResource("Gradient_0d0hi")
+width = 100
+height = 20
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ex7y"]
+size = Vector3(1, 1.67432, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fyy5l"]
+
+[node name="Villager" instance=ExtResource("1_ltxbh")]
+script = ExtResource("2_c8e36")
+description = "A basic human"
+hpMax = 200
+isInvincible = true
+
+[node name="Skeleton3D" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Reference/Object_47" index="0"]
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0507155, -0.063492, -0.115938, 0.989927)
+bones/7/rotation = Quaternion(-0.115318, -0.0389252, 0.317385, 0.940454)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.137576, 0.0317817, -0.809804, 0.569455)
+bones/8/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(-0.000390392, -0.00894373, -0.0208622, 0.999742)
+bones/11/rotation = Quaternion(0.00067248, -0.0178352, 0.0317644, 0.999336)
+bones/12/rotation = Quaternion(0.00163144, -0.0177779, 0.0375877, 0.999134)
+bones/13/rotation = Quaternion(-0.63749, -0.245657, -0.272417, 0.677531)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.508608, 0.663932, 0.466294, -0.28824)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(-7.02675e-05, 0.000880259, 0.296302, 0.955094)
+bones/17/rotation = Quaternion(-0.0888346, -0.253112, 0.06517, 0.961143)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.0510614, -0.0501608, 0.0558222, 0.995872)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(-0.333003, 0.742324, 0.23798, 0.5305)
+bones/20/rotation = Quaternion(-0.338503, -0.148704, -0.0210631, 0.928902)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(0.510236, -0.455677, 0.0489473, 0.727751)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/rotation = Quaternion(-0.050808, -0.0119991, 0.226302, 0.972657)
+bones/23/rotation = Quaternion(-0.269773, 0.927837, 0.0719109, 0.247325)
+bones/25/rotation = Quaternion(0.325654, -0.191689, 0.0329793, 0.925266)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/scale = Vector3(1, 1, 1)
+bones/29/rotation = Quaternion(0.115371, -0.107616, 0.0670074, 0.9852)
+bones/29/scale = Vector3(1, 1, 1)
+bones/31/rotation = Quaternion(-0.354801, 0.913133, 0.0727097, 0.187129)
+bones/33/rotation = Quaternion(-0.17803, 0.0589055, 0.0367108, 0.981574)
+bones/34/rotation = Quaternion(-0.549962, 0.797446, 0.140932, 0.204352)
+bones/35/rotation = Quaternion(0.245657, -0.63749, 0.677531, 0.272417)
+bones/35/scale = Vector3(1, 1, 1)
+bones/36/rotation = Quaternion(0.270001, -0.537686, -0.399557, 0.691626)
+bones/36/scale = Vector3(1, 1, 1)
+bones/37/rotation = Quaternion(-0.000331359, 0.000681787, 0.642626, 0.766179)
+bones/37/scale = Vector3(1, 1, 1)
+bones/38/rotation = Quaternion(-0.303292, 0.0128376, 0.0212162, 0.952575)
+bones/38/scale = Vector3(1, 1, 1)
+bones/39/rotation = Quaternion(0.170001, -0.188674, -0.00609385, 0.967194)
+bones/39/scale = Vector3(1, 1, 1)
+bones/40/rotation = Quaternion(0.051222, -0.0391342, 0.0747905, 0.995114)
+bones/40/scale = Vector3(1, 1, 1)
+bones/41/rotation = Quaternion(-0.333003, 0.742324, 0.23798, 0.5305)
+bones/42/scale = Vector3(1, 1, 1)
+bones/43/rotation = Quaternion(-0.467488, 0.781471, 0.105098, -0.39964)
+bones/44/rotation = Quaternion(-0.196661, -0.306207, 0.384847, 0.848206)
+bones/44/scale = Vector3(1, 1, 1)
+bones/45/rotation = Quaternion(-0.269773, 0.927837, 0.0719109, 0.247325)
+bones/47/rotation = Quaternion(-0.102435, -0.354549, -0.0562393, 0.927706)
+bones/48/rotation = Quaternion(0.22118, -0.668397, -0.11679, 0.700489)
+bones/49/rotation = Quaternion(0.424126, -0.566695, 0.414999, 0.57162)
+bones/52/rotation = Quaternion(-0.0396916, -0.631004, 0.250241, 0.733238)
+bones/53/rotation = Quaternion(0.0320914, -0.183351, 0.326133, 0.926817)
+bones/54/rotation = Quaternion(-0.354801, 0.913133, 0.0727097, 0.187129)
+bones/55/rotation = Quaternion(0.293908, -0.647147, 0.340115, 0.615744)
+bones/55/scale = Vector3(1, 1, 1)
+bones/57/rotation = Quaternion(-0.549962, 0.797446, 0.140932, 0.204352)
+bones/60/rotation = Quaternion(3.04704e-18, 1.71484e-18, 0.378573, 0.925572)
+bones/62/rotation = Quaternion(0.672701, 0.187524, 0.675619, -0.236318)
+bones/64/rotation = Quaternion(0.686342, 0.192004, 0.662176, -0.231499)
+bones/64/scale = Vector3(1, 1, 1)
+
+[node name="TorchRig_Ctrl_HipsEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="0"]
+transform = Transform3D(0.998475, -0.0552091, -4.65661e-10, 0.0551266, 0.996983, -0.0546419, 0.00301673, 0.0545585, 0.998506, 3.16435, 79.5734, -2.92448)
+
+[node name="TorchRig_Ctrl_LeftAnkleEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="1"]
+transform = Transform3D(0.979851, -0.00448603, 0.19968, 0.00457757, 0.99999, 3.22924e-06, -0.199678, 0.000910886, 0.979861, 15.6466, 4.86214, -6.96504)
+
+[node name="TorchRig_Ctrl_RightAnkleEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="2"]
+transform = Transform3D(0.943197, 0.021385, -0.331546, -0.0226747, 0.999743, -2.17671e-05, 0.33146, 0.00753822, 0.943439, -19.2348, 5.20747, -10.8724)
+
+[node name="TorchRig_Ctrl_LeftWristEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="3"]
+transform = Transform3D(0.24387, 0.924669, -0.29243, -0.860192, 0.345493, 0.375106, 0.447881, 0.160069, 0.879648, 34.636, 71.7439, -2.13266)
+
+[node name="TorchRig_Ctrl_RightWristEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="4"]
+transform = Transform3D(-0.0601337, -0.974146, 0.217767, -0.540846, 0.21516, 0.813137, -0.838969, -0.0688816, -0.539801, -35.3263, 113.024, 25.6655)
+
+[node name="TorchRig_Ctrl_LeftKneeEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="5"]
+transform = Transform3D(0.988001, 0.0238354, 0.152596, 0.0241889, 0.951947, -0.305307, -0.152541, 0.305334, 0.939948, 16.4705, 37.7681, 3.58923)
+
+[node name="TorchRig_Ctrl_RightKneeEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="6"]
+transform = Transform3D(0.966509, 0.150439, -0.207917, -0.222503, 0.894924, -0.386785, 0.127882, 0.420093, 0.898425, -13.9447, 36.6769, 3.89993)
+
+[node name="TorchRig_Ctrl_LeftElbowEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="7"]
+transform = Transform3D(0.243832, 0.924694, -0.292383, -0.860143, 0.345462, 0.375248, 0.447996, 0.159994, 0.879603, 30.0651, 87.8683, -10.5308)
+
+[node name="TorchRig_Ctrl_RightElbowEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="8"]
+transform = Transform3D(-0.0608547, -0.666617, 0.742912, -0.498492, 0.665123, 0.555983, -0.864755, -0.336502, -0.372779, -36.4672, 103.68, 9.45467)
+
+[node name="TorchRig_Ctrl_ChestOriginEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="9"]
+transform = Transform3D(0.999301, -0.0373727, -3.52738e-08, 0.0372755, 0.996703, -0.0720601, 0.00269311, 0.0720098, 0.9974, 2.36386, 94.0264, -2.08917)
+
+[node name="TorchRig_Ctrl_ChestEndEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="10"]
+transform = Transform3D(0.999421, 0.0340334, -3.0268e-09, -0.0336978, 0.989566, -0.140087, -0.00476765, 0.140006, 0.990139, 1.81664, 106.796, -4.86554)
+
+[node name="TorchRig_Ctrl_LeftFootEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="11"]
+transform = Transform3D(0.979851, -0.00448603, 0.19968, 0.00457757, 0.99999, 3.22962e-06, -0.199678, 0.000910886, 0.979861, 18.7765, 4.64519, 8.38853)
+
+[node name="TorchRig_Ctrl_RightFootEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="12"]
+transform = Transform3D(0.943197, 0.0213849, -0.331546, -0.0226747, 0.999743, -2.1772e-05, 0.33146, 0.00753821, 0.943439, -28.1705, 3.32262, 14.419)
+
+[node name="TorchRig_Ctrl_LeftShoulderEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="13"]
+transform = Transform3D(0.36383, 0.925146, -0.108316, -0.924219, 0.344073, -0.165629, -0.115962, 0.160368, 0.980222, 18.9383, 116.129, -6.98522)
+
+[node name="TorchRig_Ctrl_RightShoulderEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="14"]
+transform = Transform3D(0.715342, -0.666445, 0.210085, 0.444444, 0.665931, 0.599171, -0.539217, -0.335242, 0.772566, -14.5929, 117.27, -7.03395)
+
+[node name="TorchRig_Ctrl_HeadEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="15"]
+transform = Transform3D(0.999421, 0.0340333, -1.0943e-08, -0.0340023, 0.998511, 0.0426526, 0.00145162, -0.0426279, 0.99909, 2.7721, 134.69, 1.7014)
+
+[node name="TorchRig_Ctrl_LeftHipEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="16"]
+transform = Transform3D(0.996027, -0.0170093, 0.0874082, 0.00359229, 0.988463, 0.151417, -0.0889753, -0.150501, 0.984598, 15.7393, 80.2676, -2.88648)
+
+[node name="TorchRig_Ctrl_RightHipEffector" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="17"]
+transform = Transform3D(0.988045, 0.105461, 0.112453, -0.121574, 0.981535, 0.147676, -0.0948027, -0.159582, 0.982622, -9.41055, 78.8791, -2.96247)
+
+[node name="TorchRig_Ctrl_Hips" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference" index="18"]
+transform = Transform3D(0.998475, -0.0552091, -2.91038e-08, 0.0551266, 0.996983, -0.0546419, 0.00301676, 0.0545585, 0.998506, 3.08211, 81.0572, -2.82067)
+
+[node name="TorchRig_Ctrl_LeftUpLeg" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips" index="0"]
+transform = Transform3D(0.994438, 0.0370532, 0.0985922, -0.0562627, 0.978209, 0.199853, -0.0890386, -0.204288, 0.974853, 12.5941, -1.48959, -0.0225754)
+
+[node name="TorchRig_Ctrl_LeftLeg" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_LeftUpLeg" index="0"]
+transform = Transform3D(0.997735, -6.83218e-06, 0.0672612, 0.0300622, 0.894606, -0.445843, -0.0601693, 0.446856, 0.89258, -1.77636e-15, -42.9963, 0)
+
+[node name="TorchRig_Ctrl_LeftFoot" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_LeftUpLeg/TorchRig_Ctrl_LeftLeg" index="0"]
+transform = Transform3D(0.998663, 0.0196175, 0.0478157, -0.0332559, 0.952108, 0.303948, -0.0395631, -0.305132, 0.951488, 0, -34.5669, -1.77636e-15)
+
+[node name="TorchRig_Ctrl_RightUpLeg" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips" index="1"]
+transform = Transform3D(0.97955, 0.158927, 0.123387, -0.180928, 0.964045, 0.194632, -0.0880181, -0.212976, 0.973085, -12.5941, -1.48959, -0.0225754)
+
+[node name="TorchRig_Ctrl_RightLeg" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_RightUpLeg" index="0"]
+transform = Transform3D(0.969881, 1.5378e-05, -0.243581, -0.136873, 0.827226, -0.544943, 0.201488, 0.561869, 0.802313, -2.86102e-06, -42.9963, 0.00042057)
+
+[node name="TorchRig_Ctrl_RightFoot" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_RightUpLeg/TorchRig_Ctrl_RightLeg" index="0"]
+transform = Transform3D(0.959041, -0.200813, -0.199788, 0.260846, 0.901078, 0.346436, 0.110456, -0.38436, 0.916552, 9.53674e-07, -35.1644, -8.88178e-16)
+
+[node name="TorchRig_Ctrl_Spine" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips" index="2"]
+transform = Transform3D(0.99984, 0.0178477, -0.000888373, -0.0178597, 0.999711, -0.0160664, 0.000601368, 0.0160797, 0.999871, -8.88178e-16, 13.0097, 0.00203085)
+
+[node name="TorchRig_Ctrl_Spine1" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine" index="0"]
+transform = Transform3D(0.999362, 0.0356835, -0.00120256, -0.0357038, 0.998845, -0.0321556, 5.37457e-05, 0.032178, 0.999482, 0, 8.95527, -0.648969)
+
+[node name="TorchRig_Ctrl_Spine2" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1" index="0"]
+transform = Transform3D(0.999362, 0.0357024, -5.37487e-05, -0.0356857, 0.998845, -0.0321782, -0.00109515, 0.0321596, 0.999482, 2.22045e-16, 9.20436, -0.648969)
+
+[node name="TorchRig_Ctrl_LeftArm" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1/TorchRig_Ctrl_Spine2/TorchRig_Ctrl_LeftShoulder" index="0"]
+transform = Transform3D(0.394876, 0.913144, -0.101198, -0.905514, 0.368207, -0.210873, -0.155296, 0.174905, 0.972261, 9.79451, 10.4615, -1.40144)
+
+[node name="TorchRig_Ctrl_LeftForeArm" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1/TorchRig_Ctrl_Spine2/TorchRig_Ctrl_LeftShoulder/TorchRig_Ctrl_LeftArm" index="0"]
+transform = Transform3D(0.831723, -0.00140444, -0.555189, 0.00147234, 0.999999, -0.000323962, 0.555189, -0.000547982, 0.831724, 30.5788, -4.26326e-14, 7.10543e-15)
+
+[node name="TorchRig_Ctrl_LeftHand" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1/TorchRig_Ctrl_Spine2/TorchRig_Ctrl_LeftShoulder/TorchRig_Ctrl_LeftArm/TorchRig_Ctrl_LeftForeArm" index="0"]
+transform = Transform3D(1, 1.88713e-07, 0.000130578, -1.77579e-07, 1, -8.52688e-05, -0.000130578, 8.52688e-05, 1, 18.7462, 1.42109e-14, -4.44089e-16)
+
+[node name="TorchRig_Ctrl_RightArm" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1/TorchRig_Ctrl_Spine2/TorchRig_Ctrl_RightShoulder" index="0"]
+transform = Transform3D(0.699033, -0.68919, 0.190712, 0.491124, 0.656555, 0.57248, -0.51976, -0.306519, 0.79743, -9.79451, 10.4615, -1.40144)
+
+[node name="TorchRig_Ctrl_RightForeArm" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1/TorchRig_Ctrl_Spine2/TorchRig_Ctrl_RightShoulder/TorchRig_Ctrl_RightArm" index="0"]
+transform = Transform3D(0.201207, 0.000198171, 0.979549, -0.00150303, 0.999999, 0.000106426, -0.979547, -0.0014937, 0.201207, -30.5788, -4.26326e-14, -7.10543e-15)
+
+[node name="TorchRig_Ctrl_RightHand" parent="Sketchfab_model/5504f715b8d64cb798c61f2f7db76023_fbx/Object_2/RootNode/Object_4/TorchRig_Ctrl_Reference/TorchRig_Ctrl_Hips/TorchRig_Ctrl_Spine/TorchRig_Ctrl_Spine1/TorchRig_Ctrl_Spine2/TorchRig_Ctrl_RightShoulder/TorchRig_Ctrl_RightArm/TorchRig_Ctrl_RightForeArm" index="0"]
+transform = Transform3D(0.99877, 0.0115911, 0.0482012, -0.0373276, 0.815669, 0.577313, -0.0326246, -0.578402, 0.815099, -18.7462, 1.42109e-14, -3.55271e-15)
+
+[node name="HPBar" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82001, 0)
+texture = SubResource("GradientTexture2D_tspmk")
+script = ExtResource("3_d8202")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.863464, 0)
+shape = SubResource("BoxShape3D_5ex7y")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="4"]
+
+[node name="Area3D" type="Area3D" parent="." index="5"]
+collision_layer = 8
+collision_mask = 720900
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("CapsuleShape3D_fyy5l")
+
+[node name="3D_dialogBox" parent="." index="6" instance=ExtResource("4_olm6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80215, 0.79724)
+collision_layer = 5242880
+scene = ExtResource("5_tu2vu")
+scene_properties_keys = PackedStringArray("dialog_box.gd")
+
+[node name="sfx_animal_crossing" type="AudioStreamPlayer3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.618056, 1.02521)
+stream = ExtResource("6_olo6r")
