@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjt2gdprk4vl4"]
 
-[ext_resource type="Script" path="res://Entities/Player/Scripts/player.gd" id="1_ynu65"]
-[ext_resource type="AudioStream" uid="uid://b1ruhfgid4fp8" path="res://Sounds/hit/hit_mc.mp3" id="2_evt5d"]
-[ext_resource type="AudioStream" uid="uid://bggbyw15lbtpq" path="res://Sounds/hit/hit-101soundboards copie.mp3" id="3_rvqil"]
+[ext_resource type="Script" path="res://Entities/Player/Scripts/playerClass.gd" id="1_ynu65"]
+[ext_resource type="AudioStream" uid="uid://bsa1vj88uokjh" path="res://Sounds/hit/hit_mc.mp3" id="2_evt5d"]
+[ext_resource type="AudioStream" uid="uid://dshhe188383e5" path="res://Sounds/hit/hit-101soundboards copie.mp3" id="3_rvqil"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ky0hw"]
 size = Vector3(1, 2, 1)

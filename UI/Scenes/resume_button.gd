@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	sfx_1.play()
+
+
+func _on_movement_pressed() -> void:
+	pass # Replace with function body.

@@ -1,148 +1,186 @@
-class_name PlayerScript
+extends PlayerScript
 
-extends Node3D
+@onready var pauseMenu = $"LeftHand/#UI/pause_menu"
+@onready var debugMenu = $"LeftHand/#UI/debug_menu"
+# we take the instantiated debug menu UI scene
+@onready var debugMenu_scene = debugMenu.get_scene_instance() 
+@onready var FunctionPointer = $"RightHand/#XR_PLUGIN/FunctionPointer"
+@onready var sfx_footsteps = $"sfx_footsteps"  
+@onready var sword_hitbox = $"../NiceSword/Hitbox"
+@onready var musicbg = $musicbg
+@onready var functionTeleportScene = preload("res://addons/godot-xr-tools/functions/function_teleport.tscn")
+@onready var movement_direct = $"LeftHand/#XR_PLUGIN/MovementDirect"
 
-const SPEED = 10.0
-const JUMP_VELOCITY = 4.5
+var teleport = false
+var function_teleport
 
-enum SpellEnum {FIREBALL, ## Spell fireball
-				HEALORB, ## Spell heal orb
-				ELECTRICARC, ## Spell electric arc
-				NOTHING
-				}
-var selected_spell : SpellEnum = SpellEnum.NOTHING ## The variable where the selected spell is save
+var previous_position: Vector3
 
-var spellUnlock = {
-					"FIREBALL": false, 
-					"HEALORB": false,
-					"ELECTRICARC": false
-				}
-				
+signal hit_by_ennemy(damage)
+
+var max_speed = 3
+
+# test values, rememmber to remove !!!
+var counter = 0
+var btn_presed
+var incr = 0
 
 
-
-# Références des noeuds enfants
-@onready var camera: Camera3D = $Camera
-@onready var left_hand: Node3D = $LeftHand
-@onready var right_hand: Node3D = $RightHand
-
-enum Hands {
-	LEFT,
-	RIGHT
-}
-var main_hand : Hands = Hands.RIGHT
-
-@onready var sfx1 = $"sfx1"
-@onready var sfx2 = $"sfx2"
-
-# @export var name : String
-@export var stats : Statistics = Statistics.new()
-
-# Delete this variable when Statistics will be implemented
-@export var hpMax : int
-var hp : int
-
-@export var manaMax : int
-var mana : int
-var t_recharge_mana ## last time the mana was regen
-
-# @export var armorSet : Set
-var inventory : Array[Object]
-
-func _ready():
-	mana = manaMax
-	hp = hpMax/3
-	t_recharge_mana = Time.get_ticks_msec()
-	add_to_group("Player") # DO NOT REMOVE
+func _ready() -> void:
+	super._ready()
+	if musicbg :
+		musicbg.volume_db = -30
+		musicbg.play()
+	previous_position = global_transform.origin
 	
+	var hand_logic = $"LeftHand/#XR_PLUGIN"
 
+	function_teleport = functionTeleportScene.instantiate()
+	function_teleport.name = "FunctionTeleport"
+	hand_logic.add_child(function_teleport)
+	
+	# Désactiver les deux au départ
+	_disable_function(function_teleport)
+
+	# Activer le mode de départ
+	_set_mode(teleport)
+	
+func _process(delta: float) -> void:
+	counter += 1
+	# print(debugMenu_scene.get_content())
+	if sword_hitbox :
+		debugMenu_scene.update_content(['some test values', get_node("LeftHand/#XR_PLUGIN/MovementDirect").max_speed, counter, btn_presed, incr, sword_hitbox.velocity, sword_hitbox.velocity_norm, teleport])
+	recharge_mana()
+	if musicbg: 
+		if(!musicbg.playing):
+			musicbg.play()
+	
+	# Gestion du son des pas
+	var movement_speed = global_transform.origin - previous_position
+	previous_position = global_transform.origin  # Met à jour la position précédente
+
+	#if movement_speed.length() > 0.1:  # Ajuste ce seuil selon la sensibilité
+		#if sfx_footsteps.playing == false:
+			#sfx_footsteps.play()
+	#else:
+		#sfx_footsteps.stop()
 
 ## Function which regen the the number of manapoint every second (replace this function later)
-func recharge_mana():
-	if mana+2 < manaMax:
-		if Time.get_ticks_msec()-t_recharge_mana>1000:
-			mana +=10
-			t_recharge_mana = Time.get_ticks_msec()
 
 
-func _on_equipment(new_stats:Variant) -> void:
-	stats.HP += new_stats.HP
-	stats.ATK += new_stats.ATK
-	stats.DEF += new_stats.DEF
-	stats.speed += new_stats.speed
-	stats.ATKSpeed *= new_stats.ATKSpeed
-	
-func _on_unequipment(old_stats:Variant) -> void:
-	stats.HP -= old_stats.HP
-	stats.ATK -= old_stats.ATK
-	stats.DEF -= old_stats.DEF
-	stats.speed -= old_stats.speed
-	stats.ATKSpeed /= old_stats.ATKSpeed
-
-
-## return the scene of the spell to instantiate in function of the variable SpellEnum
-func which_spell():
-	if selected_spell == SpellEnum.FIREBALL:
-		return "res://Spells/Scenes/fire_ball.tscn"
-	elif selected_spell == SpellEnum.HEALORB:
-		return "res://Spells/Scenes/heal_orb.tscn"
-	elif selected_spell == SpellEnum.ELECTRICARC:
-		return "res://Spells/Scenes/electric_arc.tscn"
-	elif selected_spell == SpellEnum.NOTHING:
-		return ""
-
-
-## Reduce the number of manapoint (function call by spells)
-func lost_mana(mana_point_consume : int)->bool:
-	if mana - mana_point_consume < 0:
-		return false
-	else :
-		mana -= mana_point_consume
-		return true
-
-## Heal the player
-func heal_player(heal_point: int):
-	hp += heal_point
-	if hp > hpMax:
-		hp = hpMax
-
-## Gave damage to the player
-func damage_player(damages: int):
-	hp -= damages
-	if hp < 0:
-		pass
-
-	randomize()  # Initialise the random number generator
-	var result = randi_range(1, 2)  #Generate 1 or 2
-	if(result == 1):
-		if sfx1 :
-			sfx1.play()
-	else : 
-		if sfx2:
-			sfx2.play()
+func _on_area_3d_body_entered(body):
+ #	print("Collision détectée avec :", body.name)
+	if body.is_in_group("PoisonBall"): # DO NOT REMOVE
+		hp -= body.damage
 
 
 
-"""
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func button_main_hand_pressed(name):
+	if name == "ax_button":
+		var scene = get_parent_node_3d().get_node("Spell")
+		var selected_spell = which_spell()
+		if selected_spell != "":
+			var spell_scene = load(selected_spell).instantiate()
+			scene.add_child(spell_scene)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+func button_main_hand_released(name):
+	if(name == "ax_button"):
+		var scene = get_parent_node_3d().get_node("Spell")
+		if scene:
+			for spell in scene.get_children():
+				spell.mode = 1
+
+func button_other_hand_pressed(name):
+	btn_presed = name
+	if name == 'by_button':
+		incr += 1
+	if name == 'ax_button':
+		incr -= 1
+		# create the menu for spell selection when the button is pressed
+		var spell_menu = load("res://UI/Scenes/SpellMenu.tscn")
+		var player_scene = get_tree().current_scene.get_node("Player")
+		player_scene.add_child(spell_menu.instantiate())
+
+func button_other_hand_released(name):
+	if name == 'ax_button':
+		# destroy the menu for spell selection when the button is released
+		var spell_menu_scene = get_tree().current_scene.get_node("Player/SpellMenu")
+		if spell_menu_scene:
+			spell_menu_scene.destroy()
+
+
+
+
+
+# function to reload to game when the B button is pressed
+# no more needed thanks to the left hand menu
+func _on_right_hand_button_pressed(name):
+	if main_hand == Hands.RIGHT:
+		button_main_hand_pressed(name)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		button_other_hand_pressed(name)
 
-	move_and_slide()
-"""
+
+func _on_right_hand_button_released(name):
+	if main_hand == Hands.RIGHT:
+		button_main_hand_released(name)
+	else: 
+		button_other_hand_released(name)
+
+
+func _on_left_hand_button_pressed(name):
+	btn_presed = name
+	if name == "by_button":
+		debugMenu.visible = !debugMenu.visible
+	if name == "menu_button":
+		Global.exit_menu()
+		get_tree().paused = !get_tree().paused
+		pauseMenu.visible = !pauseMenu.visible
+		FunctionPointer.visible = !FunctionPointer.visible
+		
+	
+	if main_hand == Hands.LEFT:
+		button_main_hand_pressed(name)
+	else:
+		
+		button_other_hand_pressed(name)
+
+func _on_left_hand_button_released(name: String) -> void:
+	if main_hand == Hands.LEFT:
+		button_main_hand_released(name)
+	else:
+		button_other_hand_released(name)
+		
+
+func switch_movement():
+	teleport = !teleport
+	_set_mode(teleport)
+
+func _set_mode(is_teleport):
+	if is_teleport:
+		print(">> Activation du mode TELEPORTATION")
+		max_speed = movement_direct.max_speed
+		movement_direct.max_speed = 0
+		_enable_function(function_teleport)
+	else:
+		print(">> Activation du mode DIRECT")
+		_disable_function(function_teleport)
+		movement_direct.max_speed = max_speed
+
+
+func _enable_function(func_node):
+	if func_node:
+		func_node.set_process(true)
+		func_node.set_physics_process(true)
+		func_node.set_process_input(true)
+		func_node.visible = true
+
+
+func _disable_function(func_node):
+	if func_node:
+		func_node.set_process(false)
+		func_node.set_physics_process(false)
+		func_node.set_process_input(false)
+		func_node.visible = false
+		

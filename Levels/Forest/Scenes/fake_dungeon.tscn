@@ -1,0 +1,256 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwmdt77ccmtp7"]
+
+[ext_resource type="PackedScene" uid="uid://w5gpfb041yj4" path="res://3D_Models/Environnement/2/tower-complete-large.glb" id="1_1pfhl"]
+[ext_resource type="PackedScene" uid="uid://cngsxsgmcme8o" path="res://3D_Models/Environnement/3/wallWindowGlass.glb" id="2_geoyb"]
+[ext_resource type="PackedScene" uid="uid://bx52ftag4xod6" path="res://3D_Models/Environnement/3/wallDetailCross.glb" id="3_40ucj"]
+[ext_resource type="PackedScene" uid="uid://bxmf1hhck3n3c" path="res://3D_Models/Environnement/3/wallDoor.glb" id="4_urt8g"]
+[ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="5_6xl6m"]
+[ext_resource type="Script" path="res://Levels/Test/Scenes/lever.gd" id="6_gp4xr"]
+[ext_resource type="PackedScene" uid="uid://cgtrc370asmc4" path="res://3D_Models/Environnement/2/palm-bend.glb" id="7_psh1j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vme4h"]
+size = Vector3(15.8167, 10.5148, 14.1006)
+
+[node name="fake_dungeon" type="Node3D"]
+
+[node name="tower-complete-large2" parent="." instance=ExtResource("1_1pfhl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629443, 0, -0.341991)
+
+[node name="tower-complete-large3" parent="." instance=ExtResource("1_1pfhl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5304, 0, -0.621037)
+
+[node name="wallWindowGlass2" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(-8.91712e-08, 0, 2.04, 0, 2.04, 0, -2.04, 0, -8.91712e-08, -3.66548, 2.00848, -1.40564)
+
+[node name="wallWindowGlass3" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(-8.91712e-08, 0, 2.04, 0, 2.04, 0, -2.04, 0, -8.91712e-08, -7.32507, 2.02422, -1.47033)
+
+[node name="wallDetailCross2" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -9.07838, 0, 0.406346)
+
+[node name="wallDetailCross3" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -9.07838, 2.00821, 0.406346)
+
+[node name="wallDetailCross4" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -9.07838, 4.03389, 0.406346)
+
+[node name="wallDetailCross5" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -7.26212, 0, 0.406346)
+
+[node name="wallDetailCross7" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -7.26212, 4.03389, 0.406346)
+
+[node name="wallDetailCross9" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -5.44983, 2.00821, 0.406346)
+
+[node name="wallDetailCross10" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -5.44983, 4.03389, 0.406346)
+
+[node name="wallDetailCross12" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -5.44983, 2.00821, 0.406346)
+
+[node name="wallDetailCross13" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -5.44983, 4.03389, 0.406346)
+
+[node name="wallDetailCross14" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -3.65706, 0, 0.406346)
+
+[node name="wallDetailCross16" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -3.65706, 4.03389, 0.406346)
+
+[node name="wallDetailCross17" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -1.80804, 0, 0.406346)
+
+[node name="wallDetailCross18" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -1.80804, 2.00821, 0.406346)
+
+[node name="wallDetailCross19" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0351756, 0, -2.0397, 0, 2.04, 0, 2.0397, 0, 0.0351756, -1.80804, 4.03389, 0.406346)
+
+[node name="tower-complete-large5" parent="." instance=ExtResource("1_1pfhl")]
+transform = Transform3D(-0.00301939, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.00301939, -12.0975, 0, -12.6412)
+
+[node name="wallWindowGlass4" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(2.03999, 0, -0.00615945, 0, 2.04, 0, 0.00615945, 0, 2.03999, -11.3366, 2.00848, -4.77397)
+
+[node name="wallWindowGlass5" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(2.03999, 0, -0.00615945, 0, 2.04, 0, 0.00615945, 0, 2.03999, -11.2609, 2.02422, -8.43335)
+
+[node name="wallDetailCross6" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1323, 0, -10.1923)
+
+[node name="wallDetailCross15" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1323, 2.00821, -10.1923)
+
+[node name="wallDetailCross20" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1323, 4.03389, -10.1923)
+
+[node name="wallDetailCross21" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1378, 0, -8.37607)
+
+[node name="wallDetailCross22" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1378, 4.03389, -8.37607)
+
+[node name="wallDetailCross23" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1432, 0, -6.56379)
+
+[node name="wallDetailCross24" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1432, 2.00821, -6.56379)
+
+[node name="wallDetailCross25" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1432, 4.03389, -6.56379)
+
+[node name="wallDetailCross26" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1432, 0, -6.56379)
+
+[node name="wallDetailCross27" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1432, 2.00821, -6.56379)
+
+[node name="wallDetailCross28" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1432, 4.03389, -6.56379)
+
+[node name="wallDetailCross29" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1486, 0, -4.77103)
+
+[node name="wallDetailCross30" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1486, 4.03389, -4.77103)
+
+[node name="wallDetailCross31" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1542, 0, -2.92201)
+
+[node name="wallDetailCross32" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1542, 2.00821, -2.92201)
+
+[node name="wallDetailCross33" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -13.1542, 4.03389, -2.92201)
+
+[node name="tower-complete-large6" parent="." instance=ExtResource("1_1pfhl")]
+transform = Transform3D(-0.00301939, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.00301939, 0.275279, 0, -12.6001)
+
+[node name="wallWindowGlass6" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(2.03999, 0, -0.00615945, 0, 2.04, 0, 0.00615945, 0, 2.03999, 1.44871, 2.00848, -4.73287)
+
+[node name="wallWindowGlass7" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(2.03999, 0, -0.00615945, 0, 2.04, 0, 0.00615945, 0, 2.03999, 1.52445, 2.02422, -8.39224)
+
+[node name="wallDetailCross34" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.346925, 0, -10.1512)
+
+[node name="wallDetailCross35" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.346925, 2.00821, -10.1512)
+
+[node name="wallDetailCross36" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.346925, 4.03389, -10.1512)
+
+[node name="wallDetailCross37" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.352407, 0, -8.33497)
+
+[node name="wallDetailCross38" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.352407, 4.03389, -8.33497)
+
+[node name="wallDetailCross39" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.357881, 0, -6.52268)
+
+[node name="wallDetailCross40" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.357881, 2.00821, -6.52268)
+
+[node name="wallDetailCross41" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.357881, 4.03389, -6.52268)
+
+[node name="wallDetailCross42" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.357881, 0, -6.52268)
+
+[node name="wallDetailCross43" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.357881, 2.00821, -6.52268)
+
+[node name="wallDetailCross44" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.357881, 4.03389, -6.52268)
+
+[node name="wallDetailCross45" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.363294, 0, -4.72992)
+
+[node name="wallDetailCross46" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.363294, 4.03389, -4.72992)
+
+[node name="wallDetailCross47" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.368875, 0, -2.8809)
+
+[node name="wallDetailCross48" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.368875, 2.00821, -2.8809)
+
+[node name="wallDetailCross49" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(-2.03979, 0, -0.0290168, 0, 2.04, 0, 0.0290168, 0, -2.03979, -0.368875, 4.03389, -2.8809)
+
+[node name="wallWindowGlass8" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(-0.00309778, 0, 2.04, 0, 2.04, 0, -2.04, 0, -0.00309778, -3.92582, 2.00848, -14.1943)
+
+[node name="wallWindowGlass9" parent="." instance=ExtResource("2_geoyb")]
+transform = Transform3D(-0.00309778, 0, 2.04, 0, 2.04, 0, -2.04, 0, -0.00309778, -7.58549, 2.02422, -14.2535)
+
+[node name="wallDetailCross50" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -9.33596, 0, -12.3741)
+
+[node name="wallDetailCross51" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -9.33596, 2.00821, -12.3741)
+
+[node name="wallDetailCross52" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -9.33596, 4.03389, -12.3741)
+
+[node name="wallDetailCross53" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -7.5197, 0, -12.3769)
+
+[node name="wallDetailCross54" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -7.5197, 4.03389, -12.3769)
+
+[node name="wallDetailCross55" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -5.70741, 0, -12.3797)
+
+[node name="wallDetailCross56" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -5.70741, 2.00821, -12.3797)
+
+[node name="wallDetailCross57" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -5.70741, 4.03389, -12.3797)
+
+[node name="wallDetailCross58" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -5.70741, 0, -12.3797)
+
+[node name="wallDetailCross59" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -5.70741, 2.00821, -12.3797)
+
+[node name="wallDetailCross60" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -5.70741, 4.03389, -12.3797)
+
+[node name="wallDetailCross61" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -3.91464, 0, -12.3824)
+
+[node name="wallDetailCross62" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -3.91464, 4.03389, -12.3824)
+
+[node name="wallDetailCross63" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -2.06562, 0, -12.3852)
+
+[node name="wallDetailCross64" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -2.06562, 2.00821, -12.3852)
+
+[node name="wallDetailCross65" parent="." instance=ExtResource("3_40ucj")]
+transform = Transform3D(0.0382728, 0, -2.03964, 0, 2.04, 0, 2.03964, 0, 0.0382728, -2.06562, 4.03389, -12.3852)
+
+[node name="wallDoor2" parent="." instance=ExtResource("4_urt8g")]
+transform = Transform3D(-8.91712e-08, 0, -2.04, 0, 2.04, 0, 2.04, 0, -8.91712e-08, -5.54834, 0, 0.336723)
+
+[node name="Lever2" parent="." instance=ExtResource("5_6xl6m")]
+transform = Transform3D(1.33748e-15, -3.0598e-08, -0.7, -0.7, -3.0598e-08, 0, -3.0598e-08, 0.7, -3.0598e-08, -6.59065, 0.953763, -0.48841)
+script = ExtResource("6_gp4xr")
+
+[node name="palm-bend2" parent="." instance=ExtResource("7_psh1j")]
+transform = Transform3D(-0.559828, -0.00264981, 0.0136321, 0.00852652, 0.368312, 0.42175, -0.0109615, 0.421828, -0.368159, -8.67003, 3.30763, -0.493164)
+
+[node name="palm-bend3" parent="." instance=ExtResource("7_psh1j")]
+transform = Transform3D(-0.312242, -0.310256, -0.346188, -0.464742, 0.1985, 0.241273, -0.0109615, 0.421828, -0.368159, -2.51923, 3.30763, -0.493164)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52966, 4.75739, -7.84623)
+visible = false
+shape = SubResource("BoxShape3D_vme4h")

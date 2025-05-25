@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://c717orbdilke3" path="res://Entities/Player/Scenes/player.tscn" id="2_4sd3w"]
 [ext_resource type="PackedScene" uid="uid://cv61u1e5ae2ib" path="res://Levels/Test/Scenes/grid_map_test.tscn" id="3_o21ts"]
 [ext_resource type="PackedScene" uid="uid://cfrk2xrnvma5q" path="res://Levels/Test/Scenes/torch.tscn" id="4_34547"]
-[ext_resource type="PackedScene" uid="uid://wd226dl6q744" path="res://Entities/Creature/Scenes/Tuto.tscn" id="5_fnh02"]
-[ext_resource type="PackedScene" uid="uid://6rc2e6agp77u" path="res://Entities/NPC/Scenes/NPC.tscn" id="6_n782i"]
+[ext_resource type="PackedScene" uid="uid://bxpd3kisrv8px" path="res://Entities/Creature/Scenes/Tuto.tscn" id="5_fnh02"]
+[ext_resource type="PackedScene" uid="uid://45s13vcev4a6" path="res://Entities/NPC/Scenes/NPC.tscn" id="6_n782i"]
 [ext_resource type="PackedScene" uid="uid://baslo52ff8tpu" path="res://Entities/Boss/ForestBoss/Scenes/ForestBoss.tscn" id="7_aomlo"]
 [ext_resource type="PackedScene" uid="uid://ci42hw60qc84r" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="8_k2njh"]
-[ext_resource type="PackedScene" uid="uid://cf0opmdilw1d8" path="res://Levels/Test/Assets/archery_target_low_poly.glb" id="9_hthh6"]
+[ext_resource type="PackedScene" uid="uid://cg7cnvmcxfe0e" path="res://Levels/Test/Assets/archery_target_low_poly.glb" id="9_hthh6"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="10_wyr0e"]
 [ext_resource type="PackedScene" uid="uid://mf7sr62wde8x" path="res://Levels/Test/Scenes/tool_board.tscn" id="11_w5qyt"]
-[ext_resource type="Texture2D" uid="uid://d08nm5alpbafg" path="res://UI/Assets/inputs.png" id="12_oufhy"]
+[ext_resource type="Texture2D" uid="uid://sok455upnacn" path="res://UI/Assets/inputs.png" id="12_oufhy"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="13_t4hk1"]
 [ext_resource type="Script" path="res://Levels/Test/Scripts/main_menu.gd" id="14_irf2f"]
 
@@ -64,28 +64,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.46527, 22.6949)
 
 [node name="Tuto" parent="Entities" instance=ExtResource("5_fnh02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.454, -2.02, -6.886)
-collision_mask = 589827
-race = 3
-isTrackingPlayer = true
-speed = 5
 melee_distance = 10.0
-stop_fleeing_distance = 10.0
 
 [node name="NPC" parent="Entities" instance=ExtResource("6_n782i")]
 transform = Transform3D(-0.999856, 0, 0.0169462, 0, 1, 0, -0.0169462, 0, -0.999856, -60.4117, -2.96723, 24.8178)
-collision_layer = 8388608
-collision_mask = 17367043
 
 [node name="Camping" parent="Entities" instance=ExtResource("5_fnh02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0614, -2.35379, 24.2547)
-collision_mask = 17367043
 race = 2
 description = "c'est un chieng"
 isInvincible = true
-speed = 5
 aMode = 0
 melee_distance = 10.0
-stop_fleeing_distance = 10.0
 
 [node name="ForestBoss" parent="Entities" instance=ExtResource("7_aomlo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -93.5325, 0, 8.99827)

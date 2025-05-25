@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1lp2l4vgb1ug"]
+
+[ext_resource type="PackedScene" uid="uid://y08bekrrw48p" path="res://3D_Models/Environnement/3/lantern.glb" id="1_va83y"]
+
+[node name="torch" type="Node3D"]
+
+[node name="lantern2" parent="." instance=ExtResource("1_va83y")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.018766, 0, 0.0178876)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lantern2"]
+transform = Transform3D(2.22222, 0, 0, 0, 2.22222, 0, 0, 0, 2.22222, 0, 1.38688, 0)
+omni_range = 4.022
+omni_attenuation = 0.0
